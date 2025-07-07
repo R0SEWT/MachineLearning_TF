@@ -1,0 +1,22 @@
+digraph TF_Cripto_Clean {
+	rankdir=TB size="8,10"
+	node [fillcolor="#D6EAF8" fontname=Helvetica fontsize=10 shape=box style=filled]
+	NEG [label="Entendimiento del negocio"]
+	DAT [label="Adquisición y
+preprocesamiento de datos"]
+	EDA [label="Análisis exploratorio (EDA)"]
+	FEAT [label="Feature engineering"]
+	MOD [label="Modelado predictivo"]
+	ANO [label="Detección de anomalías"]
+	TUNE [label="Optimización de modelos (Optuna)"]
+	GUI [label="Despliegue en GUI"]
+	REP [label="Informe final y entrega"]
+	NEG -> DAT
+	DAT -> EDA
+	EDA -> FEAT
+	FEAT -> MOD
+	MOD -> ANO
+	ANO -> TUNE
+	TUNE -> GUI
+	GUI -> REP
+}
