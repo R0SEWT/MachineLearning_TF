@@ -1,0 +1,983 @@
+id,symbol,name,narrative,price,volume,market_cap
+huobi-token,ht,Huobi,ai,0.254416,91101.0,40555412.0
+husd,husd,HUSD,ai,0.03001868,1.48,5638018.0
+elk-finance,elk,Elk Finance,ai,0.02911734,4075.14,469860.0
+shadowtokens-bridged-usdc-elastos,ethusdc,ShadowTokens Bridged USDC (Elastos),ai,0.973962,128.5,272297.0
+shadowtokens-bridged-wbnb-elastos-smart-chain,wbnb,ShadowTokens Bridged WBNB (Elastos Smart Chain),ai,653.07,6.53,0.0
+bridged-busd,busd,Bridged BUSD,ai,0.980301,197.1,0.0
+wrapped-elastos,wela,Wrapped Elastos,ai,1.29,128.5,0.0
+shadowtokens-bridged-weth-elastos-smart-chain,weth,ShadowTokens Bridged WETH (Elastos Smart Chain),ai,2499.98,129.98,0.0
+glide-finance,glide,Glide Finance,ai,0.00796419,22.64,0.0
+time,time,TIME,meme,3.56188e-07,956.97,165868.0
+ledog-dog,dog,LEDOG (DOG),meme,7.883e-09,1307.96,165543.0
+jarvis-3,jarvis,Jarvis,meme,0.00016814,1741.14,165209.0
+morning-routine,routine,Morning Routine,meme,0.00016513,57879.0,165110.0
+ustream-coin,ustream,Ustream Coin,meme,0.00016519,2815.77,165095.0
+international-klein-blue,ikb,International Klein Blue,meme,0.00019998,1.87,164915.0
+best-memecoin-ever,cult,Best Memecoin Ever,meme,0.00016509,9434.04,164909.0
+vikita,vikita,VIKITA,meme,0.00016474,15.33,164859.0
+based-fwog,fwog,Based Fwog,meme,1.64e-06,58.31,164552.0
+cash-2,cash,CASH,meme,0.00020676,1690.66,164364.0
+one-unchill-gal,gal,one unchill gal,meme,0.00016532,83.86,163670.0
+izzy,izzy,Izzy,meme,3.86784e-07,49067.0,162716.0
+sol-drip,drip,SOL DRIP,meme,0.00015923,1977.65,162168.0
+fortune-favours-the-brave,fftb,FORTUNE FAVOURS THE BRAVE,meme,1.63e-06,158.93,162159.0
+socomfy,comfy,SOCOMFY,meme,1.62e-05,134.73,162031.0
+andy70b,andy70b,ANDY70B,meme,0.00016768,1915.38,161959.0
+baby-bitcoin-2,babybtc,Baby BitCoin,meme,0.00016137,584.77,161411.0
+cheems-cto,cheems,Cheems CTO,meme,3.82725e-10,700.1,161119.0
+dancing-triangle-2,triangle,dancing triangle,meme,0.00016998,2090.85,160200.0
+starecat,helia,StareCat,meme,0.0001601,2008.18,159985.0
+pugg,pugg,Pugg,meme,0.00015972,56986.0,159721.0
+corgicoin,corgi,CorgiCoin,meme,1.594e-05,20.89,159426.0
+shitcoin-3,shitcoin,SHITCOIN,meme,0.00015914,13762.07,159177.0
+fluffington,fluffi,Fluffington,meme,0.00015917,936.59,159173.0
+omega-3,omega,OMEGA,meme,0.00015914,6.22,159139.0
+gorth,gorth,Gorth,meme,3.78025e-10,31070.0,159080.0
+this-is-my-iguana,timi,This Is My Iguana,meme,0.00016821,2075.66,158503.0
+helal-para-coin,hpc,Helal Para Coin,meme,0.00015812,52800.0,158103.0
+infinite-backrooms,ib,infinite backrooms,meme,0.00015719,28508.0,157018.0
+dawae-2,dawae,Dawae,meme,0.00015758,1229.37,156309.0
+ghibli-mubarak,gmubarak,Ghibli Mubarak,meme,3.71979e-10,27631.0,156234.0
+the-wally-group,twg,The Wally Group,meme,1.557e-05,2559.0,155667.0
+just-a-black-rock-on-base,rock,Just a Black Rock on Base,meme,1.548e-05,79557.0,154956.0
+balto,balto,BALTO,meme,4.29889e-07,174.52,154337.0
+choctopus,choctopus,Choctopus,meme,0.0002182,27541.0,154191.0
+hana,hana,Hana,meme,1.723e-05,211339.0,153610.0
+koku-the-shikoku,$koku,Koku The Shikoku,meme,0.00015268,3.82,152680.0
+ducky,ducky,Ducky,meme,3.62813e-07,48881.0,152632.0
+keyboard-cat,keycat,Keyboard Cat,meme,0.00015242,301.7,152135.0
+mustaaaaaard,mustard,MUSTAAAAAARD,meme,0.00015206,166174.0,151937.0
+bossie,bossie,Bossie,meme,2.51e-06,8.47,151806.0
+rod-ai,rodai,ROD.AI,meme,2.769e-09,2522.69,151793.0
+store-of-value,val,Store of Value,meme,0.00015,51838.0,150869.0
+coat-dog,coat,COAT DOG,meme,1.53e-06,3867.01,150358.0
+kuma-world,kuma,Kuma World,meme,2.18181e-07,234.77,150174.0
+pizabrc,piza,PIZA (Ordinals),meme,0.00717972,53424.0,149515.0
+gua,gua,GUA,meme,2.391e-05,747.97,149352.0
+pepe-on-doge,podge,Pepe on Doge,meme,0.00014888,94.3,148924.0
+elons-pet-snail,gary,Elons Pet Snail,meme,0.00337649,137.58,148566.0
+puge,puge,Puge,meme,1.48552e-07,19328.65,148552.0
+kangal,kangal,Kangal,meme,1.48e-06,1.94,148281.0
+podflow-ai-by-virtuals,pod,Podflow AI by Virtuals,meme,0.00014944,105.71,148162.0
+queen-kitty,qkitty,Queen Kitty,meme,0.00014878,35277.0,148158.0
+og-meme,ogme,OG.meme,meme,0.0001482,10.06,148151.0
+doge,@doge,@DOGE,meme,0.00014798,3531.02,147903.0
+toki-2,toki,Toki,meme,3.51377e-10,9468.83,147870.0
+cramer-coin,$cramer,Cramer Coin,meme,0.00017434,32.2,147595.0
+byte-2,$byte,BYTE,meme,0.00020849,73.4,147259.0
+duckereum,ducker,Duckereum,meme,0.00147189,58.88,147189.0
+bitcoin-wizards,wzrd,Bitcoin Wizards,meme,0.00700063,2.16,147013.0
+ripple-with-rizz,rizzle,RIPPLE WITH RIZZ,meme,0.00014848,100884.0,146962.0
+starknet-brother,brother,STARKNET BROTHER,meme,1.46814e-10,30.63,146814.0
+go-fu-k-yourself,gfy,go fu*k yourself.,meme,2.15142e-07,46755.0,146727.0
+pepemon-pepeballs,ppblz,Pepemon Pepeballs,meme,10.42,234.55,145945.0
+pepe-clanker,pepec,Pepe Clanker,meme,0.145318,1121.77,145541.0
+csi888,csi,CSI888,meme,0.00016381,44781.0,145460.0
+minidoge-4,minidoge,MiniDoge,meme,0.00014539,2.18,145363.0
+beta,beta,BETA,meme,0.000145,1956.53,145313.0
+upsidedowncat-2,usdcat,upsidedowncat,meme,1.701e-05,19301.07,145158.0
+department-of-government-efficiency-4,doge,Department Of Government Efficiency,meme,0.00028822,114.15,144108.0
+whinecoin,whinecoin,whinecoin,meme,0.00014413,3179.68,144091.0
+chaisavings,chai,CHAISavings,meme,0.00014403,993.34,144026.0
+deli-fm,delifm,DELI FM,meme,0.00016001,39.65,143978.0
+freecz,freecz,FreeCZ,meme,0.00014386,36.35,143862.0
+harambecoin,harambe,HarambeCoin,meme,1.44289e-07,1.16,143737.0
+pico-2,$pico,Pico,meme,0.00014327,129.09,143390.0
+krasnalcoin,kc,Krasnalcoin,meme,0.00014628,686.7,143193.0
+cypherspace,cypher,Cypherspace,meme,0.00014231,131570.0,143070.0
+ghislaine-network,ghsi,Ghislaine Network,meme,0.00014307,950.52,143067.0
+sacabam,scb,Sacabam,meme,3.569e-09,139.3,142571.0
+spike-on-eth,spike,Spike,meme,3.58195e-07,1171.6,141824.0
+make,make,MAKE,meme,0.00141733,12.6,141733.0
+low-quality-cat,lqc,Low Quality Cat,meme,0.00028499,49345.0,141355.0
+watcoin,wat,WATCoin,meme,1.094e-05,1107420.0,140990.0
+chips-2,chips,Chips,meme,0.0001508,361.33,140834.0
+the-martian-dog,marvin,The Martian Dog,meme,3.33529e-07,48144.0,140313.0
+doge-mascot-shibu,shibu,Doge Mascot Shibu,meme,0.00014011,906.4,140091.0
+pepe-the-king-prawn,prawn,Pepe the King Prawn,meme,0.00013977,189283.0,139768.0
+boss-burger,bossburger,Boss Burger,meme,0.00013912,20280.0,139141.0
+wheester,wheee,Wheester,meme,3.3e-06,2260.33,138581.0
+zapcat,zapcat,ZAPCAT,meme,0.00013851,1687.47,138553.0
+agent-zero,$wsb,Agent Zero,meme,0.00659481,1420.57,138491.0
+rex-3,rex,Rex,meme,0.00014551,300.43,138475.0
+izzy-2,izzy,Izzy,meme,0.00014069,2890.75,138190.0
+sniff,$sniff,SNIFF,meme,0.0001424,56.37,138105.0
+goatseus-maximus-on-eth,goat,Goatseus Maximus,meme,1.38e-06,45985.0,137868.0
+frog-on-eth,frog,Frog on ETH,meme,3.31657e-07,10.77,137817.0
+sister,sstr,SISTER,meme,1.374e-05,2.34,137139.0
+book-of-rugs,book of rugs,BOOK OF RUGS,meme,0.00015675,3332.84,136959.0
+bro-on-base,bro,BRO on BASE,meme,0.00018898,12285.81,136610.0
+heidrun,heidrun,Heidrun,meme,0.00013778,286.97,136527.0
+wrapped-fc-barcelona-kayen,wbar,Wrapped FC Barcelona (Kayen),meme,1.076,25077.0,136260.0
+owo,owo,Owo,meme,3.23771e-10,51584.0,136232.0
+xrp-god-candle,xgc,XRP GOD CANDLE,meme,0.00023071,3.57,135886.0
+omega-2,omega,Omega,meme,0.00013555,1149.98,135572.0
+shart,shart,SHART,meme,0.00016642,7505.84,135261.0
+bonkwifhat,bif,bonkwifhat,meme,0.00013518,1938.45,135225.0
+internosaur,$intern,Internosaur,meme,0.00014636,1.47,134915.0
+suiba-inu,suib,Suiba Inu,meme,0.00013476,39.81,134757.0
+bowser,bowser,Bowser,meme,3.20157e-07,5.94,134687.0
+mewing-coin,mewing,Mewing Coin,meme,0.00013444,144.99,134467.0
+boop-3,boop,BOOP,meme,0.00013696,540.53,134122.0
+ninjachat,ninja,NinjaChat AI,meme,0.0001338,6586.98,133764.0
+barry-the-badger,barry,Barry the badger,meme,0.00014194,52967.0,133640.0
+fleabone,bone,FLEABONE,meme,3.1731e-07,777.99,133489.0
+gud-tek,gudtek,GUD TEK,meme,0.00013333,23018.0,133452.0
+hl-gato,hlgato,Hl Gato,meme,0.00013306,3741.62,133355.0
+ronnie,ronnie,Ronnie,meme,0.000148,3.95,133096.0
+bro-the-cat,bro,Bro the cat,meme,0.00013294,1827.12,132930.0
+team-mysten,mysten,Team Mysten,meme,1.395e-05,828.86,132882.0
+stickman-2,stickman,stickman,meme,0.0001324,41599.0,132109.0
+bitcoin-2-0-2,btc2,Bitcoin 2.0,meme,0.00627517,2016.43,131803.0
+the-society-library,sl,The Society Library,meme,0.0002215,361.45,131371.0
+top-protocol,top,TOP PROTOCOL,meme,0.02061257,38.81,131024.0
+duck-the-doug,doug,Doug the Duck,meme,0.0001308,1428.52,130820.0
+charlie-3,charlie,Charlie,meme,0.00013059,1706.74,130619.0
+official-ray-lewis,fit,OFFICIAL RAY LEWIS,meme,0.00013127,539.85,130197.0
+miss-china,mschina,Miss China,meme,0.00013648,61.08,129971.0
+mikawa-inu-2,shikoku,Mikawa Inu,meme,1.29928e-10,248.22,129819.0
+ghffb47yii2rteeyy10op,ghffb47yii2rteeyy10op,ghffb47yii2rteeyy10op,meme,1.3e-06,250.33,129712.0
+gremly,$gremly,Gremly,meme,3.14073e-10,6163.9,129361.0
+alf,alf,ALF,meme,1.29e-06,23897.0,128761.0
+based-snek,snek,BASED SNEK,meme,0.00012838,1059.97,128530.0
+roolz,godl,RoOLZ,meme,0.00024527,220531.0,128273.0
+bliffy,bliffy,Bliffy,meme,7.62e-06,11.95,127962.0
+pizza,pizza,Pizza,meme,0.00012771,100.78,127720.0
+biao-on-bnbchain,biao,Biao on BNBChain,meme,0.00013169,671.25,127651.0
+worthless-coin,worthless,worthless coin,meme,0.0001267,268471.0,127281.0
+kyro,kyro,Kyro,meme,0.00012693,43001.0,127108.0
+zoomer-sol,zoomer,Zoomer,meme,0.00031312,2227.24,127061.0
+slop,slop,Slop,meme,0.000127,159044.0,126975.0
+zerebro-token-of-transformation,gaycoin,Zerebro Token Of Transformation,meme,0.00012634,106.63,126354.0
+market-fun,market,Market fun,meme,0.00012545,2952.95,125447.0
+defido,defido,DeFido,meme,0.00014391,5.3,124783.0
+floos,fls,Floos,meme,0.0001349,42.66,124688.0
+msq-cycle-burn,burn,MSQ Cycle Burn,meme,0.01220789,179.2,124679.0
+ai404,$error,AI404,meme,8.642e-05,8.32,124452.0
+coin6900,coin,Coin6900,meme,0.00012832,268.78,124382.0
+brett-s-cat,balt,Brett's cat,meme,0.00013033,6072.22,124379.0
+tiny-panda,$tinyp,Tiny Panda,meme,1.24e-06,96.54,124010.0
+marv,marv,Marv,meme,2.94392e-10,68.28,123932.0
+eric,eric,Elon's Pet Fish ERIC,meme,0.00123632,841.89,123716.0
+snibbu-2,snibbu,Snibbu,meme,0.00018525,56425.0,123558.0
+yawn,yawn,YAWN,meme,1.539e-05,47766.0,123106.0
+peace-guy,peaceguy,Peace Guy,meme,0.00012218,18783.52,122153.0
+us-usach,usach,Us Usach,meme,0.0001221,2.32,122099.0
+b-h-a-d,bhad,B.H.A.D,meme,0.0001234,1914.38,122094.0
+basedandy,andy,Based Andy,meme,0.00012176,4349.45,121953.0
+naitzsche,nai,Naitzsche,meme,0.00012155,628.93,121552.0
+ishi-go,ishi,Ishi Go,meme,0.00012144,64244.0,121449.0
+keydog,$keydog,KEYDOG,meme,0.0001214,747.91,121406.0
+morud,morud,Morud,meme,0.00012103,609.88,121040.0
+based-butthole,butthole,Based Butthole,meme,1.21e-06,141.93,120920.0
+dyor-token-2,dyor,DYOR,meme,1.7496e-08,34.1,120720.0
+usacoin,usacoin,USAcoin,meme,0.00568432,43671.0,120492.0
+away-from-keyboard,afk,Away From Keyboard,meme,0.0001587,90.86,120361.0
+richcoin,richcoin,恭喜发财,meme,0.00012033,12577.66,120330.0
+tiny-fren,smol,Tiny Fren,meme,1.2e-06,1.2,120266.0
+vibing-cat,vcat,Vibing Cat,meme,0.098128,3036.87,120010.0
+catwifhat-3,catwif,CatWifHat,meme,0.0001332,294.91,119875.0
+gou,gou,Gou,meme,0.00011976,392.6,119840.0
+chester,$chester,Chester,meme,0.00012294,627.03,119795.0
+nox,nox,NOX,meme,0.119672,222.18,119653.0
+fartcoin-2,fart,FartCoin,meme,0.00172271,24665.0,119613.0
+based-hoppy,hoppy,Based Hoppy,meme,0.00012366,1692.57,119370.0
+milkbag,milkbag,MILKBAG,meme,0.00012891,494.83,119261.0
+acid-toad,toad,Acid Toad,meme,2.83395e-10,248.23,119221.0
+clancy,clancy,Clancy,meme,0.00011917,1025.09,119174.0
+dt-inu,dti,DT Inu,meme,0.00011912,11224.85,119123.0
+minetard-ai,mtard,MineTard AI,meme,0.000119,192.21,118992.0
+simple-coin,simple,Simple coin,meme,0.00011871,38149.0,118731.0
+maow,maow,maow,meme,0.00011861,503622.0,118602.0
+gaming,gaming,GAMING,meme,0.00011856,49580.0,118529.0
+toona,toona,toona,meme,0.0001251,521.88,118032.0
+black-devil,anglerfish,Black Devil,meme,0.00011801,165009.0,117930.0
+zeus-3,zeus,ZEUS,meme,0.00011681,15984.89,116834.0
+trump-derangement-syndrome,tds,Trump Derangement Syndrome,meme,0.00011676,178.38,116751.0
+maga-pepe,magapepe,MAGA PEPE,meme,2.767e-12,3758.84,116409.0
+gdog,gdog,GDOG,meme,1.4e-06,6.55,116399.0
+colon,colon,Colon,meme,0.00011858,46155.0,116383.0
+shih-tzu,shih,Shih Tzu,meme,1.1618e-10,46.7,116180.0
+the-blinking-ai-cat-catfather,catf,The Blinking AI Cat - Catfather,meme,0.00011989,5584.13,116022.0
+toad-2,toad,TOAD,meme,2.75311e-10,6829.56,115820.0
+baby-pepe-2,babypepe,Baby Pepe,meme,2.99442e-07,23.1,115680.0
+wicked,wicked,Wicked,meme,0.00011554,2912.11,115536.0
+dogwifnohat,nohat,DogWifNoHat,meme,0.00011754,1425.0,115496.0
+doge-inu,dinu,Doge Inu,meme,2.31621e-10,8.07,115384.0
+deer-token,deer,DEER TOKEN,meme,0.00020869,45778.0,115109.0
+elawn-moosk,moosk,Elawn Moosk,meme,0.00011507,1164.21,115062.0
+papichulo,chulo,Papichulo,meme,0.00014112,25.48,115052.0
+minidoge-3,minidoge,Minidoge,meme,0.00011459,707.99,114600.0
+nyxia-ai,nyxc,Nyxia AI,meme,0.01145502,1942.79,114575.0
+upside-down-meme,wewe,WEWECOIN,meme,1.14e-06,61.15,114086.0
+p-nut-s-freedom-farm,good,P’Nut's Freedom Farm,meme,0.0001897,1470.87,113631.0
+dapyai,$dapy,DapyAI,meme,0.00011345,2.57,113449.0
+catsolhat,solcat,CatSolHat,meme,0.00162085,549.99,113377.0
+shiboo,shiboo,Shiboo,meme,1.134e-05,13.29,113250.0
+trumpius-maximus,trumpius,Trumpius Maximus,meme,0.00239774,207845.0,113052.0
+chipi,chipi,CHIPI,meme,0.00011302,29.15,112985.0
+dragon-sun,drgn,Dragon Sun,meme,0.00011255,85.87,112551.0
+american-bitcoin,abtc,American Bitcoin,meme,3.17729e-07,4517.01,112507.0
+frogger,frogger,FROGGER,meme,0.00011144,7609.57,112479.0
+hawk-tuah,hawktuah,Hawk Tuah,meme,0.00012399,160937.0,112431.0
+donald-toad-coin,dtc,Donald Toad Coin,meme,0.00162933,50978.0,112424.0
+the-theory-of-gravity,thog,Theory Of Gravity,meme,0.00011832,379.77,112249.0
+jason-derulo,jason,Jason Derulo,meme,0.00011208,1022.69,112069.0
+geoff,geoff,Geoff,meme,0.00011199,9.95,112015.0
+aguri-chan,aguri,Aguri-Chan,meme,2.66008e-07,44784.0,111907.0
+andy-on-eth,andy,Andy on ETH,meme,0.116127,28.13,111868.0
+updog,updog,UpDog,meme,3.25997e-10,2.12,111729.0
+black-unicorn-corp,moon,Black Unicorn Corp.,meme,8.27e-06,3.97,111650.0
+mew-woof-dao,mwd,MEW WOOF DAO,meme,0.0001116,199.8,111599.0
+poodle,poodl,Poodl,meme,1.474e-09,3.07,110708.0
+calicoin-2,calico,Calicoin,meme,0.00011533,464.09,110657.0
+kwak,kwak,KWAK,meme,0.00010989,50236.0,110591.0
+coal-2,coal,COAL,meme,0.00523408,159.45,109916.0
+cat-token,cat,Mooncat CAT,meme,0.01676856,30369.0,109460.0
+baby-pepe-4,babypepe,Baby Pepe,meme,2.64167e-07,58211.0,109385.0
+birb-3,birb,birb,meme,0.00010932,243.04,109199.0
+spurdo-sparde-3,spurdo,Spurdo Spärde,meme,0.00011843,4842.57,109099.0
+eggdog,egg,Eggdog,meme,0.0001089,3918.06,108934.0
+zilpepe,zilpepe,ZilPepe,meme,2.58825e-10,78.89,108885.0
+grok-inu,grokinu,Grok Inu,meme,2.61139e-13,115.48,108812.0
+naincy,naincy,NAINCY,meme,0.00062061,2611.04,108734.0
+red-pepe-2,rpepe,Red Pepe,meme,2.206e-09,1.33,108687.0
+motion-coin,motion,Motion Coin,meme,0.0001206,2788.29,108558.0
+neirei,neirei,Neirei,meme,1.09e-06,8.73,108379.0
+supa-pump,supa,Supa Pump,meme,0.0001126,3201.63,108308.0
+yes-3,yes,YES,meme,1.48,766.07,108267.0
+trump-47,47,TRUMP 47,meme,0.00012803,2523.56,107993.0
+otto,$otto,Otto,meme,0.00010799,51.03,107992.0
+ruri-truth-terminal-s-crush,ruri,Ruri - Truth Terminal's Crush,meme,0.00010791,382.59,107931.0
+waygu-cash,waygu,WAYGU CASH,meme,0.0001089,7376.79,107804.0
+pepepow,pepew,PEPEPOW,meme,2.11e-06,113.91,107562.0
+babytrump,babytrump,BABYTRUMP,meme,0.00270714,25.88,107459.0
+croc-cat,croc,croc cat,meme,0.00010741,6.28,107427.0
+scrat,scrat,Scrat,meme,0.00107366,3742.96,107369.0
+suinami,nami,SUINAMI,meme,1.071e-05,107.15,107137.0
+dark-maga-2,dmaga,dark maga,meme,2.54591e-07,33659.0,107091.0
+tapdadoge,run,TapDaDoge,meme,3.15e-05,9.66,107086.0
+nasdao-ai,ndao,Nasdao Ai,ai,3.96e-05,105.01,43566.0
+lucy-ai,lucy,Lucy AI,ai,4.25e-05,16.7,42496.0
+oracle-3,orcl,Oracle,ai,0.00199843,118.64,42019.0
+buttholes,bhole,Buttholes,ai,4.056e-05,978.1,40531.0
+inoai,ino,InoAi,ai,3.918e-05,235.92,39180.0
+a16z-ai-dog,tilly,a16z AI Dog,ai,3.774e-05,91398.0,37700.0
+fiji-exe,fiji,FIJI.EXE,ai,3.901e-05,28.18,36905.0
+diviner-2,diviner,DIVINER,ai,3.686e-05,585.05,36862.0
+lillo-ai,$lillo,Lillo AI,ai,3.654e-05,18.46,36537.0
+yieldmachine,ymach,YieldMachine by Virtuals,ai,3.635e-05,54.14,36404.0
+wars-by-wow-ai,wars,WARS by wow.ai,ai,0.00014872,1504.69,36168.0
+rekt-burgundy-by-virtuals,mxnbc,Rekt Burgundy by Virtuals,ai,4.879e-05,1807.07,35500.0
+cyphomancer,42,Cyphomancer,ai,3.787e-05,106.76,35218.0
+epoch,epoch,Epoch,ai,3.359e-05,3790.95,33567.0
+astheria,heria,Astheria,ai,3.379e-05,25.27,33520.0
+finance-wizard,wizard,Finance Wizard,ai,3.373e-05,70.97,33347.0
+tay,tay,TAY,ai,6.133e-05,1.19,32134.0
+jelly-ai,jai,JELLY AI,ai,3.13e-06,10.9,31252.0
+gooseai,goose,GOOSEAI,ai,3.11e-05,36.23,31071.0
+emptiness-coin,∅,Emptiness Coin,ai,3.109e-05,3.73,31064.0
+nexus-erebus,nxr,Nexus Erebus,ai,3.104e-05,69.19,30259.0
+aurora-terminal,aurora,Aurora,ai,3.015e-05,10.26,30141.0
+zoa-ai,zoa,ZOA AI,ai,3.006e-05,221.39,30048.0
+prometheus-waluigi,prome,Prometheus Waluigi,ai,2.975e-05,89.25,29693.0
+darksun,binary,darksun,ai,2.891e-05,26.91,28910.0
+my-token,mtk,My Token,ai,2.819e-05,4.53,28137.0
+inflatable-buttplug,buttplug,Inflatable Buttplug,ai,2.895e-05,109.58,28112.0
+dogius-maximus,dogius,Dogius Maximus,ai,2.808e-05,84.72,28105.0
+vera-ai,vera,Vera AI,ai,2.808e-05,83.73,28070.0
+ai16zterminalfartarczerellmswarm,gudtek,ai16zterminalfartARCzereLLMswarm,ai,2.783e-05,213.18,26967.0
+punk3493,punk3493,PUNK3493,ai,2.674e-05,2.49,26716.0
+nyx-by-virtuals,nyx,Nyx by Virtuals,ai,2.557e-05,154.26,25579.0
+assai,assai,ASSAI,ai,2.503e-05,185.57,25046.0
+recursive-sigil-protocol,glyph,Recursive Sigil Protocol,ai,2.463e-05,418.0,24628.0
+agawa,agawa,AGAWA,ai,2.428e-05,563.56,24273.0
+hyperboreal-infinity,hypr∞,HYPERBOREAL INFINITY,ai,2.37e-05,49429.0,23775.0
+artificial-idiot,aii,Artificial idiot,ai,2.397e-05,6.53,23651.0
+mind-zero,mind,Mind Zero,ai,2.332e-05,47.37,23306.0
+gpu-inu,gpuinu,GPU Inu,ai,2.31e-06,37.5,23080.0
+zerobyte,zb,ZeroByte,ai,2.284e-05,4.12,22833.0
+ai-virtual-agents,aivia,AI Virtual Agents,ai,2.268e-05,2744.41,22478.0
+goatse-forest-rave,gfr,Goatse Forest Rave,ai,2.171e-05,24.13,21707.0
+stonefish-ai,sai,STONEFISH AI,ai,2.31e-06,2.33,21674.0
+the-anthropic-order,tao,The Anthropic Order,ai,2.129e-05,231.44,21270.0
+yann-lecoin,yann,Yann LeCoin,ai,2.055e-05,91.84,20532.0
+wibwob,wibwob,WibWob,ai,2.011e-05,17.01,19758.58
+tardigrade,tardi,tardigrade,ai,1.976e-05,1.53,19752.29
+the-pea-guy-by-virtuals,peaguy,The Pea Guy by Virtuals,ai,2.157e-05,6.91,19627.94
+brain-frog,brain,Brain Frog,ai,0.00194921,13066.14,19508.9
+cognitive-accelerationism,cog/acc,Cognitive Accelerationism,ai,1.944e-05,3.66,19437.62
+ninja-pump,ninjapump,Ninja Pump,ai,1.912e-05,51.6,19111.41
+american-general-intelligence,agi,American General Intelligence,ai,1.908e-05,2.76,19082.13
+marie-rose-ai,marie,Marie Rose AI,ai,1.898e-05,260.39,18978.15
+cheshire-grin,grin,Cheshire Grin,ai,1.884e-05,50.43,18829.73
+shrubius-maximus,shrubius,Shrubius Maximus,ai,1.85e-05,1474.1,18511.29
+hopecoin,$hope,Hopecoin,ai,1.837e-05,1258.77,18381.0
+ai-crystal-node,aicrynode,AI Crystal Node,ai,1.785e-05,1.22,17825.08
+trump-ai,$traimp,Trump AI,ai,1.739e-05,7.37,17099.78
+camel-dad,camel,Camel Dad,ai,2.17e-06,11.04,17048.8
+h0l0,h0l0,H0L0,ai,1.761e-05,8.79,17000.03
+a-new-internet-money-era,anime,A New Internet Money Era,ai,1.735e-05,2.0,16907.47
+panterai,panterai,PanterAI,ai,1.685e-05,6.64,16843.83
+chadgpt,giga,ChadGPT,ai,1.645e-05,5.04,16432.92
+tap-hold-and-load-in-4k,thl,Tap Hold and Load in 4k,ai,1.646e-05,59.87,16359.64
+beta-trader,beta,Beta Trader,ai,1.627e-05,3.25,16246.89
+memeerkat,mkat,Memeerkat,ai,1.624e-05,16.19,16241.23
+gerta,gerta,Gerta,ai,1.615e-05,16.53,16145.26
+coder-gf,codergf,Coder GF,ai,1.609e-05,3.93,16082.75
+longevity-ai,longai,Longevity AI,ai,1.79e-05,3.65,15738.25
+atreu,atreu,Atreu,ai,1.572e-05,715.28,15678.88
+truth-terminal-s-hentai,hentai,Truth Terminal's Hentai,ai,1.525e-05,2.74,15232.1
+radx-ai,$radx,Radx Ai,ai,2.41e-06,49666.0,15036.92
+solod-the-buddy,buddy,Solod The Buddy,ai,1.501e-05,190.51,15008.13
+morph,morph,MORPH,ai,3.68482e-10,20.89,14925.16
+viora-is-online,viora,VIORA IS ONLINE,ai,1.494e-05,3.15,14910.19
+agent-dora,ad,Agent DORA,ai,1.468e-05,4.14,14677.13
+rebel-by-virtuals,rebelz,Rebel by Virtuals,ai,1.465e-05,9.36,14653.2
+gaisha-ai,gaisha,Gaisha AI,ai,1.46e-05,6.13,14595.16
+retard-ai,retard,RETARD AI,ai,1.469e-05,28.87,14548.96
+bitchemical-token,bchem,Bitchemical Token,ai,1.448e-05,24910.0,14478.58
+upgrates,upg,Upgrates,ai,1.596e-05,7.51,14396.48
+kailith,kaily,Kailith,ai,1.389e-05,7.68,13892.09
+launchtokenbot,capo,LaunchTokenBot,ai,1.416e-05,15.83,13734.55
+sarah,sarah,Sarah,ai,1.39e-05,46.47,13621.95
+deus,deus,DEUS,ai,1.455e-05,57.91,13097.96
+goatse,goatse,GOATSE,ai,1.28996e-13,185.72,12890.39
+kando-ai,kando,KANDO AI,ai,1.147e-05,22.87,12819.0
+moondog-ai,mdogai,MoonDog AI,ai,1.261e-05,4.86,12613.57
+ronout,ronout,Ronout,ai,1.797e-05,4.97,12580.77
+yumiko-ai,alive,Yumiko AI,ai,1.25e-05,26.13,12490.6
+this-will-cook,women,this will cook,ai,1.25e-05,40.09,12479.29
+nexara,nxr,Nexara,ai,1.235e-05,5.96,12353.76
+machine-delusions,mdel,Machine Delusions,ai,1.228e-05,8.22,12275.77
+venti,$venti,Venti,ai,1.265e-05,94.66,12062.82
+lucy-ai-agent,lcy,Lucy Ai Agent,ai,1.929e-05,19.76,11798.09
+xspectra-ai,$xai,Xspectra Ai,ai,0.00117748,30.72,11774.81
+boltai,boltai,BoltAI,ai,1.173e-05,16.18,11725.55
+john-mcaifee,mcaifee,John McAIfee,ai,1.167e-05,23.35,11665.73
+illusive-ai,kaia,Illusive AI,ai,1.162e-05,22.55,11619.87
+violet,violet,Violet,ai,1.161e-05,51757.0,11605.43
+dream-machine,$dream,Dream machine,ai,5.963e-05,172.73,11580.25
+kz-token,kz,KZ,ai,2.339e-08,1.42,11571.03
+goatseglebe,glebe,goatseglebe,ai,1.129e-05,112.99,11225.04
+virus-protocol,virus,Virus Protocol,ai,1.108e-05,199.85,11048.36
+oink,oink,Oink,ai,2.53581e-07,397.18,10668.85
+zoo-world,zoo,Zoo World,ai,1.043e-05,189.57,10342.7
+bob-the-snek,bob,Bob the Snek,ai,1.024e-05,6.08,10233.35
+brokie-ai,$brokie,BROKIE AI,ai,1.003e-05,70.83,10033.87
+stardoge,stardoge,StarDOGE,ai,9.9894e-08,5332.17,9989.45
+fartgpt,fartgpt,FartGPT,ai,9.61e-06,1.74,9612.3
+altariste-by-virtuals,asta,Altariste by Virtuals,ai,2.339e-05,4.55,9542.01
+limoncelloai,limon,LimoncelloAI,ai,0.00094659,106.7,9465.92
+sigma-ai-terminal,sai,Sigma AI Terminal,ai,9.38e-06,3.57,9370.13
+anti-goatse,ag,Anti-Goatse,ai,9.04e-06,7.75,9031.52
+dwog,dwog,dwog,ai,9.17e-06,213.8,8998.89
+rosie-the-robot,rosie,Rosie the Robot,ai,8.92e-06,9.63,8910.84
+kyra,kyra,KYRA,ai,9.45e-06,119.88,8832.71
+dog-with-egg-on-head,egg,dog with egg on head,ai,8.75e-06,15.28,8736.2
+vampaire-squid,vs,vampAIre squid,ai,8.4e-06,1.087,8392.08
+the-omnipotence,omn,The Omnipotence,ai,8.24e-06,4.39,8233.2
+trading-oracle,orcl,Trading Oracle,ai,8.11e-06,82.53,8110.34
+smore,smore,SMORE,ai,7.79e-06,49.46,7779.23
+apicoin,api,Apicoin,ai,7.4e-06,4.71,7397.7
+first-ai-1951,snarc,First AI (1951),ai,7.23e-06,2.09,7224.79
+turbo-ai,turbo,Turbo Ai,ai,7.52e-06,53282.0,7209.53
+claude-2,claude 2,Claude 2,ai,7.17e-06,2.27,7164.59
+infinite-truths,truths,Infinite Truths,ai,7.12e-06,11.68,7125.49
+chadai,chadai,CHADAI,ai,7.12e-06,17.72,7115.86
+kol-exe,kol,KOL.exe,ai,7.1e-06,34.15,7091.86
+act-ii-the-ai-obesity,actii,Act II : The AI Obesity,ai,6.99e-06,1.37,6972.84
+erebus,erb,erebus,ai,6.93e-06,9.68,6927.4
+goat-gains,ggains,GOAT GAINS,ai,6.73e-06,71.01,6723.42
+metaiverse,metaiverse,MetAIverse,ai,6.7e-06,73.75,6689.27
+trumped-ai,trumped.ai,trumped.ai,ai,6.39e-06,1.14,6390.7
+shadow-ai,shadoai,Shadow AI,ai,6.16e-06,6.16,6067.44
+rokos-matrix,matrix,Rokos Matrix,ai,5.73e-06,29.11,5725.26
+ainalyzr,ainal,AInalyzr,ai,5.62e-06,55.19,5289.59
+snoopybabe,sbabe,SNOOPYBABE,ai,5.2414e-07,19.35,5241.4
+sagel-the-sad-guy,sagel,Sagel The Sad Guy,ai,5.14e-06,3.51,4921.3
+xiv-the-awakening,golem,XIV: THE AWAKENING,ai,4.88e-06,15.47,4878.02
+kaka-the-cat,kaka,KAKA the cat,ai,4.79562e-07,13.45,4795.62
+first-ai-owned-dog,gracie,First AI Owned Dog,ai,4.1e-06,4.1,4082.65
+saiko-ai,saiko,Saiko Ai,ai,3.83e-06,1.41,3821.15
+invify-ai,invify,INVIFY AI,ai,3.62e-06,7.33,3617.11
+avaxminerai,avaxminerai,AvaxMinerAI,ai,3.36e-06,1.96,3359.8
+dok,dok,DOK,ai,3.34e-06,15.42,3336.85
+fate-on-sui,fate,FATE on SUI,ai,2.29e-06,74.18,2293.36
+shitcoin-2,shit,Shitcoin,ai,0.00011939,4360.33,0.0
+chaos-2,chaos,Chaos,ai,1.154e-05,967.2,0.0
+the-p33l,p33l,THE P33L,ai,0.00033343,81384.0,0.0
+kitty-ai,kitty,Kitty AI,ai,0.00029304,167252.0,0.0
+enkryptedai,krai,EnKryptedAI,ai,0.04374604,28808.0,0.0
+sora-ai,sora,Sora AI,ai,0.00029645,60526.0,0.0
+stix,stix,STIX,ai,3.86e-05,85264.0,0.0
+grok-ai,grok ai,Grok Ai,ai,0.00024779,4.33,0.0
+ethereumfair,ethf,EthereumFair,ai,0.00810459,260849.0,0.0
+get-ai,get,Get AI,ai,2.38,48700.0,0.0
+tokai,tok,Tokai,ai,7.915e-05,85729.0,0.0
+bnbgpt,bnbgpt,BNBGPT,ai,0.00010599,55.57,0.0
+flying-avocado-cat,fac,Flying Avocado Cat,ai,0.04802102,17346.03,0.0
+aicell,aicell,AICell,ai,0.00164883,378318.0,0.0
+moocat-2,moocat,MooCat,ai,5.228e-05,2.97,0.0
+president-exe,aimaga,President.exe,ai,9.21522e-07,22.92,0.0
+npcs-ai,xnpcs,NPCS AI,ai,0.00078841,163382.0,0.0
+iai-token-2,iai,iAI Token,ai,0.0048248,53431.0,0.0
+swing-bydney,plsr,Swing Bydney,ai,7.8e-06,21.01,0.0
+gomble,gm,Gomble,ai,0.01107712,1279090.0,3051777.0
+alltoscan,ats,Alltoscan,ai,0.04436085,114643.0,3028256.0
+u-coin,u,U Coin,ai,0.01209546,93673.0,3022366.0
+fuse-network-token,fuse,Fuse,ai,0.00971353,751683.0,2994910.0
+good-game-us-dollar,ggusd,Good Game US Dollar,ai,1.0,43060.0,2991580.0
+forward,forward,Forward,ai,0.00058895,133398.0,2941422.0
+coco-coin,coco,COCO COIN,ai,8.557e-05,107582.0,2926609.0
+decentrawood,deod,Decentrawood,ai,0.00643018,160157.0,2884706.0
+privasea-ai,prai,Privasea AI,ai,0.01384437,3086617.0,2848181.0
+dogebonk,dobo,DogeBonk,ai,5.185e-09,6966.76,2821039.0
+seedworld,sworld,Seedworld,ai,0.00036948,50681.0,2806002.0
+mbc,mbc,MBC,ai,0.00930644,16896.84,2792042.0
+prosper,pros,Prosper [OLD],ai,0.054037,197.92,2777863.0
+creo-engine,creo,Creo Engine,ai,0.00688249,1155829.0,2758764.0
+rejuve-ai,rjv,Rejuve.AI,ai,0.00511691,627507.0,2740813.0
+safemars,safemars,Safemars,ai,7.006e-09,637.12,2685787.0
+gamegpt,duel,GameGPT,ai,0.00059315,633279.0,2671287.0
+liquiddriver,lqdr,LiquidDriver,ai,0.260815,1884.62,2656133.0
+bitbonk,bbonk,BitBonk,ai,8.85e-06,1.49,2653689.0
+dexsport,desu,Dexsport,ai,0.01355457,357.32,2651704.0
+biconomy-exchange-token,bit,Biconomy Exchange Token,ai,9.25e-06,1827880.0,2641343.0
+zambesigold,zgd,ZambesiGold,ai,0.04499613,828.39,2639856.0
+asia-coin,asia,Asia Coin,ai,0.052781,7414.01,2639073.0
+meter,mtrg,Meter Governance,ai,0.081389,170456.0,2626989.0
+dexkit,kit,DexKit,ai,0.257604,8.36,2576043.0
+ispolink,isp,Ispolink,ai,0.00028232,203094.0,2561743.0
+brn-metaverse,brn,BRN Metaverse,ai,0.100571,347542.0,2544391.0
+reddio,rdo,Reddio,ai,0.00132732,7613412.0,2524126.0
+hatch-2,hatch,Hatch,ai,0.070516,103862.0,2520496.0
+utility-web3shot,uw3s,Utility Web3Shot,ai,0.101876,3526.88,2516404.0
+dingocoin,dingo,Dingocoin,ai,2.338e-05,206428.0,2511781.0
+dtravel,trvl,Dtravel,ai,0.00557309,221768.0,2458927.0
+grabway,grab,GRABWAY,ai,0.073829,468427.0,2456799.0
+stargaze,stars,Stargaze,ai,0.00090132,30981.0,2455262.0
+faya,faya,FAYA,ai,2.26722e-07,31462.0,2425279.0
+elderglade,elde,Elderglade,ai,0.02255901,23181232.0,2423231.0
+catcoin-cash,cat,Catcoin,ai,7.0164e-11,265134.0,2420661.0
+ta-da,tada,Ta-da,ai,0.00363231,109144.0,2418863.0
+inspect,insp,Inspect,ai,0.00594163,1614594.0,2408034.0
+coin-capsule,caps,Ternoa,ai,0.00127726,232241.0,2336859.0
+gorilla-3,gorilla,Gorilla,ai,0.0023321,600290.0,2335051.0
+lto-network,lto,LTO Network,ai,0.00521737,751822.0,2285499.0
+universe-boss-coin,ubc,Universe Boss Coin,ai,0.00228404,317358.0,2279910.0
+beeper-coin,beeper,Beeper Coin,ai,0.00022711,5031.4,2271170.0
+limocoin-swap,lmcswap,Limocoin Swap,ai,0.00189509,80.1,2230756.0
+byte,byte,Byte,ai,2.3e-06,51285.0,2219482.0
+gamium,gmm,Gamium,ai,4.495e-05,164502.0,2202419.0
+paimon-spacex-spv-token,spcx,Paimon SpaceX SPV Token,ai,219.97,330.55,2199770.0
+parad-dao,prd,Parad DAO,ai,0.079535,1456.86,2195173.0
+hodl-2,hodl,HODL,ai,0.00025071,109991.0,2190341.0
+marsdao,mdao,MarsDAO,ai,0.02785442,294431.0,2189683.0
+smart-layer-network,sln,Smart Layer Network,ai,0.02845056,132489.0,2179343.0
+g8day,g8d,G8DAY,ai,0.00024429,51552.0,2149741.0
+xend-finance,rwa,Xend Finance,ai,0.01069372,78608.0,2136973.0
+engines-of-fury,fury,Engines of Fury,ai,0.04182545,765032.0,2120263.0
+4everland,4ever,4EVERLAND,ai,0.0012825,257473.0,2111335.0
+everrise,rise,EverRise,ai,2.944e-05,1368.58,2108551.0
+snfts-seedify-nft-space,snfts,Seedify NFT Space,ai,0.00041824,233.93,2101618.0
+mirror-protocol,mir,Mirror Protocol,ai,0.01340381,56893.0,2078008.0
+xcad-network,xcad,XCAD Network,ai,0.02767614,739746.0,2077106.0
+redbrick,bric,Redbrick,ai,0.00874273,1390106.0,2055369.0
+plearn,pln,PLEARN,ai,0.02274905,34379.0,2055336.0
+camille,camille,Camille,ai,0.097669,4879.79,2051128.0
+karat-galaxy,karat,KARAT Galaxy,ai,0.02257283,3382.19,2047397.0
+xana,xeta,XANA,ai,0.00041313,276471.0,2037389.0
+bridged-trueusd,tusd,Bridged TrueUSD,ai,1.0,3882.11,2026839.0
+assisterr-ai,asrr,Assisterr AI,ai,0.143964,1874692.0,2021788.0
+poolz-finance-2,poolx,Poolz Finance,ai,0.392884,130040.0,2021683.0
+sixpack-token-sixp,sixp,Sixpack Token (SIXP),ai,0.02904445,122704.0,2021186.0
+magiccraft,mcrt,MagicCraft,ai,0.00040034,661168.0,2016741.0
+skyhash,skh,Skyhash,ai,0.101292,73671.0,1995328.0
+talken,talk,Talken,ai,0.00720353,194738.0,1992619.0
+doodipals,doodi,DOODiPALS,ai,0.00198001,1231980.0,1980014.0
+chimaera,wchi,XAYA,ai,0.03411747,892.35,1965354.0
+nanobyte,nbt,NanoByte,ai,0.00152427,177250.0,1964728.0
+openocean,ooe,OpenOcean,ai,0.00384353,157582.0,1936508.0
+usdfi-stable,stable,Stable,ai,1.93,19.58,1934371.0
+alpaca-finance,alpaca,Alpaca Finance,ai,0.01279778,966697.0,1933034.0
+gamee,gmee,GAMEE,ai,0.00141415,309164.0,1930713.0
+upup-space,upp,Upup Space,ai,0.472791,0.0,1914804.0
+libra-incentix,lixx,Libra Incentix,ai,0.00027988,35783.0,1875172.0
+mint-club,mint,Mint Club V1,ai,1.59e-06,99.47,1822709.0
+dehub,dhb,DeHub,ai,0.00038157,177.03,1813762.0
+dappradar,radar,DappRadar,ai,0.00121259,200415.0,1810270.0
+octavia,via,Octavia,ai,0.02005457,194150.0,1797088.0
+stobox-token,stbu,Stobox Token,ai,0.01437028,233279.0,1796483.0
+coinbuck,buck,CoinBuck,ai,0.00017917,4285.54,1791747.0
+mubarakah,mubarakah,Mubarakah,ai,0.00176737,528138.0,1767453.0
+ritestream,rite,ritestream,ai,0.00255297,205322.0,1764389.0
+hudi,hudi,Hudi,ai,0.075921,1371.99,1762119.0
+the-big-five,bft,The Big Five,ai,1.775e-05,294915.0,1761984.0
+cashaa,cas,Cashaa,ai,0.00241007,84421.0,1748218.0
+ridotto,rdt,Ridotto,ai,0.00549053,73687.0,1728190.0
+domi,domi,Domi,ai,0.0038572,87591.0,1725722.0
+xsl-labs,syl,myDid,ai,0.00022047,161667.0,1703853.0
+yoshi-exchange,yoshi,Yoshi.exchange,ai,0.01097106,38.44,1678588.0
+magic-square,sqr,Magic Square,ai,0.00741381,261071.0,1672045.0
+slam-token,slam,Slam,ai,0.072905,190.26,1668323.0
+demi,demi,DeMi,ai,0.809003,441.15,1662358.0
+aipad,aipad,AIPad,ai,0.00862856,157476.0,1661263.0
+cakepie-xyz,ckp,Cakepie,ai,0.418825,96877.0,1649392.0
+gg3,ggx,GG3,ai,0.058811,139321.0,1646703.0
+block-ape-scissors,arcas,Arcas,ai,0.02340841,1.06,1625320.0
+blockchainspace,guild,BlockchainSpace,ai,0.00351174,61455.0,1599571.0
+ceramicliberty-com,cl8y,CeramicLiberty.com,ai,0.551455,111485.0,1593753.0
+krypton-dao,krd,Krypton DAO,ai,0.01538916,4980.86,1570640.0
+hapi,hapi,HAPI,ai,2.14,142268.0,1566758.0
+deus-finance-2,deus,DEUS Finance,ai,9.68,83.65,1545247.0
+allbridge,abr,Allbridge,ai,0.077162,367.49,1543620.0
+luffy-inu,luffy,Luffy,ai,2.996e-05,1.49,1543438.0
+babybonk,babybonk,BabyBonk,ai,3.522e-12,295785.0,1479323.0
+ice-token,ice,Popsicle Finance,ai,0.2187,44.87,1475982.0
+emoneytoken,emyc,E Money Network,ai,0.01504209,801186.0,1475887.0
+goldencat,cats,GoldenCat,ai,2.12e-06,654.01,1470240.0
+serenity-shield,sersh,Serenity,ai,0.03590605,1327432.0,1454767.0
+bitcoinbam,btcbam,BitcoinBam,ai,0.090029,6.16,1443249.0
+enterisecoin,ent,EnteriseCoin,ai,0.089951,21695.0,1442795.0
+blackcoin,blk,BlackCoin,ai,0.02266518,0.00024932,1441260.0
+bnb-card,bnbcard,BNB Card,ai,0.00144046,115824.0,1440465.0
+ecovita,ecovita,ECOVITA,ai,0.00181495,4.57,1433865.0
+media-licensing-token,mlt,Media Licensing Token,ai,0.00966206,79618.0,1414296.0
+bnbxbt,bnbxbt,BNBXBT,ai,0.00140524,757295.0,1402751.0
+miaocoin,miao,MIAOCoin,ai,0.00138939,23000.0,1389394.0
+circuits-of-value,coval,Circuits of Value,ai,0.00077755,83142.0,1387690.0
+safe-haven,sha,Safe Haven,ai,0.00016274,24.97,1383369.0
+eden-3,edn,Eden,ai,0.00065989,81079.0,1375427.0
+oni-token,oni,ONINO,ai,0.03409957,110802.0,1345370.0
+binaryx,bnx,BinaryX [OLD],ai,0.509864,725.83,1344900.0
+mbp-coin,mbp,MBP Coin,ai,0.067294,2527811.0,1344637.0
+best-patent-token,bpt,Best Patent Token,ai,0.00049556,78369.0,1339408.0
+topgoal,goal,TopGoal,ai,0.00249394,89539.0,1337274.0
+artificial-neural-network,neural,Artificial Neural Network,ai,1.33,162418.0,1326939.0
+aka,aka,AKA,ai,0.01057572,3.9,1321965.0
+shieldeum,sdm,Shieldeum,ai,0.0048578,463660.0,1313392.0
+elon-doge-token,edoge,ElonDoge.io,ai,2.395e-09,31.26,1312322.0
+avc,avc,AVC,ai,0.00037297,182772.0,1301466.0
+saycoin,say,SAYCOIN,ai,0.00097672,112451.0,1295033.0
+piratecash,pirate,PirateCash,ai,0.01941414,25599.0,1263163.0
+gains,gains,Gains,ai,0.02303758,39890.0,1259748.0
+proximax,xpx,Sirius Chain,ai,0.00019432,9.1,1259523.0
+epik-prime,epik,Epik Prime,ai,0.00101508,112493.0,1243062.0
+broccoli-4,broccoli,Broccoli,ai,0.00670653,1585991.0,1238141.0
+starslax,sslx,StarSlax,ai,0.00044564,162735.0,1234480.0
+pundi-x-purse,purse,Pundi X PURSE,ai,4.541e-05,262016.0,1233998.0
+d-a-i-wo,daiwo,D.A.I.Wo,ai,1.23,319691.0,1225752.0
+ubxs-token,ubxs,UBXS,ai,0.02265279,134466.0,1220740.0
+cosanta,cosa,Cosanta,ai,3.71,11573.79,1216937.0
+asx-capital,asx,ASX Capital,ai,0.166987,646.39,1215149.0
+torum,xtm,Torum,ai,0.00610971,195288.0,1209075.0
+bit-game-verse-token,bgvt,Bit Game Verse Token,ai,2.186e-05,184.76,1206964.0
+donkey-2,donkey,Donkey,ai,0.00120012,4023337.0,1199822.0
+playzap,pzp,PlayZap,ai,0.01437073,287418.0,1193349.0
+zoomer,zoomer,Zoomer,ai,1.729e-05,666.63,1193259.0
+hold-2,earn,HOLD,ai,0.00277846,129.72,1174544.0
+ghiblicz,ghibli,GhibliCZ,ai,0.00133075,291878.0,1166374.0
+revv,revv,REVV,ai,0.00104916,61785.0,1164824.0
+switcheo,swth,Carbon Protocol,ai,0.00067394,4699.33,1159629.0
+starrynift,snift,StarryNift,ai,0.00684915,455701.0,1159303.0
+shree,shr,SHREE,ai,0.056746,0.0039722,1149432.0
+web3-decision,web3d,WEB3 DECISION,ai,0.03759715,590.79,1149321.0
+catboy-3,catboy,Catboy,ai,0.00571974,77592.0,1143947.0
+cjournal,ucjl,Utility Cjournal,ai,4.18,4770.33,1138643.0
+vinuchain,vc,VinuChain,ai,0.00692229,515990.0,1134375.0
+dumpling,dump,Dumpling,ai,0.00185367,758.19,1132714.0
+troy,troy,TROY,ai,0.00011305,1228438.0,1131075.0
+the-three-kingdoms,ttk,The Three Kingdoms,ai,0.00136138,76649.0,1122456.0
+bscpad,bscpad,BSCPAD,ai,0.0141871,344366.0,1119580.0
+eywa,eywa,EYWA,ai,0.00595016,298706.0,1116851.0
+chappyz,chapz,Chappyz,ai,0.00015262,89259.0,1107492.0
+perry,perry,Perry,ai,0.00110527,1277672.0,1105972.0
+jarvis-2,jarvis,Jarvis,ai,0.02621523,157.15,1101040.0
+snake-2,snk,Snake,ai,0.01318712,23026.0,1100917.0
+what-do-you-meme,w3w,Web3 Whales,ai,0.01160168,805.21,1085673.0
+unifi-protocol-dao,unfi,Unifi Protocol DAO,ai,0.13668,401997.0,1079904.0
+tower,tower,Tower,ai,0.00037001,101078.0,1079736.0
+bulldogito,bdogito,BullDogito,ai,0.00268583,1155.74,1051223.0
+laika-ai,lki,Laika AI,ai,0.0024518,599654.0,1046457.0
+blackcardcoin,bccoin,BlackCardCoin,ai,0.103996,504141.0,1039954.0
+forty-two-dao-token,ftd,Forty Two DAO Token,ai,0.064528,5943.01,1038943.0
+chirpley,chrp,Chirpley,ai,0.00145198,104388.0,1036654.0
+mcontent,mcontent,MContent,ai,2.79976e-10,2594.77,1031212.0
+cryptogpt-token,lai,LayerAI,ai,0.00044875,160022.0,1025706.0
+pleasure-coin,nsfw,Pleasure Coin,ai,1.617e-05,2657.36,1020778.0
+wesendit,wsi,WeSendit,ai,0.00131111,101315.0,1019291.0
+gamezone,gzone,GameZone,ai,0.00240279,79931.0,1017436.0
+merit-circle,mc,Merit Circle,ai,0.084686,602.98,1008392.0
+sensi,sensi,Sensi,ai,0.00420729,2452.47,1008318.0
+goldenrat,rats,GoldenRat,ai,1.79e-06,3490.44,1006623.0
+xraders,xr,Xraders,ai,0.02546819,776337.0,1002198.0
+million,mm,Million,ai,1.002,46.48,1001506.0
+lossless,lss,Lossless,ai,0.01313749,142952.0,999469.0
+befasterholdertoken,bfht,BeFaster Holder Token,ai,0.00335552,37.88,998986.0
+wombat-exchange,wom,Wombat Exchange,ai,0.00390171,6148.42,991367.0
+genius,geni,Genius,ai,3.23e-06,2438.95,988292.0
+fu,fu,FU,ai,5.57e-06,422.84,986921.0
+dastra-network,dan,Dastra Network,ai,0.00782597,0.0,986405.0
+nest,nest,Nest Protocol,ai,0.00016499,138.13,978348.0
+depay,depay,DePay,ai,0.14496,25.52,965233.0
+edexa,edx,edeXa,ai,0.02604354,111182.0,963783.0
+sophiaverse,soph,SophiaVerse,ai,0.00363447,136399.0,945542.0
+my-defi-pet,dpet,My DeFi Pet,ai,0.01874197,95060.0,941486.0
+aiden-labs,adn,Aiden Labs,ai,0.00390988,305861.0,918930.0
+multivac,mtv,MultiVAC,ai,0.00026509,284568.0,915701.0
+trader,tde,Trader,ai,0.963235,3582.73,912155.0
+tronpad,tronpad,TRONPAD,ai,0.00119126,2.36,911603.0
+enfineo,enf,enfineo,ai,0.02602882,41099.0,911598.0
+wefi-finance,wefi,Wefi,ai,0.02175813,59943.0,911303.0
+adapad,adapad,ADAPad,ai,0.00242606,81799.0,905480.0
+garlicoin,grlc,Garlicoin,ai,0.0131665,90.97,905466.0
+gym-network,gymnet,Gym Network,ai,0.00726758,24718.0,901542.0
+andy-4,andy,Andy BSC,ai,8.963e-09,19029.68,896302.0
+obortech,obot,Obortech,ai,0.0044653,1509.68,881585.0
+notai,notai,NOTAI,ai,9.23e-06,551781.0,878831.0
+scallop,sclp,Scallop,ai,0.01571934,16.32,874989.0
+dypius,dyp,Dypius,ai,0.00560747,189797.0,873202.0
+orbofi-ai,obi,Orbofi AI,ai,0.00074744,192405.0,869208.0
+any-inu,ai,Any Inu,ai,2.06e-06,106720.0,865734.0
+pussy-financial,pussy,Pussy Financial,ai,3.96e-06,445.14,864954.0
+polka-city,polc,Polkacity,ai,0.00208358,82931.0,857959.0
+metaq,metaq,MetaQ,ai,0.052845,723.5,856973.0
+baby-neiro-2,babyneiro,Baby Neiro,ai,2.03e-12,41485.0,852723.0
+covesting,cov,Covesting,ai,0.04547149,13.47,851478.0
+jupiter,jup,Jupiter Project,ai,0.00084922,28895.0,849217.0
+blockchain-certified-data-token,bcdt,EvidenZ,ai,0.02454274,1.015,845306.0
+umbrella-network,umb,Umbrella Network,ai,0.00195913,135657.0,840783.0
+idrx,idrx,IDRX,ai,6.165e-05,33535.0,830710.0
+atlas-usv,usv,Atlas USV,ai,7.87,3.95,830596.0
+stacktical,dsla,DSLA Protocol,ai,0.00014653,80933.0,815861.0
+salamanca,don,Salamanca,ai,0.00080838,396230.0,809214.0
+cryptocart,ccv2,CryptoCart V2,ai,0.853904,403.81,794436.0
+gamem-token,gmt,GameM Token,ai,0.0003011,9160.59,783838.0
+zap,zap,Zap,ai,0.00169603,15.28,780167.0
+z,z,Z,ai,0.00076359,100926.0,775488.0
+casper-ai,aiagent,Casper AI,ai,0.00075496,422800.0,775060.0
+pell-network-token,pell,Pell Network Token,ai,0.00229922,525661.0,772184.0
+tomb,tomb,Tomb,ai,0.00250681,4.8,768291.0
+saakuru-labs,skr,Saakuru,ai,0.00109193,2.07,767091.0
+taboo-token,taboo,Taboo,ai,7.784e-05,6472.78,761539.0
+tarot,tarot,Tarot V1,ai,0.01119652,2.63,758005.0
+aura-network-old,aura,Aura Network [OLD],ai,0.01858147,54.54,754408.0
+vcgamers,vcg,VCGamers,ai,0.00750991,11676.65,751070.0
+sin-city,sin,Sinverse,ai,0.00093198,402779.0,750923.0
+lif3-lshare,lshare,LIF3 LSHARE (OLD),ai,25.43,1.79,743350.0
+chain4energy,c4e,Chain4Energy,ai,0.0075393,10580.82,742849.0
+qna3-ai,gpt,QnA3.AI,ai,0.00088952,162468.0,737138.0
+arth,arth,ARTH,ai,1.66,8.91,731825.0
+purefi,ufi,PureFi,ai,0.00774666,343.11,724047.0
+usdx-money-staked-usdx,susdx,Stables Labs Staked USDX,ai,1.089,86349.0,722900.0
+amber,amb,Ascendia (ex AirDAO),ai,0.00012758,186776.0,720780.0
+pointpay-2,pxp,PointPay,ai,0.02394906,42997.0,718472.0
+alchemist-ai,alch,Alchemist AI,meme,0.131968,15611423.0,112417686.0
+unit-00-rei,rei,Rei,meme,0.094318,1189740.0,94297616.0
+paal-ai,paal,PAAL AI,meme,0.096864,4767380.0,86925060.0
+venice-token,vvv,Venice Token,meme,2.69,2591306.0,85628830.0
+chaingpt,cgpt,ChainGPT,meme,0.090379,9242739.0,76327067.0
+tagger,tag,TAGGER,meme,0.00045881,82938218.0,49785294.0
+tokenbot-2,clanker,tokenbot,meme,37.51,3076488.0,37502105.0
+revox,rex,REVOX,meme,0.01467655,5419382.0,29777973.0
+tao-bot,taobot,tao.bot,meme,0.332282,25894.0,26594172.0
+genius-ai,gnus,GENIUS AI,meme,2.01,30437.0,25023792.0
+vedoraai,ved,VedoraAI,meme,0.276658,14.86,23781092.0
+victoria-vr,vr,Victoria VR,meme,0.00280496,4654712.0,22836449.0
+icecream-ai,icecream,IceCream AI,meme,0.01748297,2620.37,17483492.0
+flock-2,flock,FLOCK,meme,0.150619,4528524.0,16596554.0
+o-intelligence-coin,oi,O Intelligence Coin,meme,14378020.0,10246.63,14366364.0
+metacade,mcade,Metacade,meme,0.00829566,913920.0,14040444.0
+agent-virtual-machine,avm,Agent Virtual Machine,meme,0.262408,1166965.0,13945541.0
+adex,adx,AdEx,meme,0.087362,10453999.0,13063181.0
+kryll,krl,KRYLL,meme,0.305281,159872.0,12166167.0
+meet48,idol,MEET48,meme,0.01297922,18136338.0,11713038.0
+singularry,singularry,Singularry,meme,0.01154405,86752.0,11543059.0
+coral-protocol,coral,Coral Protocol,meme,0.00109521,280177.0,10961864.0
+opulous,opul,Opulous,meme,0.01790291,797941.0,8951459.0
+vaiot,vai,VAIOT,meme,0.0230981,272451.0,8880611.0
+kondux-v2,kndx,KONDUX,meme,0.01379634,5641.07,7556322.0
+altered-state-token,asto,Altered State Machine,meme,0.00919319,549037.0,7549471.0
+galeon,galeon,Galeon,meme,0.01012912,168741.0,7401913.0
+rift-ai,rift,RIFT AI,meme,0.00703548,1168.52,7033347.0
+soul-graph,grph,Soul Graph,meme,0.0053279,55057.0,5327594.0
+osmi,osmi,OSMI,meme,0.02311839,23695.0,5245541.0
+glorious-looking,glg,Glorious Looking,meme,0.358187,1998.08,5193665.0
+openfabric,ofn,Openfabric AI,meme,0.02494341,108848.0,4827659.0
+somnium-space-cubes,cube,Somnium Space CUBEs,meme,0.30688,5963.92,4553991.0
+sharpe-ai,sai,Sharpe AI,meme,0.0138164,904195.0,4220021.0
+alphakek-ai,aikek,AlphaKEK.AI,meme,0.01772379,10856.73,4206198.0
+only1,like,LIKE,meme,0.01003901,635612.0,3967687.0
+lush-ai,lush,LushAI,meme,0.00065216,602.18,3939261.0
+muhdo-hub,dna,Muhdo Hub,meme,0.00188014,63699.0,3230377.0
+reflect-base,rfl,Reflect,meme,0.219299,139186.0,3056215.0
+imgn-labs,imgn,IMGN Labs,meme,0.00303293,86171.0,3024502.0
+kin,kin,Kin,meme,1.15e-06,68171.0,3017634.0
+libertai,ltai,LibertAI,meme,0.176,3280.54,2901093.0
+distribute-ai,dis,Distribute.ai,meme,0.00361042,324891.0,2838970.0
+lea-ai,lea,LEA AI,meme,0.0028381,27222.0,2827488.0
+agenttank,tank,AgentTank,meme,0.00277235,649190.0,2768463.0
+highkey,highkey,HighKey,meme,0.00271434,383194.0,2556476.0
+widi,widi,WIDI,meme,0.00250683,56729.0,2494469.0
+sogni-ai,sogni,Sogni AI,meme,0.00315305,637998.0,2428063.0
+eliza,eliza,Eliza,meme,0.00225483,1579386.0,2254651.0
+unibot,unibot,Unibot,meme,2.23,149974.0,2226249.0
+johnny-suede,suede,Johnny Suede,meme,0.00464319,220826.0,2157343.0
+lux-token,lux,Lux Token,meme,0.00196188,492434.0,1953141.0
+synesis-one,sns,Synesis One,meme,0.00251552,302571.0,1864411.0
+lumerin,lmr,Lumerin,meme,0.00287428,77833.0,1743921.0
+locked-money,lmy,Locked Money,meme,0.00190465,13860.87,1648470.0
+acid-ai,acid,Acid AI,meme,0.00163702,1185358.0,1636930.0
+lumo-8b-instruct,lumo,Lumo-8B-Instruct,meme,0.00159639,1085415.0,1588059.0
+apescreener,apes,ApeScreener,meme,0.01554981,13345.6,1554713.0
+flork-cto,flork,FLORK CTO,meme,0.00162717,735419.0,1531301.0
+octonetai,octo,OctonetAI,meme,0.01352205,125651.0,1351698.0
+arbus,arbus,Arbus,meme,0.00250026,693771.0,1302199.0
+agenius,agns,Madness.fun (Agenius),meme,0.0012939,20469.0,1255152.0
+venture-mind-ai,vntr,VentureMind AI,meme,0.00246272,10693.92,1224788.0
+angel-twin,angl,ANGL TOKEN,meme,0.00597849,245443.0,1195748.0
+mindai,mdai,MindAI,meme,1.29,1437.77,1194082.0
+mint-blockchain,mint,Mint Blockchain,meme,0.00673664,553185.0,1168288.0
+rovr-network,rovr,ROVR Network,meme,0.01046751,6087.54,1155181.0
+hdoki,oki,HDOKI,meme,0.00100536,21979.0,1089662.0
+solify100,s100,Solify100,meme,0.00106089,539629.0,1058828.0
+verida,vda,Verida Token,meme,0.00359681,79436.0,1051687.0
+neurahub,neura,Neurahub,meme,0.01225899,7628.34,1042591.0
+big-data-protocol,bdp,Big Data Protocol,meme,0.0430088,145262.0,1039024.0
+data-bot,data,Databot,meme,0.00112346,1133.94,1038751.0
+wisdomise,wsdm,Wisdomise AI,meme,0.00205775,86222.0,1003977.0
+taolie-coin,taolie,TAOlie Coin,meme,0.00099072,5246.84,990804.0
+orca-2,orcai,ORCA,meme,0.00089992,177795.0,899918.0
+gloria-ai,gloria,Gloria AI,meme,0.00166688,3714.41,833442.0
+grafi,grafi,Grafi,meme,0.00671072,101499.0,830578.0
+bepro-network,bepro,Bepro,meme,7.962e-05,267854.0,797101.0
+bitdoctorai,aidd,BitDoctorAI,meme,0.00358231,1763.53,792430.0
+blormmy,blormmy,blormmy,meme,0.00079202,18140.07,791812.0
+ring-ai,ring,Ring AI,meme,0.00759098,81081.0,758896.0
+y,yai,Ÿ,meme,0.00814536,3070.85,749213.0
+infinaeon,inf,Infinaeon,meme,0.00223389,30616.0,735413.0
+fame-ai,fmc,FAME AI,meme,0.00026421,38055.0,686889.0
+omira,omira,Omira,meme,0.00659449,2555.39,659441.0
+chromia-s-eval-by-virtuals,eval,Chromia's EVAL by Virtuals,meme,0.00064543,326.84,645432.0
+0xmonk,monk,0xMonk by Virtuals,meme,0.00062531,836.37,625309.0
+0xsim-by-virtuals,sage,0xsim by Virtuals,meme,0.00062161,4.02,620594.0
+satori-network,satori,Satori Network,meme,1.24,1549.87,618993.0
+isaac-x,isaacx,Isaac X,meme,0.00083361,6686.11,610290.0
+guru-network,guru,Guru Network,meme,0.00193804,193085.0,598840.0
+neurashi,nei,Neurashi,meme,0.00170672,190904.0,572147.0
+trenchbuddy,trench,TrenchBuddy,meme,0.00059188,5746.86,569747.0
+terminal,terminal,Terminal,meme,0.00069529,24879.0,555873.0
+qubecv-ai,qcv,QubeCV AI,meme,0.00060631,7191.63,545349.0
+xo-protocol,xoxo,XO Protocol,meme,0.00180544,438049.0,533452.0
+sui-depin,suidepin,Sui DePIN,meme,0.00053137,662.2,531371.0
+aiki,aiki,Aiki,meme,0.00492854,13.84,492844.0
+hedgewaterdao,$hwtr,HedgewaterDAO,meme,0.00452456,471.3,485041.0
+whale-ecosystem,whale,Whale Ecosystem,meme,0.02312452,155.65,484559.0
+mantis,m,Mantis,meme,0.00482139,64.0,481929.0
+saa-ai,drpal,SAA-AI,meme,0.00041691,9699.58,416744.0
+aurra-by-virtuals,aura,Aurra by Virtuals,meme,0.00041242,9031.92,408565.0
+atua-ai,tua,Atua AI,meme,7.972e-05,10247.79,398596.0
+y8u,y8u,Y8U,meme,0.0012949,99935.0,379236.0
+ethy-ai,ethy,Ethy AI,meme,0.00041445,11924.04,377148.0
+trackgood-ai,trai,Trackgood AI,meme,0.00036521,1766.33,365207.0
+wonder-sites,wonder,Wonder Sites,meme,0.00036828,21175.0,357666.0
+insightx,inx,InsightX,meme,0.00169832,648.54,348392.0
+zen-ai-2,zenai,Zen AI,meme,0.00034448,257134.0,347727.0
+stability-world-ai,aiw,Stability World AI,meme,0.00085194,11.99,344483.0
+trava-finance,trava,Trava Finance,meme,8.134e-05,72473.0,339440.0
+aigentx,agx,AGIX,meme,0.0033592,1951.94,335920.0
+sola-ai,sola,SOLA AI,meme,0.00032398,169225.0,323951.0
+wave,wav,WAVE,meme,0.00159467,4689.93,303954.0
+gemach,gmac,Gemach,meme,0.00060789,3.53,303946.0
+weird-medieval-memes,wmm,Weird Medieval Memes,meme,0.00029158,3131.31,291437.0
+asknoel,noel,AskNoel,meme,0.00098346,308.01,289257.0
+ai-pin,ai,AI PIN,meme,0.0036976,23.44,283832.0
+moontax,cpai,Moontax,meme,0.00281693,7.44,281693.0
+0chain,zcn,Zus,meme,0.0057294,165.59,277317.0
+mixmob,mxm,MAXX AI,meme,0.00082684,8366.11,273179.0
+vibe-ai-2,vibe,VIBE AI,meme,0.00029857,17049.27,265544.0
+omnia,omnia,Omnia Protocol,meme,0.01125221,234780.0,260289.0
+ai-research-orchestrator,aro,AI Research Orchestrator,meme,0.00024867,5.33,248667.0
+lumi-agent,lumi,LUMI AGENT,meme,0.00024023,48782.0,240017.0
+airight,airi,aiRight,meme,0.00018799,93322.0,238358.0
+chronoeffector,chronoeffe,Chronoeffector,meme,0.00022586,343.12,225843.0
+synthesizeai,synth,SynthesizeAI,meme,0.00022042,254.37,211832.0
+rwai,rwai,RWAI by Virtuals,meme,0.0003003,706.19,210033.0
+dnd,dnd,DND,meme,0.00020994,12588.88,209730.0
+syntor-ai,tor,Syntor Ai,meme,0.00243355,4310.14,201165.0
+the-upsider-ai,up,The Upsider AI,meme,0.0002009,1065.3,199528.0
+chainaware-ai,aware,ChainAware.ai,meme,0.00790649,30.76,193713.0
+agently,agi,Agently,meme,0.00037419,21.28,179127.0
+polymtrade,pm,Polymtrade,meme,0.00016345,47062.0,164931.0
+ainalyst,ain,AInalyst,meme,0.00016382,987.32,163538.0
+benjamin,benji,BENJAMIN,meme,0.0003467,1114.31,162321.0
+pipeiq,pipeiq,PipeIQ,meme,0.00016077,5151.55,160616.0
+stellaryai,stelai,StellaryAI,meme,0.00024027,23.66,160518.0
+mind-ai,ma,Mind AI,meme,0.00148889,251771.0,157079.0
+vaultec,vlt,Vaultec,meme,0.00153424,28357.0,153302.0
+dopamine,dope,Dopamine,meme,0.00121991,72651.0,152688.0
+oxai,oxai,Oxai,meme,0.00378434,10.71,151374.0
+iluminary-token,ilmt,iLuminary Token,meme,0.00933591,120953.0,148967.0
+just-kira,kirai,JUST KIRA,meme,0.00013437,617.68,134370.0
+beat-matchmaker,beat,Beat Matchmaker,meme,0.00132005,453.99,132005.0
+keira,keira,Keira,meme,0.00024167,83.45,129654.0
+redacted-terminal,███,Redacted Terminal,meme,0.00010151,247.15,111634.0
+voyager-ai,voyage,Voyager AI,meme,0.0001167,5733.31,110797.0
+bnb-agents,bnbai,BNB Agents,meme,0.00011299,219715.0,108248.0
+octora-ai,octa,OCTORA AI,meme,0.00583237,4198.99,102569.0
+cipherai,cipher,CipherAI,meme,0.00011235,464.76,98482.0
+handle-fi,forex,handle.fi,meme,0.00082992,80596.0,94767.0
+argo-3,argo,Argo,meme,9.322e-05,1.29,93217.0
+eigencode,code,EIGENCODE,meme,9.294e-05,7351.07,92461.0
+repo-analyzer-ai,repoalyze,REPO ANALYZER AI,meme,8.735e-05,1952.51,86468.0
+auditai,audai,AuditAI,meme,0.00178752,78.56,80438.0
+silentis,silentis,Silentis,meme,8.059e-05,49945.0,79196.0
+filter-ai-2,filter,Filter AI,meme,0.00102244,23863.0,78694.0
+gemdetector-ai,gemai,GemDetector.ai,meme,9.759e-05,103.81,78050.0
+faceless,faceless,FACELESS,meme,8.078e-05,3026.21,75607.0
+agentik-dex,agentik,Agentik DEX,meme,0.00014845,312.45,74106.0
+trackius-ai,tkus,Trackius.ai,meme,7.615e-05,10389.63,72297.0
+trebly,treb,Trebly,meme,7.26e-05,2462.01,72193.0
+zereus-ai,zereus,Zereus AI,meme,5.027e-05,513.2,50218.0
+eye-future-by-virtuals,eye,Eye Future by Virtuals,meme,4.971e-05,338.62,49706.0
+ai-dev-agent,aidev,AI Dev Agent,meme,0.00063697,108548.0,49479.0
+sentient-memes-producer,memetic,sentient memes producer,meme,5.246e-05,437.98,49245.0
+auralex-ai,aura,Auralex AI,meme,4.454e-05,48.71,44530.0
+corporate-audit-ai,audit,Corporate Audit AI,meme,4.372e-05,40.94,43653.0
+tranchevest,tranche,TrancheVest,meme,4.215e-05,1290.11,42108.0
+social-lens-ai,lens,Social Lens Ai,meme,0.00041302,66.7,41296.0
+curiso,cur,Curiso,meme,4.119e-05,699.97,40273.0
+launch-on-usd1,l,Launch On USD1,meme,3.99617e-07,193.68,39965.0
+ocada-ai,ocada,OCADA.AI,meme,0.00066583,143.25,37439.0
+nora,nora,NORA,meme,3.654e-05,500.11,36514.0
+agora-by-virtuals,agora,Agora by Virtuals,meme,3.271e-05,13.64,32707.0
+tsuba,tsuba,TSUBA,meme,3.234e-05,3.01,32338.0
+pixocracy,pix,Pixocracy,meme,3.175e-05,7.38,31730.0
+insora-ai,$insora,INSORA AI,meme,0.00031186,35.84,31186.0
+kanzzai,kaai,KanzzAI,meme,0.00030975,138.35,30975.0
+codease,codon,CodEase,meme,3.202e-05,29.1,30542.0
+neuravox,$vox,Neuravox,meme,0.00029878,171.16,29878.0
+39a-fun,39a,39a.fun,meme,2.978e-05,892.69,29288.0
+agentverse,agv,AgentVerse,meme,2.805e-05,18.25,28041.0
+metainside-by-virtuals,min,MetaInside by Virtuals,meme,2.582e-05,1375.04,25820.0
+ai-trader-agent,ait,AI Trader Agent,meme,2.996e-05,15.51,25404.0
+kendo-ai,$realkendo,Kendo AI,meme,2.5e-05,270.71,24650.0
+exodus-ai,exo,Exodus AI,meme,2.426e-05,117.31,23991.0
+navigator-ai,nav,Navigator AI,meme,2.383e-05,4.08,23815.0
+apollo-ai-by-virtuals,apl,APOLLO AI by Virtuals,meme,2.277e-05,2.17,22767.0
+virtubeauty-by-virtuals,vbea,VirtuBeauty by Virtuals,meme,2.35e-05,12.76,22568.0
+neurostack,vision,NeuroStack,meme,2.024e-05,2.75,20241.0
+beingai,being_ai,BEINGAI,meme,2.042e-05,21.11,20234.0
+goosepumpsai,goosepumps,GoosepumpsAI,meme,2.016e-05,21.85,20131.0
+xetra-ai,xetra,Xetra AI,meme,0.00018389,5.1,18389.02
+cybertrader-ai,cyb,Cybertrader AI,meme,1.887e-05,53.04,18243.67
+sheerluck-ai,sheerluck,Sheerluck AI,meme,1.805e-05,234.28,17896.78
+ua1,ua1,UA1,meme,0.00029059,1342.33,17811.84
+superfruits-ai,supai,SuperFruits AI,meme,1.771e-05,138.58,17708.58
+safe-quantum-wallet,sqw,Safe Quantum Wallet,meme,0.00017655,1249.72,17651.87
+docusol,docusol,DocuSol,meme,1.742e-05,17.04,17270.8
+prediction-arena,arena,Prediction Arena,meme,1.697e-05,956.88,16905.31
+beliefteam,beliefteam,Beliefteam,meme,1.677e-05,1.21,16751.93
+artificial-isle-clams,clams,Artificial Isle Clams,meme,1.734e-05,43.42,16469.05
+prol-ai,prol,Prol AI,meme,1.711e-05,7.54,16192.91
+miraya-7f,m7f,Miraya 7f,meme,1.623e-05,16.28,16188.22
+eralabs,eralab,EraLabs,meme,1.593e-05,13.39,15889.84
+origin3d,o3d,Origin3D,meme,1.576e-05,4.0,15764.89
+hygea-ai,hgai,Hygea AI,meme,0.01388193,53.41,13881.93
+elixir-ai,elxai,ELIXIR AI,meme,1.367e-05,626.85,13874.04
+1hub-ai,1hub,1Hub.ai,meme,3.145e-05,340.53,13695.37
+jobseek,$jobseek,JOBSEEK,meme,0.00013364,541.47,13329.78
+alina-ai,alinaintel,ALINA AI,meme,1.289e-05,1.3,12882.46
+ai99x,ai99x,ai99x,meme,1.307e-05,8.4,12394.29
+itronixai,itxs,ItronixAI,meme,1.095e-05,129.32,10945.57
+brooder,brood,Brooder,meme,1.183e-05,1.53,10897.07
+yod-agent,yod,Yod Agent,meme,1.207e-05,13.85,10855.02
+fortify-ai,fai,FORTIFY AI,meme,1.06e-05,31.57,10597.6
+julia-swarm-syndicate,jss,Julia Swarm Syndicate,meme,1.084e-05,110.8,10465.83
+xyradao-by-virtuals,xyra,XyraDAO by VIRTUALS,meme,2.085e-05,10.42,10211.37
+mox-ai,$moxi,MOX AI,meme,9.88e-06,5.06,9880.73
+charm-ai,charm,Charm AI,meme,9.44e-06,2.92,9421.94
+pavise,pavise,Pavise,meme,9.25e-06,7.53,9249.17
+digger-ai,diggai,DIGGER AI,meme,8.01e-06,163.98,8001.42
+akachi,akachi,AKACHI,meme,7.66e-06,7.37,7662.38
+ascia,ascia,ASCIA,meme,7.45e-06,2.31,7439.8
+gearup,gup,GearUp,meme,0.00068924,2.38,6892.37
+grid-protocol,grid,Grid Protocol,meme,8.61e-06,4.61,6627.04
+asix-2,asix,ASIX,meme,5.77e-06,1.099,5770.58
+chatxzi-by-ai,cxzi,chatXZI by AI,meme,6.18e-06,10.9,5620.76
+roboflux,$rfq,RoboFlux,meme,5.391e-05,34.93,5390.94
+nodev-ai,nodev,NoDev AI,meme,5.3e-06,148.97,5280.98
+cypher-ai-2,cypher,Cypher AI,meme,3.842e-05,52.59,3838.29
+degent,degent,Degent,meme,4.01e-06,10.56,3125.68
+trendix,trdx,Trendix,meme,2.896e-05,25.25,2891.31
+gracy,gracy,Gracy,meme,0.02035804,34350.0,0.0
+imgnai,imgnai,imgnAI,meme,0.00446875,388.8,0.0
+gptplus,gptplus,GPTPlus,meme,8.225e-05,88702.0,0.0
+reform-dao,rfrm,Reform DAO,meme,0.0270422,255230.0,0.0
+coinrobot-ai,coinrobot,CoinRobot.AI,meme,1.29,18230.57,0.0
+sage-union,sagu,Sage Union,meme,4.64091e-07,71.15,0.0
+matrix-one,matrix,Matrix One,meme,3.949e-05,74463.0,0.0
+iris-ecosystem,iristoken,Iris Ecosystem,meme,0.0030337,8074.9,0.0
+apecoin,ape,ApeCoin,gaming,0.593332,16231067.0,474619835.0
+axie-infinity,axs,Axie Infinity,gaming,2.11,27391685.0,348961758.0
+stepn,gmt,GMT,gaming,0.04223936,20147625.0,123933176.0
+illuvium,ilv,Illuvium,gaming,10.18,5701273.0,96507122.0
+yield-guild-games,ygg,Yield Guild Games,gaming,0.146038,11683217.0,76881783.0
+gods-unchained,gods,Gods Unchained,gaming,0.116501,849473.0,44396526.0
+wilder-world,wild,Wilder World,gaming,0.131635,736456.0,42688706.0
+magic,magic,Treasure,gaming,0.118042,8779586.0,36353257.0
+my-neighbor-alice,alice,My Neighbor Alice,gaming,0.374893,6883508.0,34542977.0
+mobox,mbox,Mobox,gaming,0.053983,71982663.0,26975793.0
+alien-worlds,tlm,Alien Worlds,gaming,0.00420721,8610564.0,24623851.0
+league-of-kingdoms,loka,League of Kingdoms,gaming,0.055929,15097489.0,20942977.0
+karrat,karrat,Karrat,gaming,0.0312402,609537.0,19011116.0
+aavegotchi,ghst,Aavegotchi,gaming,0.36669,10665819.0,18753900.0
+sweatcoin,sweat,SWEAT,gaming,0.00221911,4306643.0,16877861.0
+xborg,xbg,XBorg,gaming,0.069707,43032.0,14979238.0
+star-atlas-dao,polis,Star Atlas DAO,gaming,0.05052,220737.0,14929653.0
+cornucopias,copi,Cornucopias,gaming,0.01226912,255978.0,12637962.0
+ix-token,ixt,Planet IX,gaming,0.079651,27105.0,11486319.0
+metahero,hero,Metahero,gaming,0.0010219,218892.0,9571102.0
+guild-of-guardians,gog,Guild of Guardians,gaming,0.01251789,560787.0,9220901.0
+game7,g7,Game7,gaming,0.00406818,200321.0,9200032.0
+sidus,sidus,Sidus,gaming,0.00069361,575306.0,7695044.0
+shrapnel-2,shrap,Shrapnel,gaming,0.00468248,162375.0,6947201.0
+aurory,aury,Aurory,gaming,0.090244,9028.13,6779957.0
+heroes-of-mavia,mavia,Heroes of Mavia,gaming,0.129885,2469881.0,6696264.0
+ufo-gaming,ufo,UFO Gaming,gaming,2.24191e-07,158270.0,5774633.0
+step-app-fitfi,fitfi,Step App,gaming,0.00146295,2174518.0,5744191.0
+starlink,starl,StarLink,gaming,5.00922e-07,1014343.0,4999609.0
+phantasma,soul,Phantasma Phoenix,gaming,0.04004655,205645.0,4971917.0
+draggin-karma-points,dkp,Draggin Karma Points,gaming,0.00120049,3495.84,4794155.0
+genopets,gene,Genopets,gaming,0.057321,47821.0,4633375.0
+moon-tropica,cah,Moon Tropica,gaming,1.6,11922.06,4496700.0
+defi-kingdoms,jewel,DeFi Kingdoms,gaming,0.03677729,54185.0,4135590.0
+sipher,sipher,SIPHER,gaming,0.02937093,6879.8,3974106.0
+derace,zerc,zkRace,gaming,0.03079548,201155.0,3694449.0
+splinterlands,sps,Splintershards,gaming,0.00719141,173622.0,3521423.0
+artyfact,arty,Artyfact,gaming,0.147938,1405234.0,3333445.0
+the-virtua-kolect,tvk,Virtua,gaming,0.02569164,2849.0,2158007.0
+gam3s-gg,g3,GAM3S.GG,gaming,0.0040813,806861.0,1898854.0
+senate,senate,SENATE,gaming,0.00641677,79929.0,822017.0
+bag,bag,Bag,gaming,0.00012487,125177.0,745321.0
+redfox-labs-2,rfox,RFOX,gaming,0.00034621,79.35,667806.0
+perion,perc,Perion,gaming,0.0095611,79823.0,376356.0
+gram-ecosystem,grampus,GRAM Ecosystem,gaming,0.00154188,57079.0,306290.0
+nifty-league,nftl,Nifty League,gaming,0.00023176,62.89,231757.0
+lucha,lucha,Lucha,gaming,0.01784667,322.83,220682.0
+fourth-star,fstr,Fourth Star,gaming,0.01789919,873.21,181745.0
+exeedme,xed,Exeedme [OLD],gaming,0.00176046,5.58,158442.0
+metafighter,mf,MetaFighter,gaming,0.00014238,74714.0,150416.0
+eldarune,elda,Eldarune,gaming,0.00055789,1572.18,144297.0
+love-monster,love,Love Monster,gaming,2.567e-05,84139.0,121906.0
+gunstar-metaverse,gsts,Gunstar Metaverse,gaming,0.00022628,495.61,76050.0
+crypto-royale,roy,Crypto Royale,gaming,0.00052959,91.72,63947.0
+king-of-legends-2,kol,King of Legends,gaming,0.00014699,30040.0,42898.0
+rebel-bots,rbls,Rebel Bots,gaming,0.00014397,5.83,41038.0
+bonkersmemetoken,bonkers,BonkersMemeToken,gaming,1.692e-05,274.63,9582.06
+burger-swap,burger,BurgerCities,gaming,0.00278447,224509.0,0.0
+bounty-temple,tyt,Bounty Temple,gaming,0.00392082,97511.0,0.0
+venator-universe,vnt,Venator Universe,gaming,0.271948,103193.0,0.0
+medieval-empires,mee,Medieval Empires,gaming,0.00262714,118587.0,0.0

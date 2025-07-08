@@ -1,0 +1,399 @@
+id,symbol,name,narrative,price,volume,market_cap
+onchain-coin,onchain,Onchain Coin,ai,0.00834798,65.06,0.0
+ripple,xrp,XRP,ai,2.28,4635787923.0,134519584088.0
+uniswap,uni,Uniswap,ai,7.46,277017494.0,4477421681.0
+aave,aave,Aave,ai,283.13,421109028.0,4298233466.0
+internet-computer,icp,Internet Computer,ai,4.76,36651178.0,2545922790.0
+filecoin,fil,Filecoin,ai,2.26,122805771.0,1535811784.0
+worldcoin-wld,wld,Worldcoin,ai,0.861209,97537496.0,1471941575.0
+celestia,tia,Celestia,ai,1.56,150979204.0,1093455828.0
+blockstack,stx,Stacks,ai,0.646275,22738801.0,991209293.0
+theta-token,theta,Theta Network,ai,0.681983,15086312.0,681924038.0
+arweave,ar,Arweave,ai,5.01,19776075.0,328151878.0
+zksync,zk,ZKsync,ai,0.04522319,17320634.0,323450701.0
+1inch,1inch,1inch,ai,0.189582,21368462.0,264258354.0
+decred,dcr,Decred,ai,15.63,2870398.0,264122253.0
+0x,zrx,0x Protocol,ai,0.216469,14827441.0,183504245.0
+oasis-network,rose,Oasis,ai,0.02354354,6393954.0,173998143.0
+yearn-finance,yfi,yearn.finance,ai,5105.0,11817757.0,172590099.0
+nervos-network,ckb,Nervos Network,ai,0.00345221,7638975.0,161495739.0
+cow-protocol,cow,CoW Protocol,ai,0.306461,17757653.0,149311043.0
+sushi,sushi,Sushi,ai,0.593659,20189166.0,114452231.0
+uma,uma,UMA,ai,1.062,5099287.0,93617256.0
+power-ledger,powr,Powerledger,ai,0.154197,4191166.0,81670686.0
+civic,cvc,Civic,ai,0.093,23038953.0,74602924.0
+across-protocol,acx,Across Protocol,ai,0.135149,15866177.0,66672465.0
+balancer,bal,Balancer,ai,0.951109,4148974.0,61057189.0
+energy-web-token,ewt,Energy Web,ai,0.983289,459625.0,59542994.0
+auction,auction,Bounce,ai,8.79,8579946.0,57923473.0
+forta,fort,Forta,ai,0.068,2370857.0,40853830.0
+wrapped-nxm,wnxm,Wrapped NXM,ai,58.58,218587.0,37634587.0
+orchid-protocol,oxt,Orchid Protocol,ai,0.053003,2436085.0,31334290.0
+bouncebit,bb,BounceBit,ai,0.075836,6338181.0,31054199.0
+paraswap,psp,ParaSwap,ai,0.01943979,315511.0,30171141.0
+badger-dao,badger,Badger,ai,1.039,5408602.0,20695059.0
+chainflip,flip,Chainflip,ai,0.31391,1221052.0,20055908.0
+shapeshift-fox-token,fox,ShapeShift FOX,ai,0.02328223,291729.0,14482526.0
+index-cooperative,index,Index Cooperative,ai,1.059,58385.0,7730630.0
+archway,arch,Archway,ai,0.00491543,134109.0,3113835.0
+hxro,hxro,HXRO,ai,0.00296481,4826.95,1839326.0
+witnet,wit,Witnet,ai,0.00112996,102745.0,1506159.0
+kine-protocol,kine,Kine Protocol,ai,0.00116302,14.99,23507.0
+pixel-3,pxl,Pixel,ai,0.00014002,208.97,90208.0
+repo-analyzer-ai,repoalyze,REPO ANALYZER AI,ai,8.631e-05,2017.11,85453.0
+module,module,Module,ai,8.47,62.4,84657.0
+holozone,holo,Holozone,ai,9.339e-05,678.12,84479.0
+flow-agent,flow,Flow Agent,ai,8.66e-05,821.89,82200.0
+silentis,silentis,Silentis,ai,8.12e-05,51095.0,81547.0
+alphaarc,alpha,AlphaArc,ai,8.128e-05,41.41,81260.0
+auditai,audai,AuditAI,ai,0.00179342,78.82,80704.0
+magnus-opus-by-virtuals,magnus,Magnus Opus by Virtuals,ai,0.00014641,279.6,80324.0
+notmeme-agent,notmeme,NOTMEME Agent,ai,2.26e-06,26116.0,79186.0
+filter-ai-2,filter,Filter AI,ai,0.00101431,23686.0,77981.0
+gemdetector-ai,gemai,GemDetector.ai,ai,9.682e-05,106.72,77451.0
+bark-ruffalo-by-virtuals,pawsy,Bark Ruffalo by Virtuals,ai,7.748e-05,205.78,77311.0
+bloomsperg-terminal,sperg,Bloomsperg Terminal,ai,7.684e-05,108.17,76836.0
+honeyfun-ai,aibera,HoneyFun AI,ai,0.0021809,2250.13,75993.0
+faceless,faceless,FACELESS,ai,8.071e-05,3764.08,75486.0
+alpha-radar-bot,arbot,Alpha Radar AI,ai,0.00104646,30.53,74468.0
+agentik-dex,agentik,Agentik DEX,ai,0.00014884,313.26,74420.0
+trebly,treb,Trebly,ai,7.259e-05,2839.25,72547.0
+trackius-ai,tkus,Trackius.ai,ai,7.647e-05,10545.8,72500.0
+hunter-by-virtuals,drpxbt,Hunter by Virtuals,ai,7.216e-05,86.22,72095.0
+sentiient,sent,Sentiient,ai,5.999e-05,622.35,71993.0
+kogin-by-virtuals,kogin,Kogin by Virtuals,ai,7.938e-05,1236.75,71562.0
+build-3,build,BUILD,ai,7.099e-05,159757.0,70979.0
+agenthub,$dira,AgentHub,ai,7.101e-05,4885.1,70943.0
+bird-money,bird,Bird.Money,ai,0.612634,2114.14,70781.0
+agent-zeek-by-virtuals,zeek,Agent Zeek by Virtuals,ai,7.066e-05,11.82,70535.0
+pilso-os,pilso,PILSO OS,ai,0.00083967,25387.0,69063.0
+brot,brot,BROT,ai,6.899e-05,100.49,68985.0
+o-megax,o-megax,O-megax,ai,9.196e-05,790.23,68977.0
+rick-the-npc,rick,Rick the NPC,ai,6.705e-05,199.34,67045.0
+caire,caire,CAIRE,ai,0.00318919,1661.89,66973.0
+aimbot,aimbot,Aimbot AI,ai,0.062029,9.82,62029.0
+nodelyai,$node,NodelyAI,ai,7.771e-05,7.76,61706.0
+qlix,qlix,QLix,ai,0.061484,123.58,61353.0
+doglibre,dogl,DogLibre,ai,6.459e-09,943.51,60551.0
+sylvi-agent,sylviai,SYLVI AGENT,ai,6.048e-05,131.47,60481.0
+dream-3,dream,DREAM by Virtuals,ai,6.025e-05,143.55,60157.0
+paint,paint,MurAll,ai,5.04e-06,99.38,58389.0
+lola-3,lola,Lola,ai,5.627e-05,1281.21,56247.0
+cainam,cainam,Cainam,ai,7.478e-05,44.84,56134.0
+cr0w-by-virtuals,crow,cr0w by Virtuals,ai,5.747e-05,691.71,55603.0
+saitoshi-by-virtuals,sai,Saitoshi by Virtuals,ai,5.476e-05,938.6,54760.0
+senti-ai,senti,Senti AI,ai,5.73489e-07,313.66,54492.0
+levia_us,lev,Levia_us,ai,5.361e-05,286.3,53607.0
+skyops,skyops,Skyops,ai,0.0007845,1288.93,52766.0
+pillzumi,pillzumi,Pillzumi,ai,5.267e-05,2.27,52661.0
+memehive-ai,mhive,MemeHive AI,ai,5.286e-05,1280.7,52489.0
+omnis-genesis-by-virtuals,omni,Omnis Genesis by Virtuals,ai,6.139e-05,10.44,51863.0
+agent-doge-by-virtuals,aidoge,AGENT DOGE by Virtuals,ai,5.072e-05,23.73,50717.0
+agentensor,agts,AgenTensor,ai,0.00241215,142.65,50655.0
+eye-future-by-virtuals,eye,Eye Future by Virtuals,ai,4.98e-05,339.29,49805.0
+taobank,tbank,TaoBank,ai,0.00331838,134.2,49659.0
+pulsr-2,$pulsr,PULSR,ai,4.957e-05,428.71,49569.0
+ai-dev-agent,aidev,AI Dev Agent,ai,0.0006351,107091.0,49333.0
+epik-protocol,aiepk,EpiK Protocol,ai,0.00031708,70522.0,49214.0
+sentient-memes-producer,memetic,sentient memes producer,ai,5.208e-05,434.83,48931.0
+glacier-network,gls,Glacier Network,ai,4.778e-05,11.72,47776.0
+pseudo-reality,pseudo,PSEUDO REALITY,ai,5.861e-05,6.7,46810.0
+hiero-terminal,hterm,Hiero Terminal,ai,5.702e-05,182.59,46334.0
+omniagent,omagent,OmniAgent,ai,4.592e-05,14.86,45916.0
+thales-ai,thales,Thales AI,ai,4.551e-05,329.66,45497.0
+pathos,pathos,PathOS,ai,0.00214664,2282.49,45079.0
+creator,creator,CREATOR,ai,4.496e-05,236.94,44958.0
+auralex-ai,aura,Auralex AI,ai,4.472e-05,48.91,44619.0
+threatslayerai-by-virtuals,slayer,ThreatSlayerAI by Virtuals,ai,4.419e-05,100.21,44192.0
+yoko,yoko,Yoko,ai,0.00010722,88.06,43960.0
+citadel-by-virtuals,citdel,Citadel by Virtuals,ai,4.393e-05,9.04,43932.0
+corporate-audit-ai,audit,Corporate Audit AI,ai,4.338e-05,40.62,43329.0
+axion-2,axi,Axira,ai,4.272e-05,219.05,42621.0
+if-science,ifsci,IF Science,ai,4.477e-05,18.86,42530.0
+tranchevest,tranche,TrancheVest,ai,4.212e-05,1289.07,42088.0
+artto-ai,artto,Artto AI,ai,4.209e-05,1502.38,42088.0
+genzai,genzai,GENZAI by Virtuals,ai,4.668e-05,109.58,42016.0
+social-lens-ai,lens,Social Lens Ai,ai,0.00041379,66.83,41379.0
+ali-for-fx-protocol-by-virtuals,fx,Ali for fx protocol by Virtuals,ai,4.227e-05,31.46,40977.0
+tokito,tokito,Tokito,ai,9.208e-05,67.89,40579.0
+tao-accounting-system,tas,Tao Accounting System,ai,0.004046,38.19,40460.0
+aether-collective,aether,aether collective,ai,4.074e-05,75.24,40145.0
+launch-on-usd1,l,Launch On USD1,ai,4.00244e-07,193.98,40028.0
+curiso,cur,Curiso,ai,4.086e-05,694.41,39970.0
+verox,vrx,Verox,ai,1.76,176.41,39937.0
+leonardo-ai,leonai,Leonardo AI,ai,3.959e-05,35.49,39589.0
+suissma-ai-by-virtuals,suiss,SUISSMA AI by Virtuals,ai,0.00010787,96.05,38743.0
+ai-voice-agents,aiva,AI Voice Agents,ai,0.00016039,90489.0,37920.0
+ocada-ai,ocada,OCADA.AI,ai,0.00066381,142.82,37361.0
+alris-agent,alr,ALRIS AGENT,ai,3.725e-05,486.25,37204.0
+lillo-ai,$lillo,Lillo AI,ai,3.654e-05,18.46,36537.0
+nora,nora,NORA,ai,3.625e-05,496.13,36243.0
+zegent-ai,zgen,Zegent AI,ai,4.262e-05,149.36,35242.0
+cyphomancer,42,Cyphomancer,ai,3.774e-05,106.37,35089.0
+launchbot,rocketai,launchbot,ai,3.50883e-07,10.58,35088.0
+fridonai,frai,FridonAI,ai,4.504e-05,406.76,35004.0
+osiris,osiri,Osiris,ai,0.00036904,55.9,34994.0
+2077-code,2077,2077 CODE,ai,5.45e-05,37.56,34696.0
+zerepy,zerepy,ZerePy,ai,3.41e-05,11.57,34100.0
+wagmi-5,wagmi,WAGMI,ai,3.387e-05,3.35,33872.0
+sedux-ai,sedux,SEDUX AI,ai,3.399e-05,338.93,32811.0
+agora-by-virtuals,agora,Agora by Virtuals,ai,3.271e-05,13.64,32707.0
+druid-ai,dru,Druid AI,ai,3.225e-05,87.13,32250.0
+trady,trady,TRADY,ai,3.534e-05,145.93,32115.0
+quasar-3,quasar,Quasar,ai,3.212e-05,73.08,32097.0
+iamai,iamai,IAMAI,ai,3.2e-05,29.25,32003.0
+daeta,daeta,DÆTA,ai,0.00045687,103.9,31630.0
+insora-ai,$insora,INSORA AI,ai,0.00031186,35.84,31186.0
+kanzzai,kaai,KanzzAI,ai,0.00030975,138.35,30975.0
+fusion-ai-2,fusion,Fusion AI,ai,3.138e-05,62.85,30612.0
+codease,codon,CodEase,ai,3.199e-05,29.08,30517.0
+neuravox,$vox,Neuravox,ai,0.00029878,171.16,29878.0
+shift-ai,shift,Shift AI,ai,2.945e-05,11.58,29442.0
+sigma-music,fan,Sigma Music,ai,4.439e-05,482.37,29223.0
+riddle-by-virtuals,riddle,Riddle by Virtuals,ai,3.607e-05,474.18,28296.0
+39a-fun,39a,39a.fun,ai,2.867e-05,880.44,28167.0
+ongo,ongo,Ongo,ai,2.817e-05,5.95,28137.0
+agentverse,agv,AgentVerse,ai,2.81e-05,18.28,28098.0
+degpt,degpt,deGPT,ai,2.695e-05,1.34,26939.0
+agentme,agme,AgentMe,ai,2.692e-05,10.91,26902.0
+ailive,ailive,ailive,ai,2.748e-05,103.8,26431.0
+vicky,vicky,Vicky,ai,2.623e-05,30.63,26225.0
+universal-operating-system,$uos,Universal Operating System [OLD],ai,2.558e-05,39.45,25568.0
+ai-trader-agent,ait,AI Trader Agent,ai,2.996e-05,15.51,25404.0
+noderzz-by-virtuals,node,noderzz by Virtuals,ai,2.508e-05,38.12,25084.0
+market-maverick,luigi,Market Maverick,ai,0.001181,158770.0,24801.0
+rosscoin,rosscoin,Rosscoin,ai,2.415e-05,7.19,24135.0
+skainet,skai,SKAINET,ai,2.395e-05,25.27,23944.0
+soly-ai,soly,SOLY AI,ai,2.387e-05,1917.7,23852.0
+exodus-ai,exo,Exodus AI,ai,2.407e-05,116.38,23813.0
+pollo,pollo,Pollo,ai,2.357e-05,9.12,23565.0
+mozaic,moz,Mozaic,ai,0.00015346,148.19,22973.0
+ocnest-ai,ocai,OcNest AI,ai,0.00228665,37810.0,22867.0
+virtubeauty-by-virtuals,vbea,VirtuBeauty by Virtuals,ai,2.35e-05,12.76,22568.0
+aigg,$aigg,AIGG,ai,2.214e-05,1.62,22144.0
+aaai_agent-by-virtuals,aaai,AAAI_agent by Virtuals,ai,2.146e-05,8.11,21462.0
+pulse3d,pulse,Pulse3D,ai,2.109e-05,1.43,21086.0
+simsai,simsai,SimsAI,ai,2.106e-05,1406.05,21056.0
+rina-by-arc,rina,Rina By Arc,ai,2.104e-05,3.93,21042.0
+2dai-io,2dai,2DAI.io,ai,2.099e-05,10.01,20989.0
+storagent,storagent,STORAGENT,ai,2.07e-05,42959.0,20695.0
+gigabrain,giga🧠,GIGABRAIN,ai,3.721e-05,31.63,20683.0
+arata-agi,arata,Arata AGI,ai,0.00295286,77.37,20670.0
+roseon,rosx,Roseon,ai,0.00023083,90.38,20656.0
+intellika-ai,intai,intellika AI,ai,2.064e-05,13.67,20644.0
+psynova-token,psy,PsyNova Token,ai,2.055e-05,1.19,20537.0
+neurostack,vision,NeuroStack,ai,2.024e-05,2.75,20241.0
+crazzers-ai,crazzers,Crazzers AI,ai,0.0001645,709.42,20118.0
+goosepumpsai,goosepumps,GoosepumpsAI,ai,2e-05,21.68,19981.9
+cerebrum,cbm,Cerebrum,ai,1.93e-05,11.85,19299.59
+lenda-on-chain,lenda,lenda on chain,ai,1.92e-05,1960.36,19191.97
+aesoperator,aesoperator,Aesoperator,ai,1.917e-05,2.73,19144.43
+paperclip-ai,paperclips,Paperclip AI,ai,2.179e-05,559.41,18524.34
+zkgpt,zkgpt,ZKGPT,ai,1.844e-05,5.4,18438.33
+xetra-ai,xetra,Xetra AI,ai,0.00018389,5.1,18389.02
+ua1,ua1,UA1,ai,0.00029184,1348.07,17847.78
+solace-ai,$slce,Solace AI,ai,1.85e-05,2.21,17709.73
+superfruits-ai,supai,SuperFruits AI,ai,1.771e-05,138.58,17708.58
+morris,morris,MORRIS,ai,1.772e-05,3.97,17706.56
+safe-quantum-wallet,sqw,Safe Quantum Wallet,ai,0.00017687,1252.04,17687.49
+prediction-arena,arena,Prediction Arena,ai,1.722e-05,904.14,17158.13
+docusol,docusol,DocuSol,ai,1.728e-05,16.9,17140.93
+croy-ai,croy,CROY AI,ai,1.825e-05,854.58,16808.11
+artificial-isle-clams,clams,Artificial Isle Clams,ai,1.721e-05,43.07,16345.21
+dolphin-agent,dola,Dolphin Agent,ai,1.626e-05,20.89,16263.84
+boofus-by-virtuals,boof,Boofus by Virtuals,ai,1.624e-05,24.15,16240.95
+sozoai,soai,SōzōAI,ai,1.71e-05,2.17,16226.28
+prol-ai,prol,Prol AI,ai,1.711e-05,7.54,16192.91
+perspective-ai-by-virtuals,pai,Perspective AI by VIRTUALS,ai,1.618e-05,1901.12,16176.97
+middle-earth-ai,mearth,Middle Earth AI,ai,1.718e-05,3.12,16143.69
+miraya-7f,m7f,Miraya 7f,ai,1.617e-05,16.23,16132.59
+eralabs,eralab,EraLabs,ai,1.58e-05,13.28,15770.35
+origin3d,o3d,Origin3D,ai,1.576e-05,4.0,15764.89
+shillguy,shill,SHILLGUY,ai,1.554e-05,7.77,15540.1
+splash-ai,splash,SPLASH AI,ai,1.518e-05,333.5,15176.98
+agistry,agi,AGISTRY,ai,1.583e-05,456.31,14962.22
+zora-ai,zora,Zora AI,ai,0.01468906,1860.12,14575.06
+taotools,taotools,TAOTools,ai,0.01426421,2.21,14264.21
+basey-ai-agent,basey,BASEY AI Agent,ai,1.401e-05,6.29,13870.16
+arbion-ai,arai,Arbion AI,ai,0.00015226,8.7,13703.59
+1hub-ai,1hub,1Hub.ai,ai,3.135e-05,339.49,13671.64
+eco-ai,eco,ECO AI,ai,1.36e-05,5.32,13394.22
+dearbook,dearbook,DearBook.AI,ai,1.324e-05,43.39,13231.26
+relign,relign,RELIGN,ai,1.32e-05,214.59,13181.29
+vortex,vrtx,VORTEX,ai,0.00016056,18.01,13165.97
+elixir-ai,elxai,ELIXIR AI,ai,1.308e-05,67.6,13075.17
+23-turtles,ai23t,23 Turtles,ai,1.301e-05,24.75,13004.1
+trust-inspect,$trust,Trust Inspect,ai,1.99e-05,12.8,12956.17
+origent-ai,ori,Origent Ai,ai,0.00013153,6.61,12889.87
+alina-ai,alinaintel,ALINA AI,ai,1.289e-05,1.3,12882.46
+mentat,spice,Mentat,ai,1.258e-05,4.56,12582.86
+omnitensor,omnit,OmniTensor,ai,3.15e-05,5.67,12522.08
+dexai,dexai,DEXAI,ai,1.209e-05,137.44,12081.66
+social-edge,sedge,Social Edge,ai,0.0119639,16.55,11963.9
+boltai,boltai,BoltAI,ai,1.173e-05,16.18,11725.55
+breakbot,break,BreakBot,ai,1.173e-05,46.53,11656.92
+suidefai-by-suiai,suid,SUIDeFAI by SuiAI,ai,1.158e-05,22.25,11575.98
+lotion-coin,lotion,Lotion AI,ai,1.182e-05,11.77,11379.04
+minji,minji,minji,ai,1.168e-05,18.67,11145.2
+saios,sai,SAIOS,ai,1.111e-05,3.75,11104.19
+cove-quant,cove,Cove Quant,ai,1.102e-05,234.72,11019.32
+taxsolutions-ai,tsai,TaxSolutions AI,ai,1.099e-05,17.14,10987.81
+itronixai,itxs,ItronixAI,ai,1.086e-05,128.32,10861.58
+yod-agent,yod,Yod Agent,ai,1.207e-05,13.85,10855.02
+neuralis-ai,neurai,Neuralis AI,ai,0.01073434,44.94,10734.34
+julia-swarm-syndicate,jss,Julia Swarm Syndicate,ai,1.084e-05,110.8,10465.83
+a-i-agent-kaia,kaia,A.I Agent kAia,ai,1.082e-05,32.61,10421.97
+xyradao-by-virtuals,xyra,XyraDAO by VIRTUALS,ai,2.085e-05,10.42,10211.37
+alice,alice,Alice,ai,1.051e-05,39.11,10100.97
+rivusdao,rivus,RivusDAO,ai,3.296e-05,36.87,9712.96
+zalpha,zalpha,ZALPHA,ai,9.59e-06,10.56,9506.43
+samsara-build,sams,Samsara.Build,ai,9.433e-05,1.27,9433.21
+moongate-fun,mgtai,Moongate Fun,ai,1.95e-06,2.96,9328.42
+cortexzero,cortexzero,CortexZero,ai,9.26e-06,2.98,9257.07
+waifu-3,waifu,WaiFU,ai,9.43e-06,19.28,9044.81
+claude-3,mcp,Claude,ai,8.74e-06,93.26,8739.5
+neuro-paranoid,neuro,Neuro Paranoid,ai,8.72e-06,2.42,8721.69
+sudo-labs,sudo,Sudo Labs,ai,0.00848104,21.64,8481.04
+eoniq,eoniq,EonIQ,ai,8.166e-05,55.73,8165.68
+flare-ai,flare,Flare AI,ai,8.07e-06,162.07,8070.26
+digger-ai,diggai,DIGGER AI,ai,8.01e-06,163.98,8001.42
+trump-ai-2,$trumpai,Trump AI,ai,7.9e-06,7.13,7896.8
+xerox-player-agent,xerai,Xerox Player Agent,ai,7.86e-06,4.89,7851.67
+pivot-ai,$pivot,Pivot AI,ai,7.564e-05,28.04,7564.35
+typen,typen,Typen,ai,7.79e-06,3.27,7546.08
+ascia,ascia,ASCIA,ai,7.45e-06,2.31,7439.8
+ethforestai,ethfai,ETHforestAI,ai,3.0714e-07,31.95,6918.77
+alchemist-accelerate,alch,Alchemist Accelerate,ai,6.03e-06,11.77,6627.98
+grid-protocol,grid,Grid Protocol,ai,8.61e-06,4.61,6627.04
+the-new-genesis,gen,The New Genesis,ai,6.85e-06,11.64,6562.8
+rapid-fun,rapid,Rapid.fun,ai,6.31e-06,15.1,6300.36
+alice-3,alice,Alice,ai,6e-06,3.54,5996.08
+chatxzi-by-ai,cxzi,chatXZI by AI,ai,6.18e-06,10.9,5620.76
+roboflux,$rfq,RoboFlux,ai,5.391e-05,34.93,5390.94
+ainalyzr,ainal,AInalyzr,ai,5.62e-06,55.19,5289.59
+nodev-ai,nodev,NoDev AI,ai,5.3e-06,148.97,5280.98
+zenmemory-ai,zmen,ZenMemory AI,ai,5.23e-06,1.92,5232.61
+buildr,bldr,Buildr,ai,4.9e-06,127.2,4900.86
+memecast-ai,mcai,MEMECAST.AI,ai,4.82e-06,48.17,4816.66
+context-layer,cxlyr,Context Layer,ai,6.75e-06,1190.71,4562.32
+clonex-ai,clx,CloneX AI,ai,0.00015632,6.12,4116.6
+cypher-ai-2,cypher,Cypher AI,ai,3.849e-05,52.69,3848.85
+hyperseed,hpr,HyperSeed,ai,4.615e-05,6.84,3844.15
+rna-2,sn117,RNA,ai,3460.65,142.42,3460.65
+sugarbounce,sugarb,SugarBlock,ai,2.157e-05,25.6,3308.15
+buyai,bai,Buyai,ai,2.849e-05,2.95,2848.72
+mirada-ai,mirx,Mirada AI,ai,3.764e-05,50.26,2628.63
+solmev,sn116,SolMev,ai,2398.72,51.1,2398.72
+cognify,sn115,Cognify,ai,1762.47,55.65,1762.47
+frens-ai,fren,Frens.ai,ai,0.00031024,15.09,829.12
+omegax-health,omegax,OmegaX Health,ai,0.00106078,13858.57,0.0
+destra-network,dsync,Destra Network,ai,0.112915,1229601.0,0.0
+neurowebai,neuro,NeuroWeb,ai,0.0159398,184272.0,0.0
+qu3ai,qu3,QU3ai,ai,0.00836775,20567.0,0.0
+aventis-ai,aai,Aventis AI,ai,0.05169,204.11,0.0
+addon-ai,addon,AddOn Ai,ai,0.00063084,7.78,0.0
+balance-ai,bai,Balance AI,ai,0.222994,77.78,0.0
+gptverse,gptv,GPTVerse,ai,0.000771,111762.0,0.0
+avil,avil,AVIL,ai,4.253e-05,1.84,0.0
+archai,archai,ArchAI,ai,0.00379914,373523.0,0.0
+zkcrypt-ai,zkai,ZKCrypt AI,ai,0.04268597,12399.59,0.0
+ai-waifu-2,wai,AI Waifu,ai,0.088661,48814.0,0.0
+iris-ecosystem,iristoken,Iris Ecosystem,ai,0.00303377,8075.07,0.0
+nimoai,nimo,NimoAI,ai,1.68e-06,4.24,0.0
+infinity-ground,ain,Infinity Ground,ai,0.073679,47474869.0,0.0
+open-gpu,ogpu,OPEN GPU,ai,0.175351,255073.0,0.0
+the-next-gem-ai,gemai,The Next Gem AI,ai,0.0004631,47706.0,0.0
+privateai,pgpt,PrivateAI,ai,0.01031966,28963.0,0.0
+securechain-ai-2,scai,SecureChain AI,ai,0.00087927,922.15,0.0
+argocoin,wagc,Wrapped AGC,ai,0.03021479,2165.57,0.0
+bridge-oracle,brg,Bridge AI,ai,0.00010715,93854.0,0.0
+aither,aither,Aither,ai,0.00013072,1013.62,0.0
+aid,aid,AID,ai,0.358553,1667.35,0.0
+legend-2,legend,Legend,ai,7.918e-05,48727.0,0.0
+pitch-lucy-ai,lucyai,Pitch Lucy AI,ai,9.987e-05,1427.3,0.0
+vuzzmind,vuzz,VuzzMind,ai,0.00042008,5.67,0.0
+grindery-x,gx,Grindery X,ai,0.00056397,108219.0,0.0
+reflectionai,rect,ReflectionAI,ai,0.00599743,306111.0,0.0
+wachxbt,wach,WachXBT,ai,0.00359434,81950.0,0.0
+aurk-ai,aurk,Aurk AI,ai,0.00366374,337.0,0.0
+sora-ai,sora,Sora AI,ai,0.00029886,61176.0,0.0
+fractrade,frac,FRACTRADE,ai,0.065219,364.61,0.0
+bonzai-depin,bonzai,BonzAI DePIN,ai,0.183726,10.64,0.0
+gracy,gracy,Gracy,ai,0.02041148,35685.0,0.0
+functionland,fula,Functionland,ai,0.0033355,264.54,0.0
+faircaster,fair,Faircaster,ai,1.237e-05,36377.0,0.0
+ora-protocol,olm,OpenLM RevShare Token,ai,0.00052511,51009.0,0.0
+quant-ai,qai,Quant AI,ai,5.5643e-08,6.96,0.0
+din,din,DIN,ai,0.058832,367693.0,0.0
+wrapped-hypertensor,tensor,Wrapped Hypertensor,ai,14.04,11625.76,0.0
+quantum-2,q,Quantum,ai,0.00376568,62629.0,0.0
+purple-ai,pai,Purple AI,ai,0.051846,12.04,0.0
+aisweatshop,defai,AISweatShop,ai,0.00653858,101.9,0.0
+matrix-one,matrix,Matrix One,ai,3.949e-05,74262.0,0.0
+aiccelerate,aicc,Aiccelerate,ai,0.00067941,1341.93,0.0
+elis,xls,ELIS,ai,0.00250992,33918.0,0.0
+imgnai,imgnai,imgnAI,ai,0.00446875,388.8,0.0
+bubsy-ai,bubsy,Bubsy AI,ai,0.00956756,9018.78,0.0
+suia,suia,SUIA,ai,0.00317617,47.95,0.0
+chad-4,chad/sol,CHAD,ai,0.00010323,1776.81,0.0
+symbaiex,symx,SYMBaiEX,ai,0.00010356,777.97,0.0
+xllm2,xllm2,xLLM2,ai,9.483e-05,296.59,0.0
+robostack,robot,RoboStack,ai,0.00075079,6458.71,0.0
+quantlytica,qtlx,Quantlytica,ai,0.02731915,96798.0,0.0
+project-ailey,ale,Project Ailey,ai,0.543367,3804019.0,0.0
+goatindex-ai,aiai,GoatIndex.ai,ai,0.00048731,103.97,0.0
+wienerai,wai,WienerAI,ai,5.89e-06,43184.0,0.0
+defi-agents-ai,defai,DeFi Agents AI,ai,0.00011938,41.87,0.0
+cipher-protocol,cipher,Cipher Protocol,ai,0.00012392,1154.05,0.0
+vectorspace,vaix,Vectorspace AI X,ai,0.03086029,17787.16,0.0
+appduck-by-virtuals,duck,AppDuck by Virtuals,ai,0.00025903,670.87,0.0
+baron-von-whiskers,baron,Baron Von Whiskers,ai,2.952e-05,177.02,0.0
+hypercycle,hypc,HyperCycle,ai,0.03321861,10027.01,0.0
+murasaki,mura,Murasaki,ai,0.15112,12447.47,0.0
+ttai,ttai,TTAI,ai,0.00023701,160347.0,0.0
+gaimin,gmrx,Gaimin,ai,0.00012149,100096.0,0.0
+fx1sports,fxi,FX1Sports,ai,0.00313289,4025.68,0.0
+nfinityai,nfnt,nfinityAI,ai,0.01174299,2536.93,0.0
+nimbus-ai,nai,Nimbus AI,ai,2.263e-05,359.63,0.0
+ai-meta-club,amc,AI Meta Club,ai,0.409068,163200.0,0.0
+agii,agii,AGII,ai,2.231e-05,151311.0,0.0
+xhashtag,xtag,xHashtag,ai,0.01253593,91857.0,0.0
+mia-2,mia,MIA,ai,0.068401,145011.0,0.0
+cryptoai,cai,CryptoAI,ai,0.00031119,31.88,0.0
+truebit-protocol,tru,Truebit Protocol,ai,0.133939,161420.0,0.0
+trace-network-labs,trace,Trace Network Labs,ai,9.252e-05,63.18,0.0
+gpt-wars,gptw,GPT Wars,ai,0.00018392,1568.97,0.0
+universal-operating-system-2,$uos,Universal Operating System,ai,4.28,10461.69,0.0
+nexa-2,nxa,Nexa,ai,0.097622,26755.0,0.0
+aivalanche-defai-agents,avaxai,AIvalanche DeFAI Agents,ai,0.00015158,379097.0,0.0
+assemble-protocol,asm,Assemble AI,ai,0.01335073,200059.0,0.0
+ai-protocol-2,ai,AI Protocol,ai,0.151818,0.0,0.0
+bad-coin,badai,BAD Coin [OLD],ai,0.000157,21.8,0.0
+alice-2,alice,Alice,ai,0.04303893,13443.22,0.0
+staked-tao-root,sn0,Staked TAO (Root),ai,321.64,47785032.0,0.0
+virtu-network,virtu,Virtu Network,ai,0.00074094,33.08,0.0
+meshchain-coin,mcc,MeshChain Coin,ai,0.01390284,213.77,0.0
+imonster-ai,imon,iMonster Ai,ai,,,
+trader-2,trader,TRADER,ai,,,
+kvants-ai,kvai,Kvants AI,ai,,,
+promptale-ai,tale,PrompTale AI,ai,,,
+blockfi,bfi,BlockFi,ai,,,
+neurocheck,neuro,NeuroCheck,ai,,,
+cogni-ai,cogni,COGNI AI,ai,,,
+acurast,acu,Acurast,ai,,,
+codatta,xny,Codatta,ai,,,
+astrena-ai,rena,Astrena AI,ai,,,
+opz,opz,OPZ,ai,,,
+intenet,int,InteNet,ai,,,
+zoey-your-longevity-coach-by-netmind-xyz,nml,zoey - your longevity coach by NetMind XYZ,ai,,0.0,
+boom-2,boom,Boom,ai,,,
+aishare,aishare,AIShare,ai,,,
+dtelecom,dtel,dTelecom,ai,,,
+gata,gata,GATA,ai,,,
+uomi,uomi,UOMI,ai,,,
+soundsright,sn105,SoundsRight,ai,,,
+visual-workflow-ai,flowai,Visual Workflow AI,ai,,,
+finna-ai,finna,Finna AI,ai,,,
+zesh,zai,Zesh AI Layer,ai,,,
+moveai,mai,MoveAI,ai,,,
+fleek,flk,Fleek,ai,,,
