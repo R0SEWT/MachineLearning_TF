@@ -89,54 +89,123 @@ class CryptoMLTrainer:
         self.results = {}
         self.scaler = StandardScaler()
         
-        # Configuración de modelos
-        self.model_configs = {
-            'xgboost': {
-                'objective': 'binary:logistic',
-                'eval_metric': 'auc',
-                'tree_method': 'gpu_hist',  # 🚀 Usar GPU
-                'gpu_id': 0,               # 🚀 GPU ID
-                'max_depth': 6,
-                'learning_rate': 0.05,
-                'subsample': 0.8,
-                'colsample_bytree': 0.8,
-                'reg_alpha': 0.1,
-                'reg_lambda': 1.0,
-                'n_estimators': 1000,
-                'random_state': 42,
-                'early_stopping_rounds': 100
-            },
-            'lightgbm': {
-                'objective': 'binary',
-                'metric': 'auc',
-                'boosting_type': 'gbdt',
-                'device': 'gpu',          # 🚀 Usar GPU
-                'gpu_platform_id': 0,    # 🚀 GPU Platform ID
-                'gpu_device_id': 0,      # 🚀 GPU Device ID
-                'num_leaves': 31,
-                'learning_rate': 0.05,
-                'feature_fraction': 0.8,
-                'bagging_fraction': 0.8,
-                'bagging_freq': 5,
-                'verbose': -1,
-                'random_state': 42,
-                'n_estimators': 1000
-            }
-        }
+        # Detectar disponibilidad de GPU
+        self.gpu_available = self._check_gpu_availability()
         
-        if CATBOOST_AVAILABLE:
-            self.model_configs['catboost'] = {
-                'objective': 'Logloss',
-                'eval_metric': 'AUC',
-                'task_type': 'GPU',       # 🚀 Usar GPU
-                'devices': '0',           # 🚀 GPU Device ID
-                'iterations': 1000,
-                'learning_rate': 0.05,
-                'depth': 6,
-                'l2_leaf_reg': 3,
-                'random_state': 42,
-                'verbose': False
+        # Configuración de modelos (se ajustará según GPU disponible)
+        self._setup_model_configs()
+    
+    def _check_gpu_availability(self):
+        """Detectar si GPU está disponible para entrenamiento"""
+        try:
+            # Verificar CUDA para XGBoost
+            import subprocess
+            result = subprocess.run(['nvidia-smi'], capture_output=True, text=True)
+            if result.returncode == 0:
+                print("✅ GPU detectada y disponible")
+                return True
+        except:
+            pass
+        
+        print("⚠️  GPU no disponible, usando CPU")
+        return False
+    
+    def _setup_model_configs(self):
+        """Configurar modelos según disponibilidad de GPU"""
+        if self.gpu_available:
+            # Configuración con GPU
+            self.model_configs = {
+                'xgboost': {
+                    'objective': 'binary:logistic',
+                    'eval_metric': 'auc',
+                    'tree_method': 'gpu_hist',  # 🚀 Usar GPU
+                    'gpu_id': 0,               # 🚀 GPU ID
+                    'max_depth': 6,
+                    'learning_rate': 0.05,
+                    'subsample': 0.8,
+                    'colsample_bytree': 0.8,
+                    'reg_alpha': 0.1,
+                    'reg_lambda': 1.0,
+                    'n_estimators': 1000,
+                    'random_state': 42,
+                    'early_stopping_rounds': 100
+                },
+                'lightgbm': {
+                    'objective': 'binary',
+                    'metric': 'auc',
+                    'boosting_type': 'gbdt',
+                    'device': 'gpu',          # 🚀 Usar GPU
+                    'gpu_platform_id': 0,    # 🚀 GPU Platform ID
+                    'gpu_device_id': 0,      # 🚀 GPU Device ID
+                    'num_leaves': 31,
+                    'learning_rate': 0.05,
+                    'feature_fraction': 0.8,
+                    'bagging_fraction': 0.8,
+                    'bagging_freq': 5,
+                    'verbose': -1,
+                    'random_state': 42,
+                    'n_estimators': 1000
+                }
             }
+            
+            if CATBOOST_AVAILABLE:
+                self.model_configs['catboost'] = {
+                    'objective': 'Logloss',
+                    'eval_metric': 'AUC',
+                    'task_type': 'GPU',       # 🚀 Usar GPU
+                    'devices': '0',           # 🚀 GPU Device ID
+                    'iterations': 1000,
+                    'learning_rate': 0.05,
+                    'depth': 6,
+                    'l2_leaf_reg': 3,
+                    'random_state': 42,
+                    'verbose': False
+                }
+        else:
+            # Configuración con CPU
+            self.model_configs = {
+                'xgboost': {
+                    'objective': 'binary:logistic',
+                    'eval_metric': 'auc',
+                    'tree_method': 'hist',    # 🖥️ Usar CPU
+                    'max_depth': 6,
+                    'learning_rate': 0.05,
+                    'subsample': 0.8,
+                    'colsample_bytree': 0.8,
+                    'reg_alpha': 0.1,
+                    'reg_lambda': 1.0,
+                    'n_estimators': 1000,
+                    'random_state': 42,
+                    'early_stopping_rounds': 100
+                },
+                'lightgbm': {
+                    'objective': 'binary',
+                    'metric': 'auc',
+                    'boosting_type': 'gbdt',
+                    'device': 'cpu',          # 🖥️ Usar CPU
+                    'num_leaves': 31,
+                    'learning_rate': 0.05,
+                    'feature_fraction': 0.8,
+                    'bagging_fraction': 0.8,
+                    'bagging_freq': 5,
+                    'verbose': -1,
+                    'random_state': 42,
+                    'n_estimators': 1000
+                }
+            }
+            
+            if CATBOOST_AVAILABLE:
+                self.model_configs['catboost'] = {
+                    'objective': 'Logloss',
+                    'eval_metric': 'AUC',
+                    'task_type': 'CPU',       # 🖥️ Usar CPU
+                    'iterations': 1000,
+                    'learning_rate': 0.05,
+                    'depth': 6,
+                    'l2_leaf_reg': 3,
+                    'random_state': 42,
+                    'verbose': False
+                }
     
     def load_and_prepare_data(self, target_period: int = 30, min_market_cap: float = 0, 
                              max_market_cap: float = 10_000_000):
@@ -316,40 +385,70 @@ class CryptoMLTrainer:
         ensemble_models = []
         
         if 'xgboost' in self.models and self.models['xgboost'] is not None:
-            xgb_simple = xgb.XGBClassifier(
-                tree_method='gpu_hist',  # 🚀 Usar GPU
-                gpu_id=0,               # 🚀 GPU ID
-                max_depth=6,
-                learning_rate=0.1,
-                n_estimators=100,
-                random_state=42,
-                verbosity=0
-            )
+            if self.gpu_available:
+                xgb_simple = xgb.XGBClassifier(
+                    tree_method='gpu_hist',  # 🚀 Usar GPU
+                    gpu_id=0,               # 🚀 GPU ID
+                    max_depth=6,
+                    learning_rate=0.1,
+                    n_estimators=100,
+                    random_state=42,
+                    verbosity=0
+                )
+            else:
+                xgb_simple = xgb.XGBClassifier(
+                    tree_method='hist',     # 🖥️ Usar CPU
+                    max_depth=6,
+                    learning_rate=0.1,
+                    n_estimators=100,
+                    random_state=42,
+                    verbosity=0
+                )
             ensemble_models.append(('xgboost', xgb_simple))
         
         if 'lightgbm' in self.models and self.models['lightgbm'] is not None:
-            lgb_simple = lgb.LGBMClassifier(
-                device='gpu',          # 🚀 Usar GPU
-                gpu_platform_id=0,    # 🚀 GPU Platform ID
-                gpu_device_id=0,      # 🚀 GPU Device ID
-                max_depth=6,
-                learning_rate=0.1,
-                n_estimators=100,
-                random_state=42,
-                verbosity=-1
-            )
+            if self.gpu_available:
+                lgb_simple = lgb.LGBMClassifier(
+                    device='gpu',          # 🚀 Usar GPU
+                    gpu_platform_id=0,    # 🚀 GPU Platform ID
+                    gpu_device_id=0,      # 🚀 GPU Device ID
+                    max_depth=6,
+                    learning_rate=0.1,
+                    n_estimators=100,
+                    random_state=42,
+                    verbosity=-1
+                )
+            else:
+                lgb_simple = lgb.LGBMClassifier(
+                    device='cpu',          # 🖥️ Usar CPU
+                    max_depth=6,
+                    learning_rate=0.1,
+                    n_estimators=100,
+                    random_state=42,
+                    verbosity=-1
+                )
             ensemble_models.append(('lightgbm', lgb_simple))
         
         if 'catboost' in self.models and self.models['catboost'] is not None:
-            cb_simple = cb.CatBoostClassifier(
-                task_type='GPU',       # 🚀 Usar GPU
-                devices='0',           # 🚀 GPU Device ID
-                depth=6,
-                learning_rate=0.1,
-                iterations=100,
-                random_state=42,
-                verbose=False
-            )
+            if self.gpu_available:
+                cb_simple = cb.CatBoostClassifier(
+                    task_type='GPU',       # 🚀 Usar GPU
+                    devices='0',           # 🚀 GPU Device ID
+                    depth=6,
+                    learning_rate=0.1,
+                    iterations=100,
+                    random_state=42,
+                    verbose=False
+                )
+            else:
+                cb_simple = cb.CatBoostClassifier(
+                    task_type='CPU',       # 🖥️ Usar CPU
+                    depth=6,
+                    learning_rate=0.1,
+                    iterations=100,
+                    random_state=42,
+                    verbose=False
+                )
             ensemble_models.append(('catboost', cb_simple))
         
         if len(ensemble_models) < 2:
@@ -430,10 +529,24 @@ class CryptoMLTrainer:
                 model.save_model(f"{model_path}.cbm")
                 print(f"   ✅ {name} guardado: {model_path}.cbm")
             
-            # Guardar configuración
+            # Guardar configuración con metadata
             config_path = f"{model_path}_config.json"
+            config_to_save = self.model_configs.get(name, {}).copy()
+            
+            # Añadir metadata sobre la ejecución
+            config_to_save['_metadata'] = {
+                'timestamp': timestamp,
+                'gpu_available': self.gpu_available,
+                'gpu_used': self.gpu_available,  # Se usó GPU si estaba disponible
+                'python_version': sys.version,
+                'training_data_shape': {
+                    'train': self.X_train.shape,
+                    'test': self.X_test.shape
+                }
+            }
+            
             with open(config_path, 'w') as f:
-                json.dump(self.model_configs.get(name, {}), f, indent=2)
+                json.dump(config_to_save, f, indent=2)
         
         # Guardar feature importance
         importance_path = f"{output_dir}/feature_importance_{timestamp}.json"
