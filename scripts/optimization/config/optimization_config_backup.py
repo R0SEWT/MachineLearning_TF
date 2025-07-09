@@ -284,3 +284,41 @@ if __name__ == "__main__":
     print(f"\n🏭 Configuración producción:")
     print(f"   - Trials XGBoost: {production_config.model_trials['xgboost']}")
     print(f"   - CV Folds: {production_config.cv_folds}")
+        'max_depth': {'type': 'int', 'low': 3, 'high': 12},
+        'learning_rate': {'type': 'float', 'low': 0.01, 'high': 0.3, 'log': True},
+        'subsample': {'type': 'float', 'low': 0.6, 'high': 1.0},
+        'colsample_bytree': {'type': 'float', 'low': 0.6, 'high': 1.0},
+        'reg_alpha': {'type': 'float', 'low': 0, 'high': 10},
+        'reg_lambda': {'type': 'float', 'low': 0, 'high': 10},
+        'min_child_weight': {'type': 'int', 'low': 1, 'high': 10},
+        'gamma': {'type': 'float', 'low': 0, 'high': 5}
+    }
+    
+    # Rangos de hiperparámetros para LightGBM
+    lightgbm_params = {
+        'n_estimators': {'type': 'int', 'low': 100, 'high': 1000, 'step': 50},
+        'max_depth': {'type': 'int', 'low': 3, 'high': 12},
+        'learning_rate': {'type': 'float', 'low': 0.01, 'high': 0.3, 'log': True},
+        'subsample': {'type': 'float', 'low': 0.6, 'high': 1.0},
+        'colsample_bytree': {'type': 'float', 'low': 0.6, 'high': 1.0},
+        'reg_alpha': {'type': 'float', 'low': 0, 'high': 10},
+        'reg_lambda': {'type': 'float', 'low': 0, 'high': 10},
+        'min_child_samples': {'type': 'int', 'low': 5, 'high': 100},
+        'num_leaves': {'type': 'int', 'low': 10, 'high': 300}
+    }
+    
+    # Rangos de hiperparámetros para CatBoost
+    catboost_params = {
+        'iterations': {'type': 'int', 'low': 100, 'high': 1000, 'step': 50},
+        'depth': {'type': 'int', 'low': 3, 'high': 10},
+        'learning_rate': {'type': 'float', 'low': 0.01, 'high': 0.3, 'log': True},
+        'subsample': {'type': 'float', 'low': 0.6, 'high': 1.0},
+        'colsample_bylevel': {'type': 'float', 'low': 0.6, 'high': 1.0},
+        'l2_leaf_reg': {'type': 'float', 'low': 1, 'high': 10},
+        'min_data_in_leaf': {'type': 'int', 'low': 1, 'high': 100},
+        'bootstrap_type': {'type': 'categorical', 'choices': ['Bayesian', 'Bernoulli']}
+    }
+
+# Instancia global de configuración
+CONFIG = OptimizationConfig()
+MODEL_CONFIG = ModelConfig()
