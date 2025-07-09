@@ -1,0 +1,2 @@
+{"timestamp": "2025-07-09T15:18:19.266704", "level": "INFO", "component": "trial", "message": "Trial iniciado", "context": {"params": {"param1": 0.5}, "model_name": "test_model"}, "trial_id": 1, "model_name": "test_model", "metric_value": null}
+{"timestamp": "2025-07-09T15:18:19.266786", "level": "INFO", "component": "trial", "message": "Trial success", "context": {"duration_seconds": 10.5, "status": "success"}, "trial_id": 1, "model_name": "test_model", "metric_value": 0.85}
