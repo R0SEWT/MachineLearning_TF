@@ -1,4 +1,4 @@
-# � EDA - Análisis Exploratorio de Criptomonedas
+# 📊 EDA - Análisis Exploratorio de Criptomonedas
 
 > **🏠 DOCUMENTACIÓN PRINCIPAL**: Ver **[README.md](../../README.md)** en la carpeta raíz para la documentación centralizada completa del proyecto **MachineLearning_TF**.
 
