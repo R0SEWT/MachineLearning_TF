@@ -31,6 +31,19 @@ except ImportError as e:
     print(f"⚠️ Error importando componentes de Fase 1: {e}")
     print("Continuando con funcionalidad básica...")
 
+# Importar nuevos componentes de Fase 2
+try:
+    from config.optuna_config import (
+        SAMPLER_CONFIG, PRUNER_CONFIG, MULTI_OBJECTIVE_CONFIG, CONVERGENCE_CONFIG,
+        SAMPLER_FACTORY, PRUNER_FACTORY, STRATEGY_SELECTOR
+    )
+    from utils.temporal_validator import TEMPORAL_VALIDATOR, TimeSeriesValidationConfig
+    from utils.early_stopping import ADAPTIVE_CONTROLLER, EarlyStoppingConfig
+    print("✅ Nuevos componentes de Fase 2 importados correctamente")
+except ImportError as e:
+    print(f"⚠️ Error importando componentes de Fase 2: {e}")
+    print("Continuando con funcionalidad de Fase 1...")
+
 # Agregar paths necesarios
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'src', 'utils', 'utils'))
@@ -73,7 +86,7 @@ class CryptoHyperparameterOptimizer:
     
     def __init__(self, data_path: str = None, results_path: str = None, config: Any = None):
         """
-        Inicializar el optimizador con mejoras de Fase 1
+        Inicializar el optimizador con mejoras de Fase 1 y Fase 2
         
         Args:
             data_path: Ruta a los datos (opcional, usa CONFIG si no se especifica)
@@ -118,6 +131,36 @@ class CryptoHyperparameterOptimizer:
             self.data_validator = None
             self.metrics_calculator = None
         
+        # Inicializar componentes de Fase 2
+        try:
+            # Validador temporal
+            self.temporal_validator = TEMPORAL_VALIDATOR
+            
+            # Controlador adaptativo
+            self.adaptive_controller = ADAPTIVE_CONTROLLER
+            
+            # Configuraciones de Optuna
+            self.sampler_factory = SAMPLER_FACTORY
+            self.pruner_factory = PRUNER_FACTORY
+            self.strategy_selector = STRATEGY_SELECTOR
+            
+            # Configuración de validación temporal
+            self.temporal_config = TimeSeriesValidationConfig()
+            
+            # Configuración de early stopping
+            self.early_stopping_config = EarlyStoppingConfig()
+            
+            print("✅ Componentes de Fase 2 inicializados correctamente")
+            
+        except Exception as e:
+            print(f"⚠️ Error inicializando componentes de Fase 2: {e}")
+            print("Continuando con funcionalidad de Fase 1...")
+            self.temporal_validator = None
+            self.adaptive_controller = None
+            self.sampler_factory = None
+            self.pruner_factory = None
+            self.strategy_selector = None
+        
         # Datasets
         self.X_train = None
         self.X_val = None
@@ -131,6 +174,7 @@ class CryptoHyperparameterOptimizer:
         self.best_params = {}
         self.best_scores = {}
         self.detailed_results = {}  # Para métricas múltiples
+        self.convergence_history = {}  # Para análisis de convergencia
         
         # Configuración desde CONFIG
         self.cv_folds = self.config.cv_folds
@@ -142,7 +186,9 @@ class CryptoHyperparameterOptimizer:
                 'data_path': self.data_path,
                 'results_path': str(self.results_path),
                 'cv_folds': self.cv_folds,
-                'random_state': self.random_state
+                'random_state': self.random_state,
+                'phase_1_enabled': self.data_validator is not None,
+                'phase_2_enabled': self.temporal_validator is not None
             })
             
             # Log información de hardware
@@ -155,6 +201,8 @@ class CryptoHyperparameterOptimizer:
         print(f"   💾 Resultados: {self.results_path}")
         print(f"   🎯 Métrica primaria: {self.config.primary_metric}")
         print(f"   🔄 CV folds: {self.cv_folds}")
+        print(f"   🚀 Fase 1 (Fundamentos): {'✅' if self.data_validator else '❌'}")
+        print(f"   ⚡ Fase 2 (Optimización Core): {'✅' if self.temporal_validator else '❌'}")
     
     def load_and_prepare_data(self, target_period: int = None, min_market_cap: float = None, 
                              max_market_cap: float = None):
@@ -219,14 +267,19 @@ class CryptoHyperparameterOptimizer:
                 self.logger.log_error(error_msg, exception=e)
             raise RuntimeError(error_msg)
         
-        # Filtrar por market cap con validación
+        # Filtrar por market cap con validación (opcional)
         try:
-            df_filtered = df[(df['market_cap'] >= min_market_cap) & 
-                            (df['market_cap'] <= max_market_cap)].copy()
-            print(f"   💰 Filtrado por market cap: {df_filtered.shape}")
-            
-            if len(df_filtered) == 0:
-                raise ValueError("No quedan datos después del filtro de market cap")
+            if 'market_cap' in df.columns:
+                df_filtered = df[(df['market_cap'] >= min_market_cap) & 
+                                (df['market_cap'] <= max_market_cap)].copy()
+                print(f"   💰 Filtrado por market cap: {df_filtered.shape}")
+                
+                if len(df_filtered) == 0:
+                    raise ValueError("No quedan datos después del filtro de market cap")
+            else:
+                # No filtrar si no hay columna market_cap (datos sintéticos)
+                df_filtered = df.copy()
+                print(f"   💰 Sin filtro de market cap (columna no encontrada): {df_filtered.shape}")
                 
         except Exception as e:
             error_msg = f"Error filtrando por market cap: {e}"
@@ -236,14 +289,22 @@ class CryptoHyperparameterOptimizer:
         
         # Crear features con manejo de errores
         try:
-            print("🔧 Creando features avanzadas...")
-            df_features = create_ml_features(df_filtered, include_targets=True)
+            # Verificar si es un dataset sintético (ya tiene features)
+            if all(col.startswith('feature_') for col in df_filtered.columns if col not in ['date', 'high_return_30d']):
+                print("🔧 Detectado dataset sintético - usando features existentes...")
+                df_features = df_filtered.copy()
+            else:
+                print("🔧 Creando features avanzadas...")
+                df_features = create_ml_features(df_filtered, include_targets=True)
             
         except Exception as e:
             error_msg = f"Error creando features: {e}"
             if self.logger:
                 self.logger.log_error(error_msg, exception=e)
-            raise RuntimeError(error_msg)
+            
+            # Fallback para datos sintéticos
+            print("   ⚠️  Fallback: usando datos como features directas")
+            df_features = df_filtered.copy()
         
         # Preparar dataset con validación
         target_col = f'high_return_{target_period}d'
@@ -384,29 +445,77 @@ class CryptoHyperparameterOptimizer:
         
         return self
     
-    def optimize_xgboost(self, n_trials: int = None, timeout: Optional[int] = None):
+    def optimize_xgboost(self, n_trials: int = None, timeout: Optional[int] = None,
+                        use_temporal_cv: bool = True, optimization_strategy: str = 'balanced'):
         """
-        Optimizar hiperparámetros de XGBoost con mejoras de Fase 1
+        Optimizar hiperparámetros de XGBoost con mejoras de Fase 1 y Fase 2
+        
+        Args:
+            n_trials: Número de trials (None para usar estrategia)
+            timeout: Timeout en segundos (None para usar estrategia)
+            use_temporal_cv: Usar validación cruzada temporal
+            optimization_strategy: Estrategia de optimización ('quick', 'balanced', 'thorough')
         """
         n_trials = n_trials or self.config.default_n_trials
         timeout = timeout or self.config.default_timeout_per_model
         
         print("\n🔥======================================================================")
-        print("🔥 OPTIMIZANDO XGBOOST CON MEJORAS DE FASE 1")
+        print("🔥 OPTIMIZANDO XGBOOST CON MEJORAS DE FASE 1 Y FASE 2")
         print("🔥======================================================================")
+        
+        # Seleccionar estrategia de optimización automáticamente
+        if self.strategy_selector:
+            strategy_config = self.strategy_selector.select_strategy(
+                n_trials=n_trials,
+                timeout=timeout,
+                problem_type=optimization_strategy
+            )
+            print(f"   📋 Estrategia seleccionada: {strategy_config}")
+        else:
+            strategy_config = {'sampler': 'tpe', 'pruner': 'median'}
         
         # Log inicio de optimización del modelo
         if self.logger:
             self.logger.log_model_optimization_start('xgboost', n_trials, {
                 'timeout': timeout,
-                'cv_folds': self.cv_folds
+                'cv_folds': self.cv_folds,
+                'use_temporal_cv': use_temporal_cv,
+                'strategy': strategy_config
             })
         
         model_start_time = time.time()
         
+        # Crear sampler y pruner avanzados
+        try:
+            sampler = self.sampler_factory.create_sampler(
+                strategy_config.get('sampler', 'tpe'),
+                SAMPLER_CONFIG
+            )
+            pruner = self.pruner_factory.create_pruner(
+                strategy_config.get('pruner', 'median'),
+                PRUNER_CONFIG
+            )
+            print(f"   🎯 Sampler: {type(sampler).__name__}")
+            print(f"   ✂️  Pruner: {type(pruner).__name__}")
+        except Exception as e:
+            print(f"   ⚠️ Error creando sampler/pruner avanzados: {e}")
+            sampler = None
+            pruner = None
+        
+        # Obtener monitor de early stopping
+        if self.adaptive_controller:
+            early_stopping_monitor = self.adaptive_controller.get_monitor('xgboost')
+            early_stopping_monitor.reset()
+        else:
+            early_stopping_monitor = None
+        
         def objective(trial):
-            """Función objetivo para XGBoost con mejoras de Fase 1"""
+            """Función objetivo para XGBoost con mejoras de Fase 1 y Fase 2"""
             trial_start_time = time.time()
+            
+            # Verificar early stopping
+            if early_stopping_monitor and early_stopping_monitor.stopped:
+                raise optuna.TrialPruned()
             
             # Configuración base con GPU Manager
             base_params = {
@@ -426,10 +535,8 @@ class CryptoHyperparameterOptimizer:
                 except Exception as e:
                     if self.logger:
                         self.logger.log_warning(f"Error configurando GPU para XGBoost: {e}")
-                    # Fallback a CPU
                     base_params.update({'tree_method': 'hist', 'n_jobs': -1})
             else:
-                # Configuración CPU por defecto
                 base_params.update({'tree_method': 'hist', 'n_jobs': -1})
             
             # Hiperparámetros a optimizar usando MODEL_CONFIG
@@ -458,18 +565,65 @@ class CryptoHyperparameterOptimizer:
                 self.logger.log_trial_start(trial.number, 'xgboost', params)
             
             try:
-                # Entrenar modelo
+                # Crear modelo
                 model = xgb.XGBClassifier(**params)
                 
-                # Cross-validation en datos de entrenamiento
-                cv_scores = cross_val_score(
-                    model, self.X_train, self.y_train,
-                    cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
-                    scoring='roc_auc',
-                    n_jobs=-1
-                )
+                # Usar validación cruzada temporal si está disponible
+                if use_temporal_cv and self.temporal_validator and 'date' in self.X_train.columns:
+                    # Preparar datos con columna de fecha
+                    X_train_with_date = self.X_train.copy()
+                    if 'date' not in X_train_with_date.columns:
+                        # Si no hay columna de fecha, crear una sintética
+                        X_train_with_date['date'] = pd.date_range(start='2020-01-01', periods=len(X_train_with_date), freq='D')
+                    
+                    try:
+                        cv_results = self.temporal_validator.perform_time_series_cv(
+                            estimator=model,
+                            X=X_train_with_date,
+                            y=self.y_train,
+                            scoring='roc_auc',
+                            cv_type='time_series'
+                        )
+                        
+                        cv_scores = cv_results['scores']
+                        primary_score = cv_results['mean_score']
+                        
+                        # Log métricas de estabilidad temporal
+                        if self.logger:
+                            self.logger.log_info(f"CV temporal completado - Trial {trial.number}", {
+                                'mean_score': primary_score,
+                                'std_score': cv_results['std_score'],
+                                'stability_score': cv_results['stability_metrics']['stability_score'],
+                                'n_folds': cv_results['n_folds']
+                            })
+                        
+                    except Exception as e:
+                        if self.logger:
+                            self.logger.log_warning(f"Error en CV temporal, usando CV estándar: {e}")
+                        # Fallback a CV estándar
+                        cv_scores = cross_val_score(
+                            model, self.X_train, self.y_train,
+                            cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
+                            scoring='roc_auc',
+                            n_jobs=-1
+                        )
+                        primary_score = cv_scores.mean()
                 
-                primary_score = cv_scores.mean()
+                else:
+                    # Validación cruzada estándar
+                    cv_scores = cross_val_score(
+                        model, self.X_train, self.y_train,
+                        cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
+                        scoring='roc_auc',
+                        n_jobs=-1
+                    )
+                    primary_score = cv_scores.mean()
+                
+                # Verificar early stopping inteligente
+                if early_stopping_monitor:
+                    should_stop = early_stopping_monitor.update(trial.number, primary_score)
+                    if should_stop:
+                        raise optuna.TrialPruned()
                 
                 # Calcular métricas múltiples si está disponible
                 if self.metrics_calculator:
@@ -492,6 +646,15 @@ class CryptoHyperparameterOptimizer:
                         if self.logger:
                             self.logger.log_metrics(trial.number, 'xgboost', metrics_result.secondary_scores)
                         
+                        # Report intermediate value para pruning
+                        trial.report(primary_score, trial.number)
+                        
+                        # Verificar si debe ser podado
+                        if trial.should_prune():
+                            if self.logger:
+                                self.logger.log_trial_pruned(trial.number, 'xgboost', "Optuna pruning")
+                            raise optuna.TrialPruned()
+                        
                     except Exception as e:
                         if self.logger:
                             self.logger.log_warning(f"Error calculando métricas múltiples: {e}")
@@ -503,6 +666,9 @@ class CryptoHyperparameterOptimizer:
                 
                 return primary_score
                 
+            except optuna.TrialPruned:
+                # Re-raise pruned trials
+                raise
             except Exception as e:
                 # Log trial fallido
                 trial_duration = time.time() - trial_start_time
@@ -512,26 +678,51 @@ class CryptoHyperparameterOptimizer:
                 
                 raise optuna.TrialPruned()
         
-        # Crear y ejecutar estudio
-        study_name = f"xgboost_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        study = optuna.create_study(
-            direction='maximize',
-            study_name=study_name,
-            storage=f'sqlite:///{self.results_path}/optuna_studies.db',
-            load_if_exists=True
-        )
+        # Crear y ejecutar estudio con configuración avanzada
+        study_name = f"xgboost_phase2_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        study_kwargs = {
+            'direction': 'maximize',
+            'study_name': study_name,
+            'storage': f'sqlite:///{self.results_path}/optuna_studies.db',
+            'load_if_exists': True
+        }
         
-        print(f"   🎯 Ejecutando {n_trials} trials...")
+        # Agregar sampler y pruner si están disponibles
+        if sampler:
+            study_kwargs['sampler'] = sampler
+        if pruner:
+            study_kwargs['pruner'] = pruner
+        
+        study = optuna.create_study(**study_kwargs)
+        
+        print(f"   🎯 Ejecutando {n_trials} trials con estrategia '{optimization_strategy}'...")
         if timeout:
             print(f"   ⏰ Timeout: {timeout} segundos")
         
-        # Log progreso periódico
+        # Callback para progreso con early stopping
         def progress_callback(study, trial):
-            if trial.number % 10 == 0 and self.logger:
+            if trial.number % 10 == 0:
                 current_best = study.best_value if study.best_value else 0.0
-                self.logger.log_progress(trial.number, n_trials, current_best, 'xgboost')
+                
+                if self.logger:
+                    self.logger.log_progress(trial.number, n_trials, current_best, 'xgboost')
+                
+                # Verificar early stopping global
+                if early_stopping_monitor:
+                    should_stop = self.adaptive_controller.should_stop_model(
+                        'xgboost', trial.number, current_best
+                    )
+                    if should_stop:
+                        study.stop()
         
-        study.optimize(objective, n_trials=n_trials, timeout=timeout, callbacks=[progress_callback])
+        # Ejecutar optimización
+        study.optimize(
+            objective, 
+            n_trials=n_trials, 
+            timeout=timeout, 
+            callbacks=[progress_callback],
+            catch=(Exception,)  # Capturar excepciones para continuar
+        )
         
         # Guardar resultados
         model_duration = time.time() - model_start_time
@@ -539,10 +730,22 @@ class CryptoHyperparameterOptimizer:
         self.best_params['xgboost'] = study.best_params
         self.best_scores['xgboost'] = study.best_value
         
+        # Guardar historial de convergencia
+        if early_stopping_monitor:
+            self.convergence_history['xgboost'] = early_stopping_monitor.get_summary()
+        
         print(f"   ✅ Optimización completada!")
         print(f"   🏆 Mejor AUC: {study.best_value:.4f}")
         print(f"   🔧 Mejores parámetros: {study.best_params}")
         print(f"   ⏰ Tiempo total: {model_duration:.1f}s")
+        print(f"   🎯 Trials ejecutados: {len(study.trials)}")
+        
+        # Información de convergencia
+        if early_stopping_monitor:
+            convergence_info = early_stopping_monitor.get_summary()
+            print(f"   📊 Early stopping: {convergence_info['stopped']}")
+            if convergence_info['stopped']:
+                print(f"   🛑 Razón: {convergence_info['stop_reason']}")
         
         # Log finalización
         if self.logger:
@@ -552,159 +755,661 @@ class CryptoHyperparameterOptimizer:
         
         return study
     
-    def optimize_lightgbm(self, n_trials: int = 100, timeout: Optional[int] = None):
+    def optimize_lightgbm(self, n_trials: int = None, timeout: Optional[int] = None,
+                         use_temporal_cv: bool = True, optimization_strategy: str = 'balanced'):
         """
-        Optimizar hiperparámetros de LightGBM
+        Optimizar hiperparámetros de LightGBM con mejoras de Fase 1 y Fase 2
+        
+        Args:
+            n_trials: Número de trials (None para usar estrategia)
+            timeout: Timeout en segundos (None para usar estrategia)
+            use_temporal_cv: Usar validación cruzada temporal
+            optimization_strategy: Estrategia de optimización ('quick', 'balanced', 'thorough')
         """
+        n_trials = n_trials or self.config.default_n_trials
+        timeout = timeout or self.config.default_timeout_per_model
+        
         print("\n💡======================================================================")
-        print("💡 OPTIMIZANDO LIGHTGBM CON OPTUNA")
+        print("💡 OPTIMIZANDO LIGHTGBM CON MEJORAS DE FASE 1 Y FASE 2")
         print("💡======================================================================")
         
+        # Seleccionar estrategia de optimización automáticamente
+        if self.strategy_selector:
+            strategy_config = self.strategy_selector.select_strategy(
+                n_trials=n_trials,
+                timeout=timeout,
+                problem_type=optimization_strategy
+            )
+            print(f"   📋 Estrategia seleccionada: {strategy_config}")
+        else:
+            strategy_config = {'sampler': 'tpe', 'pruner': 'median'}
+        
+        # Log inicio de optimización del modelo
+        if self.logger:
+            self.logger.log_model_optimization_start('lightgbm', n_trials, {
+                'timeout': timeout,
+                'cv_folds': self.cv_folds,
+                'use_temporal_cv': use_temporal_cv,
+                'strategy': strategy_config
+            })
+        
+        model_start_time = time.time()
+        
+        # Crear sampler y pruner avanzados
+        try:
+            sampler = self.sampler_factory.create_sampler(
+                strategy_config.get('sampler', 'tpe'),
+                SAMPLER_CONFIG
+            )
+            pruner = self.pruner_factory.create_pruner(
+                strategy_config.get('pruner', 'median'),
+                PRUNER_CONFIG
+            )
+            print(f"   🎯 Sampler: {type(sampler).__name__}")
+            print(f"   ✂️  Pruner: {type(pruner).__name__}")
+        except Exception as e:
+            print(f"   ⚠️ Error creando sampler/pruner avanzados: {e}")
+            sampler = None
+            pruner = None
+        
+        # Obtener monitor de early stopping
+        if self.adaptive_controller:
+            early_stopping_monitor = self.adaptive_controller.get_monitor('lightgbm')
+            early_stopping_monitor.reset()
+        else:
+            early_stopping_monitor = None
+        
         def objective(trial):
-            """Función objetivo para LightGBM"""
-            params = {
+            """Función objetivo para LightGBM con mejoras de Fase 1 y Fase 2"""
+            trial_start_time = time.time()
+            
+            # Verificar early stopping
+            if early_stopping_monitor and early_stopping_monitor.stopped:
+                raise optuna.TrialPruned()
+            
+            # Configuración base con GPU Manager
+            base_params = {
                 'objective': 'binary',
                 'metric': 'auc',
                 'boosting_type': 'gbdt',
-                'device': 'gpu',          # 🚀 Usar GPU
-                'gpu_platform_id': 0,    # 🚀 GPU Platform ID
-                'gpu_device_id': 0,      # 🚀 GPU Device ID
                 'random_state': self.random_state,
                 'verbosity': -1,
-                
-                # Hiperparámetros a optimizar
-                'n_estimators': trial.suggest_int('n_estimators', 100, 1000, step=50),
-                'max_depth': trial.suggest_int('max_depth', 3, 12),
-                'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.3, log=True),
-                'subsample': trial.suggest_float('subsample', 0.6, 1.0),
-                'colsample_bytree': trial.suggest_float('colsample_bytree', 0.6, 1.0),
-                'reg_alpha': trial.suggest_float('reg_alpha', 0, 10),
-                'reg_lambda': trial.suggest_float('reg_lambda', 0, 10),
-                'min_child_samples': trial.suggest_int('min_child_samples', 5, 100),
-                'num_leaves': trial.suggest_int('num_leaves', 10, 300)
             }
             
-            # Entrenar modelo
-            model = lgb.LGBMClassifier(**params)
+            # Configuración GPU/CPU inteligente
+            if self.gpu_manager:
+                try:
+                    gpu_config = self.gpu_manager.get_lightgbm_config(
+                        fallback_to_cpu=self.config.fallback_to_cpu
+                    )
+                    base_params.update(gpu_config)
+                except Exception as e:
+                    if self.logger:
+                        self.logger.log_warning(f"Error configurando GPU para LightGBM: {e}")
+                    base_params.update({'device': 'cpu', 'n_jobs': -1})
+            else:
+                base_params.update({'device': 'cpu', 'n_jobs': -1})
             
-            # Cross-validation
-            cv_scores = cross_val_score(
-                model, self.X_train, self.y_train,
-                cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
-                scoring='roc_auc',
-                n_jobs=-1
-            )
+            # Hiperparámetros a optimizar usando MODEL_CONFIG
+            lgb_config = MODEL_CONFIG.lightgbm_params
+            params = base_params.copy()
             
-            return cv_scores.mean()
+            for param_name, param_config in lgb_config.items():
+                if param_config['type'] == 'int':
+                    if 'step' in param_config:
+                        params[param_name] = trial.suggest_int(
+                            param_name, param_config['low'], 
+                            param_config['high'], step=param_config['step']
+                        )
+                    else:
+                        params[param_name] = trial.suggest_int(
+                            param_name, param_config['low'], param_config['high']
+                        )
+                elif param_config['type'] == 'float':
+                    params[param_name] = trial.suggest_float(
+                        param_name, param_config['low'], 
+                        param_config['high'], log=param_config.get('log', False)
+                    )
+                elif param_config['type'] == 'categorical':
+                    params[param_name] = trial.suggest_categorical(
+                        param_name, param_config['choices']
+                    )
+            
+            # Log inicio del trial
+            if self.logger:
+                self.logger.log_trial_start(trial.number, 'lightgbm', params)
+            
+            try:
+                # Crear modelo
+                model = lgb.LGBMClassifier(**params)
+                
+                # Usar validación cruzada temporal si está disponible
+                if use_temporal_cv and self.temporal_validator and 'date' in self.X_train.columns:
+                    # Preparar datos con columna de fecha
+                    X_train_with_date = self.X_train.copy()
+                    if 'date' not in X_train_with_date.columns:
+                        X_train_with_date['date'] = pd.date_range(start='2020-01-01', periods=len(X_train_with_date), freq='D')
+                    
+                    try:
+                        cv_results = self.temporal_validator.perform_time_series_cv(
+                            estimator=model,
+                            X=X_train_with_date,
+                            y=self.y_train,
+                            scoring='roc_auc',
+                            cv_type='time_series'
+                        )
+                        
+                        cv_scores = cv_results['scores']
+                        primary_score = cv_results['mean_score']
+                        
+                        # Log métricas de estabilidad temporal
+                        if self.logger:
+                            self.logger.log_info(f"CV temporal completado - Trial {trial.number}", {
+                                'mean_score': primary_score,
+                                'std_score': cv_results['std_score'],
+                                'stability_score': cv_results['stability_metrics']['stability_score'],
+                                'n_folds': cv_results['n_folds']
+                            })
+                        
+                    except Exception as e:
+                        if self.logger:
+                            self.logger.log_warning(f"Error en CV temporal, usando CV estándar: {e}")
+                        # Fallback a CV estándar
+                        cv_scores = cross_val_score(
+                            model, self.X_train, self.y_train,
+                            cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
+                            scoring='roc_auc',
+                            n_jobs=-1
+                        )
+                        primary_score = cv_scores.mean()
+                
+                else:
+                    # Validación cruzada estándar
+                    cv_scores = cross_val_score(
+                        model, self.X_train, self.y_train,
+                        cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
+                        scoring='roc_auc',
+                        n_jobs=-1
+                    )
+                    primary_score = cv_scores.mean()
+                
+                # Verificar early stopping inteligente
+                if early_stopping_monitor:
+                    should_stop = early_stopping_monitor.update(trial.number, primary_score)
+                    if should_stop:
+                        raise optuna.TrialPruned()
+                
+                # Calcular métricas múltiples si está disponible
+                if self.metrics_calculator:
+                    try:
+                        # Entrenar en datos completos para evaluación
+                        model.fit(self.X_train, self.y_train)
+                        y_pred = model.predict(self.X_val)
+                        y_proba = model.predict_proba(self.X_val)[:, 1]
+                        
+                        # Calcular todas las métricas
+                        metrics_result = self.metrics_calculator.calculate_all_metrics(
+                            y_true=self.y_val.values,
+                            y_pred=y_pred,
+                            y_proba=y_proba,
+                            cv_scores=cv_scores.tolist(),
+                            metrics_to_calculate=self.config.secondary_metrics
+                        )
+                        
+                        # Log métricas
+                        if self.logger:
+                            self.logger.log_metrics(trial.number, 'lightgbm', metrics_result.secondary_scores)
+                        
+                        # Report intermediate value para pruning
+                        trial.report(primary_score, trial.number)
+                        
+                        # Verificar si debe ser podado
+                        if trial.should_prune():
+                            if self.logger:
+                                self.logger.log_trial_pruned(trial.number, 'lightgbm', "Optuna pruning")
+                            raise optuna.TrialPruned()
+                        
+                    except Exception as e:
+                        if self.logger:
+                            self.logger.log_warning(f"Error calculando métricas múltiples: {e}")
+                
+                # Log trial exitoso
+                trial_duration = time.time() - trial_start_time
+                if self.logger:
+                    self.logger.log_trial_complete(trial.number, 'lightgbm', primary_score, trial_duration)
+                
+                return primary_score
+                
+            except optuna.TrialPruned:
+                # Re-raise pruned trials
+                raise
+            except Exception as e:
+                # Log trial fallido
+                trial_duration = time.time() - trial_start_time
+                if self.logger:
+                    self.logger.log_trial_complete(trial.number, 'lightgbm', 0.0, trial_duration, "failed")
+                    self.logger.log_error(f"Error en trial LightGBM {trial.number}", {'params': params}, e)
+                
+                raise optuna.TrialPruned()
         
-        # Crear y ejecutar estudio
-        study_name = f"lightgbm_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        study = optuna.create_study(
-            direction='maximize',
-            study_name=study_name,
-            storage=f'sqlite:///{self.results_path}/optuna_studies.db',
-            load_if_exists=True
-        )
+        # Crear y ejecutar estudio con configuración avanzada
+        study_name = f"lightgbm_phase2_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        study_kwargs = {
+            'direction': 'maximize',
+            'study_name': study_name,
+            'storage': f'sqlite:///{self.results_path}/optuna_studies.db',
+            'load_if_exists': True
+        }
         
-        print(f"   🎯 Ejecutando {n_trials} trials...")
+        # Agregar sampler y pruner si están disponibles
+        if sampler:
+            study_kwargs['sampler'] = sampler
+        if pruner:
+            study_kwargs['pruner'] = pruner
+        
+        study = optuna.create_study(**study_kwargs)
+        
+        print(f"   🎯 Ejecutando {n_trials} trials con estrategia '{optimization_strategy}'...")
         if timeout:
             print(f"   ⏰ Timeout: {timeout} segundos")
         
-        study.optimize(objective, n_trials=n_trials, timeout=timeout)
+        # Callback para progreso con early stopping
+        def progress_callback(study, trial):
+            if trial.number % 10 == 0:
+                current_best = study.best_value if study.best_value else 0.0
+                
+                if self.logger:
+                    self.logger.log_progress(trial.number, n_trials, current_best, 'lightgbm')
+                
+                # Verificar early stopping global
+                if early_stopping_monitor:
+                    should_stop = self.adaptive_controller.should_stop_model(
+                        'lightgbm', trial.number, current_best
+                    )
+                    if should_stop:
+                        study.stop()
+        
+        # Ejecutar optimización
+        study.optimize(
+            objective, 
+            n_trials=n_trials, 
+            timeout=timeout, 
+            callbacks=[progress_callback],
+            catch=(Exception,)  # Capturar excepciones para continuar
+        )
         
         # Guardar resultados
+        model_duration = time.time() - model_start_time
         self.studies['lightgbm'] = study
         self.best_params['lightgbm'] = study.best_params
         self.best_scores['lightgbm'] = study.best_value
         
+        # Guardar historial de convergencia
+        if early_stopping_monitor:
+            self.convergence_history['lightgbm'] = early_stopping_monitor.get_summary()
+        
         print(f"   ✅ Optimización completada!")
         print(f"   🏆 Mejor AUC: {study.best_value:.4f}")
         print(f"   🔧 Mejores parámetros: {study.best_params}")
+        print(f"   ⏰ Tiempo total: {model_duration:.1f}s")
+        print(f"   🎯 Trials ejecutados: {len(study.trials)}")
+        
+        # Información de convergencia
+        if early_stopping_monitor:
+            convergence_info = early_stopping_monitor.get_summary()
+            print(f"   📊 Early stopping: {convergence_info['stopped']}")
+            if convergence_info['stopped']:
+                print(f"   🛑 Razón: {convergence_info['stop_reason']}")
+        
+        # Log finalización
+        if self.logger:
+            self.logger.log_model_optimization_complete(
+                'lightgbm', study.best_value, study.best_params, model_duration
+            )
         
         return study
     
-    def optimize_catboost(self, n_trials: int = 100, timeout: Optional[int] = None):
+    def optimize_catboost(self, n_trials: int = None, timeout: Optional[int] = None,
+                         use_temporal_cv: bool = True, optimization_strategy: str = 'balanced'):
         """
-        Optimizar hiperparámetros de CatBoost
+        Optimizar hiperparámetros de CatBoost con mejoras de Fase 1 y Fase 2
+        
+        Args:
+            n_trials: Número de trials (None para usar estrategia)
+            timeout: Timeout en segundos (None para usar estrategia)
+            use_temporal_cv: Usar validación cruzada temporal
+            optimization_strategy: Estrategia de optimización ('quick', 'balanced', 'thorough')
         """
+        n_trials = n_trials or self.config.default_n_trials
+        timeout = timeout or self.config.default_timeout_per_model
+        
         print("\n🐱======================================================================")
-        print("🐱 OPTIMIZANDO CATBOOST CON OPTUNA")
+        print("🐱 OPTIMIZANDO CATBOOST CON MEJORAS DE FASE 1 Y FASE 2")
         print("🐱======================================================================")
         
+        # Seleccionar estrategia de optimización automáticamente
+        if self.strategy_selector:
+            strategy_config = self.strategy_selector.select_strategy(
+                n_trials=n_trials,
+                timeout=timeout,
+                problem_type=optimization_strategy
+            )
+            print(f"   📋 Estrategia seleccionada: {strategy_config}")
+        else:
+            strategy_config = {'sampler': 'tpe', 'pruner': 'median'}
+        
+        # Log inicio de optimización del modelo
+        if self.logger:
+            self.logger.log_model_optimization_start('catboost', n_trials, {
+                'timeout': timeout,
+                'cv_folds': self.cv_folds,
+                'use_temporal_cv': use_temporal_cv,
+                'strategy': strategy_config
+            })
+        
+        model_start_time = time.time()
+        
+        # Crear sampler y pruner avanzados
+        try:
+            sampler = self.sampler_factory.create_sampler(
+                strategy_config.get('sampler', 'tpe'),
+                SAMPLER_CONFIG
+            )
+            pruner = self.pruner_factory.create_pruner(
+                strategy_config.get('pruner', 'median'),
+                PRUNER_CONFIG
+            )
+            print(f"   🎯 Sampler: {type(sampler).__name__}")
+            print(f"   ✂️  Pruner: {type(pruner).__name__}")
+        except Exception as e:
+            print(f"   ⚠️ Error creando sampler/pruner avanzados: {e}")
+            sampler = None
+            pruner = None
+        
+        # Obtener monitor de early stopping
+        if self.adaptive_controller:
+            early_stopping_monitor = self.adaptive_controller.get_monitor('catboost')
+            early_stopping_monitor.reset()
+        else:
+            early_stopping_monitor = None
+        
         def objective(trial):
-            """Función objetivo para CatBoost"""
-            params = {
+            """Función objetivo para CatBoost con mejoras de Fase 1 y Fase 2"""
+            trial_start_time = time.time()
+            
+            # Verificar early stopping
+            if early_stopping_monitor and early_stopping_monitor.stopped:
+                raise optuna.TrialPruned()
+            
+            # Configuración base con GPU Manager
+            base_params = {
                 'objective': 'Logloss',
                 'eval_metric': 'AUC',
-                'task_type': 'GPU',       # 🚀 Usar GPU
-                'devices': '0',           # 🚀 GPU Device ID
                 'random_state': self.random_state,
                 'verbose': False,
                 'allow_writing_files': False,
-                
-                # Hiperparámetros a optimizar
-                'iterations': trial.suggest_int('iterations', 100, 1000, step=50),
-                'depth': trial.suggest_int('depth', 3, 10),
-                'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.3, log=True),
-                'subsample': trial.suggest_float('subsample', 0.6, 1.0),
-                'colsample_bylevel': trial.suggest_float('colsample_bylevel', 0.6, 1.0),
-                'l2_leaf_reg': trial.suggest_float('l2_leaf_reg', 1, 10),
-                'min_data_in_leaf': trial.suggest_int('min_data_in_leaf', 1, 100),
-                'bootstrap_type': trial.suggest_categorical('bootstrap_type', ['Bayesian', 'Bernoulli'])
             }
             
-            # Parámetros específicos para bootstrap
-            if params['bootstrap_type'] == 'Bayesian':
-                params['bagging_temperature'] = trial.suggest_float('bagging_temperature', 0, 10)
+            # Configuración GPU/CPU inteligente
+            if self.gpu_manager:
+                try:
+                    gpu_config = self.gpu_manager.get_catboost_config(
+                        fallback_to_cpu=self.config.fallback_to_cpu
+                    )
+                    base_params.update(gpu_config)
+                except Exception as e:
+                    if self.logger:
+                        self.logger.log_warning(f"Error configurando GPU para CatBoost: {e}")
+                    base_params.update({'task_type': 'CPU', 'thread_count': -1})
             else:
+                base_params.update({'task_type': 'CPU', 'thread_count': -1})
+            
+            # Hiperparámetros a optimizar usando MODEL_CONFIG
+            cb_config = MODEL_CONFIG.catboost_params
+            params = base_params.copy()
+            
+            for param_name, param_config in cb_config.items():
+                if param_config['type'] == 'int':
+                    if 'step' in param_config:
+                        params[param_name] = trial.suggest_int(
+                            param_name, param_config['low'], 
+                            param_config['high'], step=param_config['step']
+                        )
+                    else:
+                        params[param_name] = trial.suggest_int(
+                            param_name, param_config['low'], param_config['high']
+                        )
+                elif param_config['type'] == 'float':
+                    params[param_name] = trial.suggest_float(
+                        param_name, param_config['low'], 
+                        param_config['high'], log=param_config.get('log', False)
+                    )
+                elif param_config['type'] == 'categorical':
+                    params[param_name] = trial.suggest_categorical(
+                        param_name, param_config['choices']
+                    )
+            
+            # Parámetros específicos para bootstrap
+            if params.get('bootstrap_type') == 'Bayesian':
+                params['bagging_temperature'] = trial.suggest_float('bagging_temperature', 0, 10)
+            elif params.get('bootstrap_type') == 'Bernoulli':
                 params['subsample'] = trial.suggest_float('subsample_bernoulli', 0.6, 1.0)
             
-            # Entrenar modelo
-            model = cb.CatBoostClassifier(**params)
+            # Log inicio del trial
+            if self.logger:
+                self.logger.log_trial_start(trial.number, 'catboost', params)
             
-            # Cross-validation
-            cv_scores = cross_val_score(
-                model, self.X_train, self.y_train,
-                cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
-                scoring='roc_auc',
-                n_jobs=-1
-            )
-            
-            return cv_scores.mean()
+            try:
+                # Crear modelo
+                model = cb.CatBoostClassifier(**params)
+                
+                # Usar validación cruzada temporal si está disponible
+                if use_temporal_cv and self.temporal_validator and 'date' in self.X_train.columns:
+                    # Preparar datos con columna de fecha
+                    X_train_with_date = self.X_train.copy()
+                    if 'date' not in X_train_with_date.columns:
+                        X_train_with_date['date'] = pd.date_range(start='2020-01-01', periods=len(X_train_with_date), freq='D')
+                    
+                    try:
+                        cv_results = self.temporal_validator.perform_time_series_cv(
+                            estimator=model,
+                            X=X_train_with_date,
+                            y=self.y_train,
+                            scoring='roc_auc',
+                            cv_type='time_series'
+                        )
+                        
+                        cv_scores = cv_results['scores']
+                        primary_score = cv_results['mean_score']
+                        
+                        # Log métricas de estabilidad temporal
+                        if self.logger:
+                            self.logger.log_info(f"CV temporal completado - Trial {trial.number}", {
+                                'mean_score': primary_score,
+                                'std_score': cv_results['std_score'],
+                                'stability_score': cv_results['stability_metrics']['stability_score'],
+                                'n_folds': cv_results['n_folds']
+                            })
+                        
+                    except Exception as e:
+                        if self.logger:
+                            self.logger.log_warning(f"Error en CV temporal, usando CV estándar: {e}")
+                        # Fallback a CV estándar
+                        cv_scores = cross_val_score(
+                            model, self.X_train, self.y_train,
+                            cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
+                            scoring='roc_auc',
+                            n_jobs=-1
+                        )
+                        primary_score = cv_scores.mean()
+                
+                else:
+                    # Validación cruzada estándar
+                    cv_scores = cross_val_score(
+                        model, self.X_train, self.y_train,
+                        cv=StratifiedKFold(n_splits=self.cv_folds, shuffle=True, random_state=self.random_state),
+                        scoring='roc_auc',
+                        n_jobs=-1
+                    )
+                    primary_score = cv_scores.mean()
+                
+                # Verificar early stopping inteligente
+                if early_stopping_monitor:
+                    should_stop = early_stopping_monitor.update(trial.number, primary_score)
+                    if should_stop:
+                        raise optuna.TrialPruned()
+                
+                # Calcular métricas múltiples si está disponible
+                if self.metrics_calculator:
+                    try:
+                        # Entrenar en datos completos para evaluación
+                        model.fit(self.X_train, self.y_train)
+                        y_pred = model.predict(self.X_val)
+                        y_proba = model.predict_proba(self.X_val)[:, 1]
+                        
+                        # Calcular todas las métricas
+                        metrics_result = self.metrics_calculator.calculate_all_metrics(
+                            y_true=self.y_val.values,
+                            y_pred=y_pred,
+                            y_proba=y_proba,
+                            cv_scores=cv_scores.tolist(),
+                            metrics_to_calculate=self.config.secondary_metrics
+                        )
+                        
+                        # Log métricas
+                        if self.logger:
+                            self.logger.log_metrics(trial.number, 'catboost', metrics_result.secondary_scores)
+                        
+                        # Report intermediate value para pruning
+                        trial.report(primary_score, trial.number)
+                        
+                        # Verificar si debe ser podado
+                        if trial.should_prune():
+                            if self.logger:
+                                self.logger.log_trial_pruned(trial.number, 'catboost', "Optuna pruning")
+                            raise optuna.TrialPruned()
+                        
+                    except Exception as e:
+                        if self.logger:
+                            self.logger.log_warning(f"Error calculando métricas múltiples: {e}")
+                
+                # Log trial exitoso
+                trial_duration = time.time() - trial_start_time
+                if self.logger:
+                    self.logger.log_trial_complete(trial.number, 'catboost', primary_score, trial_duration)
+                
+                return primary_score
+                
+            except optuna.TrialPruned:
+                # Re-raise pruned trials
+                raise
+            except Exception as e:
+                # Log trial fallido
+                trial_duration = time.time() - trial_start_time
+                if self.logger:
+                    self.logger.log_trial_complete(trial.number, 'catboost', 0.0, trial_duration, "failed")
+                    self.logger.log_error(f"Error en trial CatBoost {trial.number}", {'params': params}, e)
+                
+                raise optuna.TrialPruned()
         
-        # Crear y ejecutar estudio
-        study_name = f"catboost_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        study = optuna.create_study(
-            direction='maximize',
-            study_name=study_name,
-            storage=f'sqlite:///{self.results_path}/optuna_studies.db',
-            load_if_exists=True
-        )
+        # Crear y ejecutar estudio con configuración avanzada
+        study_name = f"catboost_phase2_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        study_kwargs = {
+            'direction': 'maximize',
+            'study_name': study_name,
+            'storage': f'sqlite:///{self.results_path}/optuna_studies.db',
+            'load_if_exists': True
+        }
         
-        print(f"   🎯 Ejecutando {n_trials} trials...")
+        # Agregar sampler y pruner si están disponibles
+        if sampler:
+            study_kwargs['sampler'] = sampler
+        if pruner:
+            study_kwargs['pruner'] = pruner
+        
+        study = optuna.create_study(**study_kwargs)
+        
+        print(f"   🎯 Ejecutando {n_trials} trials con estrategia '{optimization_strategy}'...")
         if timeout:
             print(f"   ⏰ Timeout: {timeout} segundos")
         
-        study.optimize(objective, n_trials=n_trials, timeout=timeout)
+        # Callback para progreso con early stopping
+        def progress_callback(study, trial):
+            if trial.number % 10 == 0:
+                current_best = study.best_value if study.best_value else 0.0
+                
+                if self.logger:
+                    self.logger.log_progress(trial.number, n_trials, current_best, 'catboost')
+                
+                # Verificar early stopping global
+                if early_stopping_monitor:
+                    should_stop = self.adaptive_controller.should_stop_model(
+                        'catboost', trial.number, current_best
+                    )
+                    if should_stop:
+                        study.stop()
+        
+        # Ejecutar optimización
+        study.optimize(
+            objective, 
+            n_trials=n_trials, 
+            timeout=timeout, 
+            callbacks=[progress_callback],
+            catch=(Exception,)  # Capturar excepciones para continuar
+        )
         
         # Guardar resultados
+        model_duration = time.time() - model_start_time
         self.studies['catboost'] = study
         self.best_params['catboost'] = study.best_params
         self.best_scores['catboost'] = study.best_value
         
+        # Guardar historial de convergencia
+        if early_stopping_monitor:
+            self.convergence_history['catboost'] = early_stopping_monitor.get_summary()
+        
         print(f"   ✅ Optimización completada!")
         print(f"   🏆 Mejor AUC: {study.best_value:.4f}")
         print(f"   🔧 Mejores parámetros: {study.best_params}")
+        print(f"   ⏰ Tiempo total: {model_duration:.1f}s")
+        print(f"   🎯 Trials ejecutados: {len(study.trials)}")
+        
+        # Información de convergencia
+        if early_stopping_monitor:
+            convergence_info = early_stopping_monitor.get_summary()
+            print(f"   📊 Early stopping: {convergence_info['stopped']}")
+            if convergence_info['stopped']:
+                print(f"   🛑 Razón: {convergence_info['stop_reason']}")
+        
+        # Log finalización
+        if self.logger:
+            self.logger.log_model_optimization_complete(
+                'catboost', study.best_value, study.best_params, model_duration
+            )
         
         return study
     
-    def optimize_all_models(self, n_trials: int = 100, timeout_per_model: Optional[int] = None):
+    def optimize_all_models(self, n_trials: int = None, timeout_per_model: Optional[int] = None,
+                           use_temporal_cv: bool = True, optimization_strategy: str = 'balanced'):
         """
-        Optimizar todos los modelos secuencialmente
+        Optimizar todos los modelos secuencialmente con mejoras de Fase 1 y Fase 2
+        
+        Args:
+            n_trials: Número de trials por modelo (None para usar estrategia)
+            timeout_per_model: Timeout por modelo en segundos (None para usar estrategia)
+            use_temporal_cv: Usar validación cruzada temporal
+            optimization_strategy: Estrategia de optimización ('quick', 'balanced', 'thorough')
         """
+        n_trials = n_trials or self.config.default_n_trials
+        timeout_per_model = timeout_per_model or self.config.default_timeout_per_model
+        
         print("🚀======================================================================")
-        print("🚀 OPTIMIZACIÓN COMPLETA DE TODOS LOS MODELOS")
+        print("🚀 OPTIMIZACIÓN COMPLETA DE TODOS LOS MODELOS CON FASE 1 Y FASE 2")
         print("🚀======================================================================")
+        print(f"   🎯 Estrategia: {optimization_strategy}")
+        print(f"   🔢 Trials por modelo: {n_trials}")
+        print(f"   ⏰ Timeout por modelo: {timeout_per_model}s")
+        print(f"   📅 Validación temporal: {use_temporal_cv}")
         
         # Lista de modelos a optimizar
         models_to_optimize = [
@@ -715,21 +1420,86 @@ class CryptoHyperparameterOptimizer:
         
         start_time = datetime.now()
         
+        # Log inicio de optimización completa
+        if self.logger:
+            self.logger.log_optimization_start({
+                'models': [name for name, _ in models_to_optimize],
+                'n_trials': n_trials,
+                'timeout_per_model': timeout_per_model,
+                'use_temporal_cv': use_temporal_cv,
+                'optimization_strategy': optimization_strategy,
+                'phase_1_enabled': self.data_validator is not None,
+                'phase_2_enabled': self.temporal_validator is not None
+            })
+        
+        optimization_results = {}
+        
         for model_name, optimize_func in models_to_optimize:
             print(f"\n🎯 Iniciando optimización de {model_name}...")
             model_start = datetime.now()
             
             try:
-                optimize_func(n_trials=n_trials, timeout=timeout_per_model)
+                # Ejecutar optimización con nuevos parámetros
+                study = optimize_func(
+                    n_trials=n_trials, 
+                    timeout=timeout_per_model,
+                    use_temporal_cv=use_temporal_cv,
+                    optimization_strategy=optimization_strategy
+                )
+                
                 model_time = datetime.now() - model_start
                 print(f"   ⏰ Tiempo {model_name}: {model_time}")
                 
+                # Guardar resultados detallados
+                optimization_results[model_name.lower()] = {
+                    'best_score': study.best_value,
+                    'best_params': study.best_params,
+                    'n_trials': len(study.trials),
+                    'duration': model_time.total_seconds(),
+                    'convergence_info': self.convergence_history.get(model_name.lower(), {})
+                }
+                
             except Exception as e:
                 print(f"   ❌ Error optimizando {model_name}: {e}")
+                if self.logger:
+                    self.logger.log_error(f"Error en optimización de {model_name}", {}, e)
+                
+                optimization_results[model_name.lower()] = {
+                    'error': str(e),
+                    'duration': (datetime.now() - model_start).total_seconds()
+                }
                 continue
         
         total_time = datetime.now() - start_time
         print(f"\n⏰ Tiempo total de optimización: {total_time}")
+        
+        # Mostrar resumen de resultados
+        print("\n📊 RESUMEN DE OPTIMIZACIÓN:")
+        print("="*60)
+        for model_name, results in optimization_results.items():
+            if 'error' not in results:
+                print(f"   🏆 {model_name.upper()}: AUC = {results['best_score']:.4f} "
+                      f"({results['n_trials']} trials, {results['duration']:.1f}s)")
+                
+                # Información de convergencia
+                if results['convergence_info']:
+                    conv_info = results['convergence_info']
+                    if conv_info.get('stopped'):
+                        print(f"      🛑 Early stopping: {conv_info.get('stop_reason', 'Unknown')}")
+            else:
+                print(f"   ❌ {model_name.upper()}: Error - {results['error']}")
+        
+        # Log finalización
+        if self.logger:
+            self.logger.log_optimization_complete({
+                'total_duration': total_time.total_seconds(),
+                'results': optimization_results,
+                'best_overall': max(
+                    [(k, v['best_score']) for k, v in optimization_results.items() 
+                     if 'best_score' in v], 
+                    key=lambda x: x[1], default=('none', 0.0)
+                )
+            })
         
         # Guardar resumen de resultados
         self.save_optimization_summary()
