@@ -44,6 +44,20 @@ except ImportError as e:
     print(f"⚠️ Error importando componentes de Fase 2: {e}")
     print("Continuando con funcionalidad de Fase 1...")
 
+# Importar nuevos componentes de Fase 3
+try:
+    from utils.parallelization import (
+        WORKER_MANAGER, DISTRIBUTED_OPTIMIZER, PARALLEL_TRIAL_EXECUTOR,
+        ParallelizationConfig, DEFAULT_PARALLELIZATION_CONFIG
+    )
+    from utils.memory_manager import (
+        MEMORY_MANAGER, MemoryConfig, DEFAULT_MEMORY_CONFIG
+    )
+    print("✅ Nuevos componentes de Fase 3 importados correctamente")
+except ImportError as e:
+    print(f"⚠️ Error importando componentes de Fase 3: {e}")
+    print("Continuando con funcionalidad de Fase 2...")
+
 # Agregar paths necesarios
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'src', 'utils', 'utils'))
@@ -84,14 +98,18 @@ class CryptoHyperparameterOptimizer:
     Incluye mejoras de Fase 1: validación robusta, GPU inteligente, métricas múltiples y logging
     """
     
-    def __init__(self, data_path: str = None, results_path: str = None, config: Any = None):
+    def __init__(self, data_path: str = None, results_path: str = None, config: Any = None,
+                 parallelization_config: ParallelizationConfig = None, 
+                 memory_config: MemoryConfig = None):
         """
-        Inicializar el optimizador con mejoras de Fase 1 y Fase 2
+        Inicializar el optimizador con mejoras de Fase 1, Fase 2 y Fase 3
         
         Args:
             data_path: Ruta a los datos (opcional, usa CONFIG si no se especifica)
             results_path: Ruta donde guardar resultados (opcional)
             config: Configuración personalizada (opcional)
+            parallelization_config: Configuración de paralelización (opcional)
+            memory_config: Configuración de memoria (opcional)
         """
         # Usar configuración global o personalizada
         self.config = config if config is not None else CONFIG
@@ -161,6 +179,30 @@ class CryptoHyperparameterOptimizer:
             self.pruner_factory = None
             self.strategy_selector = None
         
+        # Inicializar componentes de Fase 3
+        try:
+            # Configuraciones de Fase 3
+            self.parallelization_config = parallelization_config or DEFAULT_PARALLELIZATION_CONFIG
+            self.memory_config = memory_config or DEFAULT_MEMORY_CONFIG
+            
+            # Gestor de workers y paralelización
+            self.worker_manager = WORKER_MANAGER
+            self.distributed_optimizer = DISTRIBUTED_OPTIMIZER
+            self.parallel_trial_executor = PARALLEL_TRIAL_EXECUTOR
+            
+            # Gestor de memoria
+            self.memory_manager = MEMORY_MANAGER
+            
+            print("✅ Componentes de Fase 3 inicializados correctamente")
+            
+        except Exception as e:
+            print(f"⚠️ Error inicializando componentes de Fase 3: {e}")
+            print("Continuando con funcionalidad de Fase 2...")
+            self.worker_manager = None
+            self.distributed_optimizer = None
+            self.parallel_trial_executor = None
+            self.memory_manager = None
+        
         # Datasets
         self.X_train = None
         self.X_val = None
@@ -188,7 +230,10 @@ class CryptoHyperparameterOptimizer:
                 'cv_folds': self.cv_folds,
                 'random_state': self.random_state,
                 'phase_1_enabled': self.data_validator is not None,
-                'phase_2_enabled': self.temporal_validator is not None
+                'phase_2_enabled': self.temporal_validator is not None,
+                'phase_3_enabled': self.worker_manager is not None and self.memory_manager is not None,
+                'parallelization_config': self.parallelization_config.__dict__ if hasattr(self, 'parallelization_config') else None,
+                'memory_config': self.memory_config.__dict__ if hasattr(self, 'memory_config') else None
             })
             
             # Log información de hardware
@@ -198,6 +243,20 @@ class CryptoHyperparameterOptimizer:
         
         print("🔧 CryptoHyperparameterOptimizer inicializado")
         print(f"   📁 Datos: {self.data_path}")
+        print(f"   📊 Resultados: {self.results_path}")
+        print(f"   🎯 Fase 1: {'✅' if self.data_validator is not None else '❌'}")
+        print(f"   🚀 Fase 2: {'✅' if self.temporal_validator is not None else '❌'}")
+        print(f"   ⚡ Fase 3: {'✅' if self.worker_manager is not None and self.memory_manager is not None else '❌'}")
+        
+        # Inicializar sistemas de Fase 3
+        if self.memory_manager:
+            self.memory_manager.start()
+            print(f"   🧠 Gestión de memoria iniciada")
+            
+        if self.worker_manager:
+            print(f"   👥 Workers disponibles: {self.parallelization_config.n_workers}")
+            print(f"   🔄 Tipo de workers: {self.parallelization_config.worker_type}")
+            print(f"   🌐 Modo distribuido: {self.parallelization_config.distributed_mode}")
         print(f"   💾 Resultados: {self.results_path}")
         print(f"   🎯 Métrica primaria: {self.config.primary_metric}")
         print(f"   🔄 CV folds: {self.cv_folds}")
@@ -1451,7 +1510,7 @@ class CryptoHyperparameterOptimizer:
                 print(f"   ⏰ Tiempo {model_name}: {model_time}")
                 
                 # Guardar resultados detallados
-                optimization_results[model_name.lower()] = {
+                optimization_results[model_name] = {
                     'best_score': study.best_value,
                     'best_params': study.best_params,
                     'n_trials': len(study.trials),
@@ -1464,7 +1523,7 @@ class CryptoHyperparameterOptimizer:
                 if self.logger:
                     self.logger.log_error(f"Error en optimización de {model_name}", {}, e)
                 
-                optimization_results[model_name.lower()] = {
+                optimization_results[model_name] = {
                     'error': str(e),
                     'duration': (datetime.now() - model_start).total_seconds()
                 }
@@ -1658,6 +1717,229 @@ class CryptoHyperparameterOptimizer:
                 print(f"      {param}: {value}")
         
         print(f"\n📁 Resultados guardados en: {self.results_path}")
+    
+    def __del__(self):
+        """Destructor para limpiar recursos de Fase 3"""
+        try:
+            if hasattr(self, 'memory_manager') and self.memory_manager:
+                self.memory_manager.stop()
+                
+            if hasattr(self, 'worker_manager') and self.worker_manager:
+                self.worker_manager.stop_workers()
+                
+            if hasattr(self, 'logger') and self.logger:
+                self.logger.log_info("CryptoHyperparameterOptimizer destruido")
+        except:
+            pass
+    
+    def cleanup_resources(self):
+        """Limpiar recursos explícitamente"""
+        try:
+            if self.memory_manager:
+                self.memory_manager.stop()
+                print("🧠 Gestión de memoria detenida")
+                
+            if self.worker_manager:
+                self.worker_manager.stop_workers()
+                print("👥 Workers detenidos")
+                
+            if self.logger:
+                self.logger.log_info("Recursos limpiados exitosamente")
+                
+        except Exception as e:
+            print(f"⚠️ Error limpiando recursos: {e}")
+            # Log el error también si el logger funciona
+            if hasattr(self, 'logger') and self.logger:
+                try:
+                    self.logger.log_error(f"Error limpiando recursos: {e}", exception=e)
+                except:
+                    pass  # Si el logger también falla, no hacer nada
+    
+    def get_system_stats(self) -> Dict[str, Any]:
+        """Obtener estadísticas del sistema de optimización"""
+        stats = {
+            'phase_1_enabled': self.data_validator is not None,
+            'phase_2_enabled': self.temporal_validator is not None,
+            'phase_3_enabled': self.worker_manager is not None and self.memory_manager is not None,
+            'timestamp': time.time()
+        }
+        
+        # Estadísticas de Fase 3
+        if self.memory_manager:
+            stats['memory_stats'] = self.memory_manager.get_comprehensive_stats()
+            
+        if self.worker_manager:
+            stats['worker_stats'] = self.worker_manager.get_stats()
+            
+        if self.parallel_trial_executor:
+            stats['parallel_stats'] = self.parallel_trial_executor.get_performance_metrics()
+            
+        return stats
+
+    def optimize_all_models_parallel(self, n_trials: int = None, timeout_per_model: Optional[int] = None,
+                                    use_temporal_cv: bool = True, optimization_strategy: str = 'balanced',
+                                    enable_parallelization: bool = True, 
+                                    enable_memory_optimization: bool = True) -> Dict[str, Any]:
+        """
+        Optimizar todos los modelos con paralelización y gestión de memoria (Fase 3)
+        
+        Args:
+            n_trials: Número de trials por modelo
+            timeout_per_model: Timeout por modelo en segundos
+            use_temporal_cv: Usar validación cruzada temporal
+            optimization_strategy: Estrategia de optimización
+            enable_parallelization: Habilitar paralelización
+            enable_memory_optimization: Habilitar gestión de memoria
+        """
+        n_trials = n_trials or self.config.default_n_trials
+        timeout_per_model = timeout_per_model or self.config.default_timeout_per_model
+        
+        print("🚀======================================================================")
+        print("🚀 OPTIMIZACIÓN PARALELA COMPLETA - FASE 3")
+        print("🚀======================================================================")
+        print(f"   🎯 Estrategia: {optimization_strategy}")
+        print(f"   🔢 Trials por modelo: {n_trials}")
+        print(f"   ⏰ Timeout por modelo: {timeout_per_model}s")
+        print(f"   📅 Validación temporal: {use_temporal_cv}")
+        print(f"   👥 Paralelización: {'✅' if enable_parallelization and self.worker_manager else '❌'}")
+        print(f"   🧠 Gestión memoria: {'✅' if enable_memory_optimization and self.memory_manager else '❌'}")
+        
+        start_time = datetime.now()
+        
+        # Inicializar componentes de Fase 3 si están habilitados
+        if enable_parallelization and self.worker_manager:
+            self.worker_manager.start_workers()
+            print(f"   👥 Workers iniciados: {self.parallelization_config.n_workers}")
+        
+        if enable_memory_optimization and self.memory_manager:
+            # Optimización inicial de memoria
+            memory_opt_result = self.memory_manager.optimize_memory()
+            print(f"   🧠 Memoria optimizada: {memory_opt_result['gc_result']['memory_freed']:.1f}MB liberados")
+        
+        # Lista de modelos a optimizar
+        models_to_optimize = [
+            ('XGBoost', self.optimize_xgboost),
+            ('LightGBM', self.optimize_lightgbm),
+            ('CatBoost', self.optimize_catboost)
+        ]
+        
+        # Log inicio de optimización
+        if self.logger:
+            self.logger.log_optimization_start({
+                'models': [name for name, _ in models_to_optimize],
+                'n_trials': n_trials,
+                'timeout_per_model': timeout_per_model,
+                'use_temporal_cv': use_temporal_cv,
+                'optimization_strategy': optimization_strategy,
+                'phase_1_enabled': self.data_validator is not None,
+                'phase_2_enabled': self.temporal_validator is not None,
+                'phase_3_enabled': enable_parallelization or enable_memory_optimization,
+                'parallelization_enabled': enable_parallelization,
+                'memory_optimization_enabled': enable_memory_optimization
+            })
+        
+        optimization_results = {}
+        
+        # Optimización secuencial con mejoras de Fase 3
+        for i, (model_name, optimize_func) in enumerate(models_to_optimize):
+            print(f"\n🎯 Iniciando optimización de {model_name} ({i+1}/{len(models_to_optimize)})...")
+            model_start = datetime.now()
+            
+            try:
+                # Gestión de memoria antes de cada modelo
+                if enable_memory_optimization and self.memory_manager:
+                    if i > 0:  # No en el primer modelo
+                        gc_result = self.memory_manager.gc_manager.auto_gc_if_needed()
+                        if gc_result:
+                            print(f"   🧠 GC automático: {gc_result['memory_freed']:.1f}MB liberados")
+                
+                # Ejecutar optimización (con paralelización interna de Optuna si está habilitada)
+                if enable_parallelization and self.parallel_trial_executor:
+                    # Usar paralelización avanzada
+                    print(f"   👥 Usando optimización paralela con {self.parallelization_config.n_workers} workers")
+                    
+                result = optimize_func(
+                    n_trials=n_trials,
+                    timeout=timeout_per_model,
+                    use_temporal_cv=use_temporal_cv,
+                    optimization_strategy=optimization_strategy
+                )
+                
+                # Guardar resultado
+                optimization_results[model_name] = result
+                
+                # Log progreso
+                model_duration = (datetime.now() - model_start).total_seconds()
+                print(f"   ✅ {model_name} completado en {model_duration:.1f}s")
+                
+                if self.logger:
+                    self.logger.log_model_completion(model_name, result, model_duration)
+                
+                # Estadísticas de memoria después del modelo
+                if enable_memory_optimization and self.memory_manager:
+                    memory_stats = self.memory_manager.monitor.get_current_stats()
+                    print(f"   📊 Memoria: {memory_stats['used_percent']:.1f}% "
+                          f"({memory_stats['used_mb']:.0f}MB)")
+                
+            except Exception as e:
+                print(f"   ❌ Error optimizando {model_name}: {e}")
+                optimization_results[model_name] = {'error': str(e)}
+                
+                if self.logger:
+                    self.logger.error(f"Error optimizando {model_name}: {e}")
+        
+        # Finalización
+        total_duration = (datetime.now() - start_time).total_seconds()
+        
+        # Resumen final
+        print(f"\n🏁 Optimización completa en {total_duration:.1f}s")
+        
+        successful_models = [name for name, result in optimization_results.items() 
+                           if 'error' not in result]
+        failed_models = [name for name, result in optimization_results.items() 
+                        if 'error' in result]
+        
+        print(f"   ✅ Modelos exitosos: {len(successful_models)}")
+        print(f"   ❌ Modelos fallidos: {len(failed_models)}")
+        
+        # Estadísticas finales de Fase 3
+        final_stats = {}
+        if enable_memory_optimization and self.memory_manager:
+            final_stats['memory'] = self.memory_manager.get_comprehensive_stats()
+            print(f"   🧠 Memoria final: {final_stats['memory']['memory_stats']['used_percent']:.1f}%")
+        
+        if enable_parallelization and self.worker_manager:
+            final_stats['workers'] = self.worker_manager.get_stats()
+            print(f"   👥 Workers utilizados: {final_stats['workers']['n_workers']}")
+        
+        # Crear resumen completo
+        summary = {
+            'optimization_results': optimization_results,
+            'total_duration': total_duration,
+            'successful_models': successful_models,
+            'failed_models': failed_models,
+            'phase_3_stats': final_stats,
+            'configuration': {
+                'n_trials': n_trials,
+                'timeout_per_model': timeout_per_model,
+                'use_temporal_cv': use_temporal_cv,
+                'optimization_strategy': optimization_strategy,
+                'parallelization_enabled': enable_parallelization,
+                'memory_optimization_enabled': enable_memory_optimization
+            },
+            'timestamp': datetime.now().isoformat()
+        }
+        
+        # Guardar resumen
+        if self.logger:
+            self.logger.log_optimization_summary(summary)
+        
+        # Limpiar workers al final
+        if enable_parallelization and self.worker_manager:
+            self.worker_manager.stop_workers()
+            print("   👥 Workers detenidos")
+        
+        return summary
 
 def main():
     """
