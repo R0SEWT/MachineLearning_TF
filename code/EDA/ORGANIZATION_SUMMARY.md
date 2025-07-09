@@ -1,6 +1,8 @@
-# 🎯 CARPETA EDA - COMPLETAMENTE ORGANIZADA
+# 📁 Resumen de Organización del Proyecto
 
-## ✅ **ESTRUCTURA FINAL**
+> **🏠 DOCUMENTACIÓN PRINCIPAL**: Ver **[README.md](./README.md)** para la documentación centralizada completa del proyecto.
+
+## ✅ **Proyecto Completamente Organizado**
 
 ```
 📊 EDA/

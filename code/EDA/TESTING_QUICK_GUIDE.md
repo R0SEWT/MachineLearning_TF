@@ -1,6 +1,8 @@
-# 🎯 GUÍA RÁPIDA - SISTEMA DE TESTING ORGANIZADO
+# 🎯 Guía Rápida de Testing - Proyecto EDA
 
-## ✅ **TODO ESTÁ LISTO Y FUNCIONANDO**
+> **🏠 DOCUMENTACIÓN PRINCIPAL**: Ver **[README.md](./README.md)** para la documentación centralizada completa del proyecto.
+
+## ✅ **Testing - TODO LISTO Y FUNCIONANDO**
 
 ### 📁 **Ubicación**: 
 ```
