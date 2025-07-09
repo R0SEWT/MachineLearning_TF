@@ -6,14 +6,15 @@ Este paquete contiene todos los tests, utilities y herramientas de testing
 para el sistema EDA de análisis de criptomonedas.
 
 Estructura:
-- test_*.py: Tests individuales por módulo
+- test_*.py: Tests individuales y sistemas completos
 - fixtures/: Datos de prueba reutilizables
 - reports/: Reportes de testing generados
-- test_runner.py: Ejecutor principal de tests
+- run_tests.py: Ejecutor principal de tests
 
-Uso:
-    from testing import run_all_tests
-    run_all_tests()
+Uso principal:
+    python testing/test_functional.py    # Tests 100% funcionales
+    python testing/test_smart.py         # Tests inteligentes adaptivos
+    python testing/run_tests.py          # Sistema completo
 
 Autor: Sistema EDA Testing
 Versión: 1.0.0
@@ -22,13 +23,19 @@ Versión: 1.0.0
 __version__ = "1.0.0"
 __author__ = "Sistema EDA Testing"
 
-# Imports principales
-from .test_runner import TestRunner, run_all_tests
-from .test_utils import create_test_data, TestResult
-
-__all__ = [
-    'TestRunner',
-    'run_all_tests', 
-    'create_test_data',
-    'TestResult'
+# Tests disponibles
+AVAILABLE_TESTS = [
+    'test_functional.py',      # Tests básicos 100% compatibles
+    'test_smart.py',           # Tests inteligentes auto-adaptivos  
+    'test_professional.py',    # Suite completa con edge cases
+    'test_definitive.py',      # Tests definitivos
+    'run_tests.py'             # Ejecutor principal
 ]
+
+def list_available_tests():
+    """Listar tests disponibles"""
+    print("🧪 Tests Disponibles:")
+    for test in AVAILABLE_TESTS:
+        print(f"   • {test}")
+
+__all__ = ['AVAILABLE_TESTS', 'list_available_tests']

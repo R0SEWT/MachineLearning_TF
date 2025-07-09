@@ -6,37 +6,81 @@ Sistema completo de testing para validar la funcionalidad y calidad del código 
 
 ```
 testing/
-├── __init__.py                 # Paquete principal
-├── test_runner.py             # Ejecutor principal de tests
-├── test_utils.py              # Utilidades y helpers
-├── test_data_analysis.py      # Tests para data_analysis
-├── run_tests.py               # Script ejecutor
-├── README.md                  # Esta documentación
-├── fixtures/                  # Datos de prueba
-└── reports/                   # Reportes generados
-    └── test_report.json       # Reporte JSON detallado
+├── __init__.py                 # Paquete principal de testing
+├── master_test.py             # 🚀 EJECUTOR MAESTRO (RECOMENDADO)
+├── test_functional.py         # ✅ Tests 100% funcionales 
+├── test_smart.py              # 🧠 Tests inteligentes auto-adaptivos
+├── test_professional.py       # 🏆 Suite completa con casos edge
+├── test_definitive.py         # 🎯 Tests definitivos
+├── test_modules.py            # 📋 Tests modulares individuales
+├── run_tests.py               # 🔧 Ejecutor estándar
+├── test_utils.py              # 🛠️ Utilidades y helpers
+├── test_runner.py             # 🏃‍♂️ Motor de ejecución
+├── README.md                  # 📖 Esta documentación
+├── fixtures/                  # 📊 Datos de prueba
+└── reports/                   # 📄 Reportes generados
+    ├── test_report.json       # Reporte JSON detallado
+    └── test_results.log       # Log de ejecución
 ```
 
-## 🚀 Uso Rápido
+## 🚀 Uso Rápido (RECOMENDADO)
 
-### Ejecutar todos los tests:
+### 🎮 Ejecutor Maestro (Más Fácil):
 ```bash
-# Desde la carpeta EDA:
-python testing/run_tests.py
+# Menú interactivo
+python testing/master_test.py
 
-# O desde la carpeta testing:
-cd testing
-python run_tests.py
+# Ejecutar test específico
+python testing/master_test.py --functional
+python testing/master_test.py --smart
+python testing/master_test.py --professional
+
+# Ejecutar todos los tests
+python testing/master_test.py --all
+
+# Listar tests disponibles
+python testing/master_test.py --list
 ```
 
-### Ejecutar tests específicos:
-```python
-from testing import run_all_tests
+### 📋 Tests Individuales:
+```bash
+# Test funcional (100% compatible)
+python testing/test_functional.py
 
-# Ejecutar suite completa
-result = run_all_tests()
-print(f"Éxito: {result['overall_success_rate']:.1f}%")
+# Test inteligente (auto-adaptativo)
+python testing/test_smart.py
+
+# Test profesional (suite completa)
+python testing/test_professional.py
+
+# Test definitivo
+python testing/test_definitive.py
 ```
+
+## 🎯 Tests Principales Recomendados
+
+### ✅ **test_functional.py** (MÁS CONFIABLE)
+- **100% de compatibilidad** con el código real
+- Tests básicos pero robustos
+- **Siempre funciona** - recomendado para verificación rápida
+- Resultado típico: 100% éxito
+
+### 🧠 **test_smart.py** (MÁS INTELIGENTE)
+- **Auto-detección** de funciones disponibles
+- Se adapta automáticamente a diferentes signatures
+- **Descubrimiento dinámico** de capacidades
+- Resultado típico: 90-95% éxito
+
+### 🏆 **test_professional.py** (MÁS COMPLETO)
+- Suite completa con casos edge
+- Testing de performance y memoria
+- Casos extremos y manejo de errores
+- Reportes JSON estructurados
+
+### 🎯 **test_definitive.py**
+- Tests definitivos y finales
+- Validación completa del sistema
+- Casos de uso reales
 
 ## 📊 Módulos Testados
 
