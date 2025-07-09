@@ -25,7 +25,6 @@ def calculate_returns(df: pd.DataFrame, periods: List[int] = [1, 7, 30],
     for period in periods:
         col_name = f'ret_{period}d'
         df_result[col_name] = df_result.groupby(id_col)[price_col].pct_change(period)
-    # --- Sección principal de procesamiento ---
     
     return df_result
 
@@ -48,7 +47,6 @@ def calculate_moving_averages(df: pd.DataFrame, windows: List[int] = [7, 30],
     for window in windows:
         col_name = f'sma_{window}'
         df_result[col_name] = df_result.groupby(id_col)[price_col].transform(
-    # --- Sección principal de procesamiento ---
             lambda x: x.rolling(window).mean()
         )
     
@@ -73,7 +71,6 @@ def calculate_volatility(df: pd.DataFrame, window: int = 30,
     vol_col_name = f'vol_{window}d'
     df_result[vol_col_name] = df_result.groupby(id_col)[return_col].transform(
         lambda x: x.rolling(window).std()
-    # --- Sección principal de procesamiento ---
     )
     
     return df_result
@@ -97,7 +94,6 @@ def calculate_bollinger_bands(df: pd.DataFrame, window: int = 20, num_std: float
     
     # Calcular SMA y std
     sma = df_result.groupby(id_col)[price_col].transform(lambda x: x.rolling(window).mean())
-    # --- Sección principal de procesamiento ---
     std = df_result.groupby(id_col)[price_col].transform(lambda x: x.rolling(window).std())
     
     # Calcular bandas
@@ -127,7 +123,6 @@ def calculate_future_returns(df: pd.DataFrame, periods: List[int] = [30],
     for period in periods:
         col_name = f'future_ret_{period}d'
         df_result[col_name] = df_result.groupby(id_col)[price_col].pct_change(-period)
-    # --- Sección principal de procesamiento ---
     
     return df_result
 
@@ -150,7 +145,6 @@ def create_technical_features(df: pd.DataFrame, config: Dict[str, Any]) -> pd.Da
     
     # Calcular promedios móviles
     if 'moving_averages' in config:
-    # --- Sección principal de procesamiento ---
         df_features = calculate_moving_averages(df_features, config['moving_averages'])
     
     # Calcular volatilidad
@@ -201,7 +195,6 @@ def prepare_ml_dataset(df: pd.DataFrame, target_col: str = 'future_ret_30d',
         drop_cols = ['date', 'id', 'name', 'symbol']
     
     # Copiar y limpiar datos
-    # --- Sección principal de procesamiento ---
     ml_df = df.copy()
     
     # Eliminar filas con target faltante
@@ -222,7 +215,6 @@ def prepare_ml_dataset(df: pd.DataFrame, target_col: str = 'future_ret_30d',
     # Eliminar filas con valores faltantes
     valid_indices = X_encoded.dropna().index.intersection(y.dropna().index)
     X_final = X_encoded.loc[valid_indices]
-    # --- Sección de validación y resultados ---
     y_final = y.loc[valid_indices]
     
     return X_final, y_final
@@ -246,7 +238,6 @@ def add_clustering_features(df: pd.DataFrame, feature_cols: List[str],
     
     df_result = df.copy()
     
-    # --- Sección principal de procesamiento ---
     # Seleccionar features válidas
     available_features = [col for col in feature_cols if col in df_result.columns]
     
@@ -267,7 +258,6 @@ def add_clustering_features(df: pd.DataFrame, feature_cols: List[str],
     
     kmeans = KMeans(n_clusters=n_clusters, random_state=random_state, n_init=10)
     cluster_labels = kmeans.fit_predict(X_scaled)
-    # --- Sección de validación y resultados ---
     
     # Asignar clusters
     df_result['cluster_id'] = '0'  # Default
@@ -294,7 +284,6 @@ def create_lagged_features(df: pd.DataFrame, feature_cols: List[str],
     for feature in feature_cols:
         if feature in df_result.columns:
             for lag in lags:
-    # --- Sección principal de procesamiento ---
                 lag_col_name = f'{feature}_lag_{lag}'
                 df_result[lag_col_name] = df_result.groupby(id_col)[feature].shift(lag)
     
@@ -319,7 +308,6 @@ def calculate_momentum_features(df: pd.DataFrame, price_col: str = 'close',
     for period in periods:
         # Rate of Change (ROC)
         roc_col = f'roc_{period}'
-    # --- Sección principal de procesamiento ---
         df_result[roc_col] = df_result.groupby(id_col)[price_col].pct_change(period)
         
         # Momentum

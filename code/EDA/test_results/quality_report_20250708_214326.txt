@@ -1,0 +1,27 @@
+================================================================================
+🔍 REPORTE DE CALIDAD DE CÓDIGO
+================================================================================
+
+📁 Módulo: /home/exodia/Documentos/MachineLearning_TF/code/EDA/utils
+📊 Score General: 93.0/100
+📄 Archivos analizados: 5/5
+
+📈 MÉTRICAS AGREGADAS
+----------------------------------------
+  • Total líneas de código: 1,223
+  • Total funciones: 27
+  • Total clases: 0
+  • Total imports: 28
+  • Complejidad promedio: 1.6
+  • Cobertura documentación: 80.0%
+  • Problemas de estilo: 37
+
+📋 ANÁLISIS DETALLADO POR ARCHIVO
+----------------------------------------
+🟢 visualizations.py: 100.0/100 (494 líneas, 5 funciones, 0 clases)
+🟢 data_analysis.py: 100.0/100 (307 líneas, 9 funciones, 0 clases)
+🟡 __init__.py: 65.0/100 (1 líneas, 0 funciones, 0 clases)
+🟢 feature_engineering.py: 100.0/100 (331 líneas, 11 funciones, 0 clases)
+🟢 config.py: 100.0/100 (90 líneas, 2 funciones, 0 clases)
+
+================================================================================

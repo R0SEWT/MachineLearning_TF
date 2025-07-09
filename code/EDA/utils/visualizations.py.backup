@@ -27,7 +27,6 @@ def plot_narrative_distribution(df: pd.DataFrame, colors: Dict[str, str],
     narrative_dist = df['narrative'].value_counts()
     plot_colors = [colors.get(n, f'C{i}') for i, n in enumerate(narrative_dist.index)]
     
-    # --- Sección principal de procesamiento ---
     # Gráfico de pastel
     wedges, texts, autotexts = ax1.pie(narrative_dist.values, labels=narrative_dist.index,
                                        autopct='%1.1f%%', colors=plot_colors, startangle=90)
@@ -41,8 +40,7 @@ def plot_narrative_distribution(df: pd.DataFrame, colors: Dict[str, str],
     
     # Añadir valores en las barras
     for bar, value in zip(bars, narrative_dist.values):
-        ax2.text(bar.get_x() + bar.get_width()/2,
-            bar.get_height() + max(narrative_dist.values)*0.01,
+        ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(narrative_dist.values)*0.01,
                 f'{value:,}', ha='center', va='bottom', fontweight='bold')
     
     plt.tight_layout()
@@ -67,28 +65,18 @@ def plot_market_cap_analysis(df: pd.DataFrame, colors: Dict[str, str],
         fig.suptitle('Market Cap no disponible en el dataset', fontsize=16)
         return fig
     
-    # --- Sección principal de procesamiento ---
     # Market cap total por narrativa
     market_cap_by_narrative = df.groupby('narrative')['market_cap'].sum().sort_values(ascending=False)
     total_market_cap = market_cap_by_narrative.sum()
     
     # Gráfico de barras
-    plot_colors = [colors.get(
-        n,
-        f'C{i}') for i,
-        n in enumerate(market_cap_by_narrative.index
-    )]
-    bars = ax1.bar(
-        market_cap_by_narrative.index,
-        market_cap_by_narrative.values/1e9,
-        color=plot_colors
-    )
+    plot_colors = [colors.get(n, f'C{i}') for i, n in enumerate(market_cap_by_narrative.index)]
+    bars = ax1.bar(market_cap_by_narrative.index, market_cap_by_narrative.values/1e9, color=plot_colors)
     ax1.set_title('Market Cap Total por Narrativa', fontweight='bold')
     ax1.set_ylabel('Market Cap (Billones USD)')
     ax1.tick_params(axis='x', rotation=45)
     ax1.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:.1f}B'))
     
-    # --- Sección de validación y resultados ---
     # Gráfico de pastel para dominancia
     wedges, texts, autotexts = ax2.pie(market_cap_by_narrative.values, 
                                        labels=market_cap_by_narrative.index,
@@ -115,15 +103,7 @@ def plot_temporal_analysis(df: pd.DataFrame, colors: Dict[str, str],
     fig.suptitle('Análisis de Patrones Temporales', fontsize=16, fontweight='bold')
     
     if 'date' not in df.columns:
-        fig.text(
-            0.5,
-    # --- Sección principal de procesamiento ---
-            0.5,
-            'Datos temporales no disponibles',
-            ha='center',
-            va='center',
-            fontsize=20
-        )
+        fig.text(0.5, 0.5, 'Datos temporales no disponibles', ha='center', va='center', fontsize=20)
         return fig
     
     df_temp = df.copy()
@@ -133,12 +113,7 @@ def plot_temporal_analysis(df: pd.DataFrame, colors: Dict[str, str],
     ax1 = axes[0, 0]
     if 'market_cap' in df_temp.columns:
         temporal_data = df_temp.groupby(['date', 'narrative'])['market_cap'].sum().reset_index()
-        pivot_temporal = temporal_data.pivot(
-            index='date',
-            columns='narrative',
-            values='market_cap').fillna(0
-        )
-    # --- Sección de validación y resultados ---
+        pivot_temporal = temporal_data.pivot(index='date', columns='narrative', values='market_cap').fillna(0)
         
         for narrative in pivot_temporal.columns:
             ax1.plot(pivot_temporal.index, pivot_temporal[narrative]/1e9, 
@@ -153,11 +128,7 @@ def plot_temporal_analysis(df: pd.DataFrame, colors: Dict[str, str],
     # 2. Tokens activos por día
     ax2 = axes[0, 1]
     active_tokens = df_temp.groupby(['date', 'narrative'])['id'].nunique().reset_index()
-    pivot_tokens = active_tokens.pivot(
-        index='date',
-        columns='narrative',
-        values='id').fillna(0
-    )
+    pivot_tokens = active_tokens.pivot(index='date', columns='narrative', values='id').fillna(0)
     
     for narrative in pivot_tokens.columns:
         ax2.plot(pivot_tokens.index, pivot_tokens[narrative], 
@@ -172,12 +143,10 @@ def plot_temporal_analysis(df: pd.DataFrame, colors: Dict[str, str],
     # 3. Actividad por día de la semana
     ax3 = axes[1, 0]
     df_temp['day_of_week'] = df_temp['date'].dt.day_name()
-    activity_heatmap = df_temp.groupby(['day_of_week',
-        'narrative']).size().unstack(fill_value=0)
+    activity_heatmap = df_temp.groupby(['day_of_week', 'narrative']).size().unstack(fill_value=0)
     
     # Reordenar días de la semana
-    day_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
-        'Sunday']
+    day_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     activity_heatmap = activity_heatmap.reindex([d for d in day_order if d in activity_heatmap.index])
     
     sns.heatmap(activity_heatmap, annot=True, fmt='d', cmap='YlOrRd', ax=ax3)
@@ -224,16 +193,8 @@ def plot_returns_analysis(df: pd.DataFrame, colors: Dict[str, str],
     # Verificar columnas de retornos
     return_cols = [col for col in ['ret_1d', 'ret_7d', 'ret_30d'] if col in df.columns]
     
-    # --- Sección principal de procesamiento ---
     if not return_cols:
-        fig.text(
-            0.5,
-            0.5,
-            'Datos de retornos no disponibles',
-            ha='center',
-            va='center',
-            fontsize=20
-        )
+        fig.text(0.5, 0.5, 'Datos de retornos no disponibles', ha='center', va='center', fontsize=20)
         return fig
     
     # 1. Histograma de retornos por narrativa
@@ -245,7 +206,6 @@ def plot_returns_analysis(df: pd.DataFrame, colors: Dict[str, str],
                 # Filtrar outliers extremos
                 data_filtered = data[(data > data.quantile(0.01)) & (data < data.quantile(0.99))]
                 ax1.hist(data_filtered, bins=30, alpha=0.6, 
-    # --- Sección de validación y resultados ---
                         label=f'{narrative} (n={len(data)})',
                         color=colors.get(narrative, f'C{i}'))
         
@@ -394,7 +354,6 @@ def plot_quality_dashboard(metrics: Dict[str, Any], quality_eval: Dict[str, Any]
     fig, axes = plt.subplots(2, 3, figsize=figsize)
     fig.suptitle('📊 Dashboard de Calidad del Dataset', fontsize=16, fontweight='bold')
     
-    # --- Sección principal de procesamiento ---
     # 1. Distribución por narrativa
     ax1 = axes[0, 0]
     narrative_dist = df['narrative'].value_counts()
@@ -415,7 +374,6 @@ def plot_quality_dashboard(metrics: Dict[str, Any], quality_eval: Dict[str, Any]
         
         # Colorear barras
         for i, (bar, narrative) in enumerate(zip(bars, market_cap_by_narrative.index)):
-    # --- Sección de validación y resultados ---
             bar.set_color(colors.get(narrative, f'C{i}'))
     
     # 3. Completitud de datos

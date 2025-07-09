@@ -1,0 +1,385 @@
+{
+  "test_run_info": {
+    "start_time": "2025-07-08T21:50:22.457502",
+    "modules_tested": [
+      "config"
+    ],
+    "include_quality_analysis": true
+  },
+  "module_results": {
+    "config": {
+      "module": "config",
+      "total_tests": 4,
+      "passed_tests": 0,
+      "failed_tests": 4,
+      "test_results": {
+        "imports": {
+          "test_name": "imports",
+          "success": false,
+          "details": {},
+          "error": "Setup falló"
+        },
+        "quality_thresholds": {
+          "test_name": "quality_thresholds",
+          "success": false,
+          "details": {},
+          "error": "Setup falló"
+        },
+        "supported_formats": {
+          "test_name": "supported_formats",
+          "success": false,
+          "details": {},
+          "error": "Setup falló"
+        },
+        "config_validation": {
+          "test_name": "config_validation",
+          "success": false,
+          "details": {},
+          "error": "Setup falló"
+        }
+      },
+      "summary": {
+        "pass_rate": 0.0,
+        "status": "FAILED"
+      }
+    }
+  },
+  "overall_summary": {
+    "total_modules": 1,
+    "total_tests": 4,
+    "passed_tests": 0,
+    "failed_tests": 4,
+    "pass_rate": 0.0,
+    "status": "FAILED",
+    "duration_seconds": 0.44371,
+    "end_time": "2025-07-08T21:50:22.901212"
+  },
+  "quality_analysis": {
+    "module_path": "/home/exodia/Documentos/MachineLearning_TF/code/EDA/utils",
+    "total_files": 5,
+    "analyzed_files": 5,
+    "failed_files": 0,
+    "file_analyses": {
+      "visualizations.py": {
+        "file_path": "/home/exodia/Documentos/MachineLearning_TF/code/EDA/utils/visualizations.py",
+        "file_size_bytes": 20055,
+        "line_count": 494,
+        "character_count": 19954,
+        "complexity_metrics": {
+          "total_nodes": 3480,
+          "max_nesting_level": 3,
+          "function_count": 5,
+          "class_count": 0,
+          "if_statements": 22,
+          "for_loops": 14,
+          "while_loops": 0,
+          "try_blocks": 0
+        },
+        "code_style_metrics": {
+          "long_lines": 22,
+          "max_line_length": 167,
+          "empty_lines": 78,
+          "trailing_whitespace_lines": 80,
+          "tab_usage": 0,
+          "mixed_indentation": false
+        },
+        "documentation_metrics": {
+          "module_docstring": true,
+          "function_docstrings": 5,
+          "class_docstrings": 0,
+          "total_functions": 5,
+          "total_classes": 0,
+          "comment_lines": 41,
+          "docstring_coverage": 100.0
+        },
+        "import_metrics": {
+          "total_imports": 9,
+          "from_imports": 1,
+          "import_statements": 4,
+          "star_imports": 0,
+          "local_imports": 0,
+          "third_party_imports": 4,
+          "standard_library_imports": 1
+        },
+        "function_metrics": {
+          "total_functions": 5,
+          "average_function_length": 96.0,
+          "max_function_length": 169,
+          "functions_with_decorators": 0,
+          "functions_with_type_hints": 5,
+          "private_functions": 0,
+          "public_functions": 5
+        },
+        "class_metrics": {
+          "total_classes": 0,
+          "classes_with_inheritance": 0,
+          "average_methods_per_class": 0,
+          "max_methods_per_class": 0,
+          "classes_with_init": 0,
+          "classes_with_str": 0,
+          "classes_with_repr": 0
+        },
+        "quality_score": 100.0
+      },
+      "data_analysis.py": {
+        "file_path": "/home/exodia/Documentos/MachineLearning_TF/code/EDA/utils/data_analysis.py",
+        "file_size_bytes": 9650,
+        "line_count": 307,
+        "character_count": 9508,
+        "complexity_metrics": {
+          "total_nodes": 1325,
+          "max_nesting_level": 2,
+          "function_count": 9,
+          "class_count": 0,
+          "if_statements": 20,
+          "for_loops": 1,
+          "while_loops": 0,
+          "try_blocks": 1
+        },
+        "code_style_metrics": {
+          "long_lines": 4,
+          "max_line_length": 97,
+          "empty_lines": 53,
+          "trailing_whitespace_lines": 41,
+          "tab_usage": 0,
+          "mixed_indentation": false
+        },
+        "documentation_metrics": {
+          "module_docstring": true,
+          "function_docstrings": 9,
+          "class_docstrings": 0,
+          "total_functions": 9,
+          "total_classes": 0,
+          "comment_lines": 15,
+          "docstring_coverage": 100.0
+        },
+        "import_metrics": {
+          "total_imports": 7,
+          "from_imports": 1,
+          "import_statements": 2,
+          "star_imports": 0,
+          "local_imports": 0,
+          "third_party_imports": 2,
+          "standard_library_imports": 1
+        },
+        "function_metrics": {
+          "total_functions": 9,
+          "average_function_length": 31.88888888888889,
+          "max_function_length": 73,
+          "functions_with_decorators": 0,
+          "functions_with_type_hints": 9,
+          "private_functions": 0,
+          "public_functions": 9
+        },
+        "class_metrics": {
+          "total_classes": 0,
+          "classes_with_inheritance": 0,
+          "average_methods_per_class": 0,
+          "max_methods_per_class": 0,
+          "classes_with_init": 0,
+          "classes_with_str": 0,
+          "classes_with_repr": 0
+        },
+        "quality_score": 100.0
+      },
+      "__init__.py": {
+        "file_path": "/home/exodia/Documentos/MachineLearning_TF/code/EDA/utils/__init__.py",
+        "file_size_bytes": 40,
+        "line_count": 1,
+        "character_count": 40,
+        "complexity_metrics": {
+          "total_nodes": 1,
+          "max_nesting_level": 0,
+          "function_count": 0,
+          "class_count": 0,
+          "if_statements": 0,
+          "for_loops": 0,
+          "while_loops": 0,
+          "try_blocks": 0
+        },
+        "code_style_metrics": {
+          "long_lines": 0,
+          "max_line_length": 39,
+          "empty_lines": 0,
+          "trailing_whitespace_lines": 0,
+          "tab_usage": 0,
+          "mixed_indentation": false
+        },
+        "documentation_metrics": {
+          "module_docstring": false,
+          "function_docstrings": 0,
+          "class_docstrings": 0,
+          "total_functions": 0,
+          "total_classes": 0,
+          "comment_lines": 1,
+          "docstring_coverage": 0.0
+        },
+        "import_metrics": {
+          "total_imports": 0,
+          "from_imports": 0,
+          "import_statements": 0,
+          "star_imports": 0,
+          "local_imports": 0,
+          "third_party_imports": 0,
+          "standard_library_imports": 0
+        },
+        "function_metrics": {
+          "total_functions": 0,
+          "average_function_length": 0,
+          "max_function_length": 0,
+          "functions_with_decorators": 0,
+          "functions_with_type_hints": 0,
+          "private_functions": 0,
+          "public_functions": 0
+        },
+        "class_metrics": {
+          "total_classes": 0,
+          "classes_with_inheritance": 0,
+          "average_methods_per_class": 0,
+          "max_methods_per_class": 0,
+          "classes_with_init": 0,
+          "classes_with_str": 0,
+          "classes_with_repr": 0
+        },
+        "quality_score": 65.0
+      },
+      "feature_engineering.py": {
+        "file_path": "/home/exodia/Documentos/MachineLearning_TF/code/EDA/utils/feature_engineering.py",
+        "file_size_bytes": 11178,
+        "line_count": 331,
+        "character_count": 11129,
+        "complexity_metrics": {
+          "total_nodes": 1409,
+          "max_nesting_level": 3,
+          "function_count": 11,
+          "class_count": 0,
+          "if_statements": 8,
+          "for_loops": 6,
+          "while_loops": 0,
+          "try_blocks": 0
+        },
+        "code_style_metrics": {
+          "long_lines": 11,
+          "max_line_length": 167,
+          "empty_lines": 72,
+          "trailing_whitespace_lines": 66,
+          "tab_usage": 0,
+          "mixed_indentation": false
+        },
+        "documentation_metrics": {
+          "module_docstring": true,
+          "function_docstrings": 11,
+          "class_docstrings": 0,
+          "total_functions": 11,
+          "total_classes": 0,
+          "comment_lines": 30,
+          "docstring_coverage": 100.0
+        },
+        "import_metrics": {
+          "total_imports": 9,
+          "from_imports": 3,
+          "import_statements": 2,
+          "star_imports": 0,
+          "local_imports": 0,
+          "third_party_imports": 4,
+          "standard_library_imports": 1
+        },
+        "function_metrics": {
+          "total_functions": 11,
+          "average_function_length": 28.454545454545453,
+          "max_function_length": 47,
+          "functions_with_decorators": 0,
+          "functions_with_type_hints": 11,
+          "private_functions": 0,
+          "public_functions": 11
+        },
+        "class_metrics": {
+          "total_classes": 0,
+          "classes_with_inheritance": 0,
+          "average_methods_per_class": 0,
+          "max_methods_per_class": 0,
+          "classes_with_init": 0,
+          "classes_with_str": 0,
+          "classes_with_repr": 0
+        },
+        "quality_score": 100.0
+      },
+      "config.py": {
+        "file_path": "/home/exodia/Documentos/MachineLearning_TF/code/EDA/utils/config.py",
+        "file_size_bytes": 2410,
+        "line_count": 90,
+        "character_count": 2395,
+        "complexity_metrics": {
+          "total_nodes": 250,
+          "max_nesting_level": 0,
+          "function_count": 2,
+          "class_count": 0,
+          "if_statements": 0,
+          "for_loops": 0,
+          "while_loops": 0,
+          "try_blocks": 0
+        },
+        "code_style_metrics": {
+          "long_lines": 0,
+          "max_line_length": 78,
+          "empty_lines": 10,
+          "trailing_whitespace_lines": 2,
+          "tab_usage": 0,
+          "mixed_indentation": false
+        },
+        "documentation_metrics": {
+          "module_docstring": true,
+          "function_docstrings": 2,
+          "class_docstrings": 0,
+          "total_functions": 2,
+          "total_classes": 0,
+          "comment_lines": 9,
+          "docstring_coverage": 100.0
+        },
+        "import_metrics": {
+          "total_imports": 3,
+          "from_imports": 1,
+          "import_statements": 2,
+          "star_imports": 0,
+          "local_imports": 0,
+          "third_party_imports": 2,
+          "standard_library_imports": 1
+        },
+        "function_metrics": {
+          "total_functions": 2,
+          "average_function_length": 10.0,
+          "max_function_length": 13,
+          "functions_with_decorators": 0,
+          "functions_with_type_hints": 2,
+          "private_functions": 0,
+          "public_functions": 2
+        },
+        "class_metrics": {
+          "total_classes": 0,
+          "classes_with_inheritance": 0,
+          "average_methods_per_class": 0,
+          "max_methods_per_class": 0,
+          "classes_with_init": 0,
+          "classes_with_str": 0,
+          "classes_with_repr": 0
+        },
+        "quality_score": 100.0
+      }
+    },
+    "aggregate_metrics": {
+      "total_lines": 1223,
+      "total_functions": 27,
+      "total_classes": 0,
+      "total_imports": 28,
+      "average_complexity": 1.6,
+      "documentation_coverage": 80.0,
+      "style_issues": 37
+    },
+    "overall_quality_score": 93.0
+  },
+  "recommendations": [
+    "🔴 CRÍTICO: Tasa de éxito de tests muy baja. Revisar y corregir fallos inmediatamente.",
+    "📌 Revisar módulo config: solo 0.0% tests pasaron",
+    "💡 Ejecutar tests regularmente para mantener la calidad del código."
+  ]
+}

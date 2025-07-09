@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-07-08T22:39:55.176375",
+  "execution_time": 0.6850128173828125,
+  "overall_success_rate": 95.23809523809523,
+  "total_tests": 21,
+  "total_passed": 20,
+  "modules": {
+    "data_analysis": {
+      "passed": 5,
+      "total": 6,
+      "success_rate": 83.33333333333334
+    },
+    "feature_engineering": {
+      "passed": 5,
+      "total": 5,
+      "success_rate": 100.0
+    },
+    "visualizations": {
+      "passed": 5,
+      "total": 5,
+      "success_rate": 100.0
+    },
+    "config": {
+      "passed": 5,
+      "total": 5,
+      "success_rate": 100.0
+    }
+  }
+}

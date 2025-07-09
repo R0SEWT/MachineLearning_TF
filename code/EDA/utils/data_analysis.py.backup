@@ -2,9 +2,12 @@
 Módulo de utilidades para análisis estadístico y de calidad de datos
 """
 
+# Imports estándar
+from typing import Dict, List, Tuple, Optional, Any
+
+# Imports de terceros
 import pandas as pd
 import numpy as np
-from typing import Dict, List, Tuple, Optional, Any
 
 def calculate_basic_metrics(df: pd.DataFrame) -> Dict[str, Any]:
     """
@@ -25,7 +28,6 @@ def calculate_basic_metrics(df: pd.DataFrame) -> Dict[str, Any]:
     }
     
     if 'date' in df.columns:
-    # --- Sección principal de procesamiento ---
         try:
             df_temp = df.copy()
             df_temp['date'] = pd.to_datetime(df_temp['date'])
@@ -71,7 +73,6 @@ def evaluate_data_quality(metrics: Dict[str, Any], thresholds: Dict) -> Dict[str
     elif metrics['total_observations'] > thresholds['good']['observations']:
         vol_score = ('🟡', 'amarillo')
     else:
-    # --- Sección principal de procesamiento ---
         vol_score = ('🔴', 'rojo')
     criteria_scores.append(vol_score[1])
     
@@ -92,7 +93,6 @@ def evaluate_data_quality(metrics: Dict[str, Any], thresholds: Dict) -> Dict[str
     else:
         div_score = ('🔴', 'rojo')
     criteria_scores.append(div_score[1])
-    # --- Sección de validación y resultados ---
     
     # Rango temporal
     if metrics['date_range'] > thresholds['excellent']['temporal_days']:
@@ -145,7 +145,6 @@ def detect_outliers_iqr(series: pd.Series) -> Tuple[int, float]:
     lower_bound = Q1 - 1.5 * IQR
     upper_bound = Q3 + 1.5 * IQR
     outliers = series[(series < lower_bound) | (series > upper_bound)]
-    # --- Sección principal de procesamiento ---
     return len(outliers), (len(outliers) / len(series) * 100)
 
 def calculate_distribution_stats(series: pd.Series) -> Dict[str, float]:
@@ -167,7 +166,6 @@ def calculate_distribution_stats(series: pd.Series) -> Dict[str, float]:
     
     skewness = series.skew()
     kurtosis_val = series.kurtosis()
-    # --- Sección principal de procesamiento ---
     is_normal = abs(skewness) < 0.5 and abs(kurtosis_val) < 3
     
     return {
@@ -198,12 +196,7 @@ def calculate_market_dominance(df: pd.DataFrame, group_col: str = 'narrative',
     
     return df.groupby(group_col)[value_col].sum().sort_values(ascending=False)
 
-def filter_extreme_values(
-    series: pd.Series,
-    quantiles: Tuple[float,
-    float] = (0.01,
-    0.99)
-) -> pd.Series:
+def filter_extreme_values(series: pd.Series, quantiles: Tuple[float, float] = (0.01, 0.99)) -> pd.Series:
     """
     Filtra valores extremos basándose en cuantiles
     
@@ -242,7 +235,6 @@ def calculate_correlation_matrix(df: pd.DataFrame, tokens: List[str],
     
     # Crear matriz de retornos
     returns_matrix = pd.DataFrame()
-    # --- Sección principal de procesamiento ---
     
     for token in tokens:
         token_data = df[df['id'] == token].sort_values(date_col)
@@ -255,12 +247,7 @@ def calculate_correlation_matrix(df: pd.DataFrame, tokens: List[str],
         
     return returns_matrix.corr()
 
-def generate_summary_report(
-    metrics: Dict[str,
-    Any],
-    quality_eval: Dict[str,
-    Any]
-) -> str:
+def generate_summary_report(metrics: Dict[str, Any], quality_eval: Dict[str, Any]) -> str:
     """
     Genera un resumen textual del análisis
     
