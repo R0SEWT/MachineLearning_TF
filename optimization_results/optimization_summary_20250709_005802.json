@@ -1,0 +1,21 @@
+{
+  "timestamp": "20250709_005802",
+  "best_params": {
+    "xgboost": {
+      "n_estimators": 350,
+      "max_depth": 6,
+      "learning_rate": 0.0343816546585015,
+      "subsample": 0.9711268926125968,
+      "colsample_bytree": 0.8937980798869847,
+      "reg_alpha": 0.31022128173191943,
+      "reg_lambda": 0.7018491850968644,
+      "min_child_weight": 2,
+      "gamma": 0.08779343508897197
+    }
+  },
+  "best_scores": {
+    "xgboost": 0.9954142907046744
+  },
+  "cv_folds": 3,
+  "random_state": 42
+}

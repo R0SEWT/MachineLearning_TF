@@ -136,3 +136,4 @@ El sistema de Machine Learning para identificar criptomonedas de baja capitaliza
 **Fecha de completación**: 9 de julio de 2025  
 **Tiempo total de desarrollo**: Implementación completa en sesión única  
 **Estado**: ✅ COMPLETADO Y FUNCIONAL
+[text](models)
