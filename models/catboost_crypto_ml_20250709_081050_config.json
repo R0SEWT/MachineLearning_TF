@@ -8,5 +8,23 @@
   "depth": 6,
   "l2_leaf_reg": 3,
   "random_state": 42,
-  "verbose": false
+  "verbose": false,
+  "_metadata": {
+    "corrected_timestamp": "20250709_110302",
+    "original_config": {
+      "objective": "Logloss",
+      "eval_metric": "AUC",
+      "task_type": "GPU",
+      "devices": "0",
+      "iterations": 1000,
+      "learning_rate": 0.05,
+      "depth": 6,
+      "l2_leaf_reg": 3,
+      "random_state": 42,
+      "verbose": false
+    },
+    "correction_reason": "Standardization for consistency",
+    "gpu_used": true,
+    "corrected_by": "config_standardizer_script"
+  }
 }
