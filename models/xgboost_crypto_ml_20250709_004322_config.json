@@ -1,0 +1,13 @@
+{
+  "objective": "binary:logistic",
+  "eval_metric": "auc",
+  "max_depth": 6,
+  "learning_rate": 0.05,
+  "subsample": 0.8,
+  "colsample_bytree": 0.8,
+  "reg_alpha": 0.1,
+  "reg_lambda": 1.0,
+  "n_estimators": 1000,
+  "random_state": 42,
+  "early_stopping_rounds": 100
+}

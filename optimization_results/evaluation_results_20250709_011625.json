@@ -1,0 +1,18 @@
+{
+  "xgboost": {
+    "cv_score": 0.9959679433798492,
+    "val_auc": 0.7801063210447399,
+    "test_auc": 0.8454347219612732,
+    "params": {
+      "n_estimators": 750,
+      "max_depth": 11,
+      "learning_rate": 0.07538833544932481,
+      "subsample": 0.7500338634235656,
+      "colsample_bytree": 0.9471115074317812,
+      "reg_alpha": 0.8066698506936958,
+      "reg_lambda": 7.779634072724803,
+      "min_child_weight": 8,
+      "gamma": 0.024467690580675626
+    }
+  }
+}

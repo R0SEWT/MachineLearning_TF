@@ -1,0 +1,10 @@
+{
+  "objective": "Logloss",
+  "eval_metric": "AUC",
+  "iterations": 1000,
+  "learning_rate": 0.05,
+  "depth": 6,
+  "l2_leaf_reg": 3,
+  "random_state": 42,
+  "verbose": false
+}
