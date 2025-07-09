@@ -1,1 +1,4 @@
-{}
+{
+  "ensemble_method": "soft_voting",
+  "weights": [0.5, 0.3, 0.2]
+}
