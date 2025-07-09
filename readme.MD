@@ -16,3 +16,11 @@ Proponer un modelo de Machine Learning que permita identificar criptomonedas eme
 - Optimizar los modelos mediante técnicas de ajuste de hiperparámetros como Optuna para mejorar su precisión y generalización.
 
 - Desarrollar una interfaz gráfica sencilla que permita visualizar las recomendaciones del sistema de forma amigable para el usuario final.
+
+
+
+## Instalacion
+
+`conda env create -f environment.yml`
+
+`conda activate ML-TF-G`
