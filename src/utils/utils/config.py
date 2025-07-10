@@ -29,7 +29,16 @@ NARRATIVE_COLORS = {
 # Configuración de rutas
 def get_project_paths():
     """Obtiene las rutas principales del proyecto"""
-    ROOT = Path.cwd().parents[1] if 'code' in str(Path.cwd()) else Path.cwd()
+    current_path = Path.cwd()
+    
+    # Detectar si estamos en el notebook (src/utils/notebooks/)
+    if 'notebooks' in str(current_path):
+        ROOT = current_path.parents[2]  # Subir 3 niveles desde notebooks
+    elif 'src' in str(current_path):
+        ROOT = current_path.parents[1]  # Subir 2 niveles desde src
+    else:
+        ROOT = current_path  # Ya estamos en la raíz
+    
     DATA_PATH = ROOT / "data" / "crypto_ohlc_join.csv"
     OUT_PATH = ROOT / "data" / "ml_dataset.csv"
     REPORTS_PATH = ROOT / "reports"

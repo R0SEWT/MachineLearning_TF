@@ -271,7 +271,7 @@ def plot_returns_analysis(df: pd.DataFrame, colors: Dict[str, str],
                 labels.append(narrative)
         
         if boxplot_data:
-            bp = ax2.boxplot(boxplot_data, labels=labels, patch_artist=True)
+            bp = ax2.boxplot(boxplot_data, tick_labels=labels, patch_artist=True)
             for patch, narrative in zip(bp['boxes'], labels):
                 patch.set_facecolor(colors.get(narrative, 'lightblue'))
         
@@ -363,7 +363,7 @@ def plot_returns_analysis(df: pd.DataFrame, colors: Dict[str, str],
                 summary_stats.append(stats)
         
         if summary_stats:
-            summary_text = "📊 ESTADÍSTICAS RESUMEN\n\n"
+            summary_text = "ESTADÍSTICAS RESUMEN\n\n"
             for stat in summary_stats:
                 summary_text += f"{stat['Narrativa']:8}: μ={stat['Media']}, σ={stat['Std']}\n"
                 summary_text += f"{'':10} Skew={stat['Skew']}, N={stat['N']}\n\n"
@@ -392,7 +392,7 @@ def plot_quality_dashboard(metrics: Dict[str, Any], quality_eval: Dict[str, Any]
         Figura de matplotlib
     """
     fig, axes = plt.subplots(2, 3, figsize=figsize)
-    fig.suptitle('📊 Dashboard de Calidad del Dataset', fontsize=16, fontweight='bold')
+    fig.suptitle('Dashboard de Calidad del Dataset', fontsize=16, fontweight='bold')
     
     # --- Sección principal de procesamiento ---
     # 1. Distribución por narrativa
