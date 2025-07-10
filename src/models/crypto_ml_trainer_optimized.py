@@ -18,8 +18,8 @@ import json
 # Suprimir warnings
 warnings.filterwarnings('ignore')
 
-# Agregar path del EDA
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'EDA', 'utils'))
+# Agregar path del utils
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'utils', 'utils'))
 from feature_engineering import create_ml_features, prepare_ml_dataset
 
 # Imports de ML

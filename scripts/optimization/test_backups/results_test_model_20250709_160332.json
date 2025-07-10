@@ -1,8 +1,0 @@
-{
-  "model": "xgboost",
-  "best_score": 0.85,
-  "best_params": {
-    "n_estimators": 100
-  },
-  "timestamp": "2025-07-09T16:03:32.385758"
-}
